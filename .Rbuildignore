@@ -1,0 +1,8 @@
+^packrat/
+^\.Rprofile$
+^.*\.Rproj$
+^\.Rproj\.user$
+^previous$
+^create-data$
+^pkg-build$
+^data-raw$
