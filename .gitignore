@@ -3,3 +3,4 @@
 .RData
 pkg-build/*
 previous/*
+inst/doc

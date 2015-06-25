@@ -1,0 +1,88 @@
+---
+title: "Kotzebue Bearded Seal Telemetry Data 2009-2012"
+author: "Josh M. London"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup,include=FALSE}
+# opts_chunk$set()
+```
+
+```{r libs,include=FALSE}
+library(kotzeb0912)
+library(sp)
+library(leaflet)
+library(dplyr)
+```
+
+```{r echo=FALSE,fig.width=3.5,fig.height=6,fig.cap='Tracklines derived from all Argos and GPS location estimates'}
+knitr::opts_chunk$set(out.extra = 'style="float:right;"')  # left
+data("kotzeb0912_locs")
+
+locs_sp <- kotzeb0912_locs %>% 
+  dplyr::select(deployid,date_time,latitude,longitude) %>% 
+  dplyr::filter(!is.na(latitude)) %>% 
+  dplyr::arrange(deployid,date_time) %>% 
+  data.frame()
+
+sp::coordinates(locs_sp) <- ~longitude+latitude
+sp::proj4string(locs_sp) <- CRS("+init=epsg:4326")
+
+## list of Lines per id, each with one Line in a list
+ll <- lapply(split(locs_sp, locs_sp$deployid), function(x) Lines(list(Line(coordinates(x))), x$deployid[1L]))
+
+# the corrected part goes here:
+lines <- SpatialLines(ll)
+data <- data.frame(id = unique(locs_sp$deployid))
+rownames(data) <- data$id
+lines_sp <- SpatialLinesDataFrame(lines, data)
+proj4string(lines_sp) <- CRS("+init=epsg:4326")
+lines_sp <- sp::spTransform(lines_sp,CRS("+proj=longlat +datum=WGS84 +lon_wrap=180"))
+
+med_lng <- median(coordinates(locs_sp)[,1])
+med_lat <- median(coordinates(locs_sp)[,2])
+
+m <- leaflet() %>% setView(lng = med_lng, lat = med_lat,zoom = 4)
+m %>% addProviderTiles("Esri.OceanBasemap") 
+```
+
+## Summary
+
+The `kotzeb0912` package is a data package for distribution of core data products
+resulting from a telemetry study of bearded seals captured near Kotzebue, Alaska.
+The telemetry devices were deployed on 7 adult/sub-adult animals and data from
+those tags spans 2009 to 2012.
+
+## Telemetry Devices
+
+All of the telemetry devices deployed in this study were manufactured by
+Wildlife Computers (Redmond, Washington, USA) [^1]. All of the tags relied on
+the Argos satellite network for location esimates and transfer of data. A few
+tags were equipped with Fastloc-GPS capabilities that provided a limited
+number of GPS quality locations [^2].
+
+[^1]: Mention of specific products or manufacturers does not constitute an 
+endorsement by NMFS, NOAA, or the U.S. Department of Commerce
+
+[^2]: Fastloc-GPS was used sparingly because the technology was relatively new
+at the time of this study and there is a significant increase in battery
+consumption when using Fastloc-GPS compared to Argos.
+
+## Bearded Seals
+
+
+## Data Gathering and Processing
+
+### Tag Programming
+
+### Argos Least-Squared vs Kalman Processing
+
+### Wildlife Computers Data Portal
+
+## Data Archiving and Availability
+
