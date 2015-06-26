@@ -1,12 +1,16 @@
 ---
-title: "Kotzebue Bearded Seal Telemetry Data 2009-2012"
-author: "Josh M. London"
+title: "Kotzebue Bearded Seal Telemetry Data 2009-2013"
 authors:
 - name: Josh M. London
   orcid: 0000-0002-3647-5046
   affiliation: National Marine Mammal Laboratory, Alaska Fisheries Science Center, NOAA, Seattle, WA, USA
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+- name: Michael F. Cameron
+  affiliation: National Marine Mammal Laboratory, Alaska Fisheries Science Center, NOAA, Seattle, WA, USA
+- name: Peter L. Boveng
+  affiliation: National Marine Mammal Laboratory, Alaska Fisheries Science Center, NOAA, Seattle, WA, USA
+output: 
+  html_document:
+    theme: flatly
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}
@@ -19,39 +23,85 @@ vignette: >
 
 ```{r libs,include=FALSE}
 library(kotzeb0912)
-library(sp)
-library(leaflet)
 library(dplyr)
+library(ggmap)
 ```
+----------------------------
+#### Josh M. London, Michael F. Cameron, and Peter L. Boveng
+National Marine Mammal Laboratory, Alaska Fisheries Science Center, NOAA, Seattle, WA, USA
 
-```{r echo=FALSE,fig.width=7,fig.height=6,fig.cap='Tracklines derived from all Argos and GPS location estimates'}
-knitr::opts_chunk$set(out.extra = 'style="float:right;"')  # left
+Last updated: `r Sys.Date()`
+
+## Executive Summary
+
+```{r echo=FALSE,fig.width=5,out.extra='style="float: right;"',fig.cap='Tracklines derived from all Argos and GPS location estimates',warning=FALSE,message=FALSE}
 data("kotzeb0912_locs")
 
-locs_sp <- kotzeb0912_locs %>% 
+locs <- kotzeb0912_locs %>% 
   dplyr::select(deployid,date_time,latitude,longitude) %>% 
   dplyr::filter(!is.na(latitude)) %>% 
   dplyr::arrange(deployid,date_time) %>% 
   data.frame()
 
-sp::coordinates(locs_sp) <- ~longitude+latitude
-sp::proj4string(locs_sp) <- CRS("+init=epsg:4326")
+med_lng <- median(locs$longitude)
+med_lat <- median(locs$latitude) -3
 
-locs_sp <- sp::spTransform(locs_sp,CRS("+proj=longlat +datum=WGS84 +lon_wrap=180"))
-
-med_lng <- median(coordinates(locs_sp)[,1])
-med_lat <- median(coordinates(locs_sp)[,2]) -3
-
-m <- leaflet(locs_sp) %>% setView(lng = med_lng, lat = med_lat,zoom = 4)
-m %>% addProviderTiles("Esri.OceanBasemap") %>% addCircles()
+map <- get_map(location=c(med_lng,med_lat),
+                     zoom=4,source="google",maptype='terrain',color="bw")
+gg <- ggmap(map) + geom_point(data=locs,mapping=aes(x=longitude,y=latitude),
+                              alpha=0.25,size=0.75)
+gg
 ```
 
-## Summary
+Bearded seals (_Erignathus barbatus_) are one of the most important subsistence
+resources for the indigenous people of coastal northern and western Alaska, as
+well as key components of Arctic marine ecosystems, yet relatively little about
+their abundance, seasonal distribution, migrations, or foraging behaviors has
+been documented scientifically. Ice-associated seal populations may be
+negatively impacted by offshore oil and gas development as well as by climate
+change. Our ability to predict impacts, however, is limited by inadequate
+knowledge of seal population structure and foraging ecology. By working
+cooperatively with Alaska Native subsistence hunters we developed methods for
+live-capturing bearded seals in the Chukchi Sea using nets set in the shallow
+coastal waters where bearded seals were foraging.  Capture efforts were based
+out of Kotzebue and various locations in the North Slope Borough from Wainwright
+to Barrow in June and July from 2009 to 2012.  In all, 7 seals were caught (2
+adults and 5 sub-adults; 4 males and three females; ranging in length and weight
+from 159 cm and 116 kg to 216 cm and 253 kg), all from Kotzebue Sound.  Each
+seal was sampled for health and condition and released with three different types
+of satellite-linked bio-loggers: the SPOT5, attached
+to a rear flipper, provided information on the timing of hauling out and on the
+seal’s location for up to three years; the MK10, glued to the top of a
+seal’s head, provided Argos estimates of location and also provided
+data on the timing and depths of dives, for up to ten months; the Mk10-AF, also
+glued to the top of the head, provided GPS quality locations in addition to the
+Argos estimates of location and dive behavior data.
 
-The *kotzeb0912* package is a data package for distribution of core data products
-resulting from a telemetry study of bearded seals captured near Kotzebue, Alaska.
-The telemetry devices were deployed on 7 adult/sub-adult animals and data from
-those tags spans 2009 to 2013.
+## Data Components
+
+The **kotzeb0912** package is a data package for distribution of core data 
+products resulting from this study. There are 7 data products distributed with
+this package:
+
+1. `kotzeb0912_locations`
+    - Argos and GPS location estimates for all deployments
+2. `kotzeb0912_status`
+    - tag status and performance messages for all deployments
+3. `kotzeb0912_divedepth`
+    - dive-depth histogram data; cleaned and tidy'd
+4. `kotzeb0912_diveduration`
+    - dive-duration histogram data; cleaned and tidy'd
+5. `kotzeb0912_tad`
+    - time-at-depth histogram data; cleaned and tidy'd
+6. `kotzeb0912_timelines`
+    - hourly percent dry (haul-out) data; cleaned and tidy'd
+7. `kotzeb0912_deployments`
+    - bearded seal morphometric and tag deployment data
+
+
+## Bearded Seals
+
+Seven bearded seals were captured between 2009 and 2012.
 
 ## Telemetry Devices
 
@@ -64,18 +114,12 @@ flipper-mounted SPOT style tags were also deployed. These tags provided location
 and haul-out data for longer duration than the Mk10 tags (attached to the hair
 which molts each spring).
 
-
-
-[^1]: Mention of specific products or manufacturers does not constitute an 
+[^1]: mention of specific products or manufacturers does not constitute an 
 endorsement by NMFS, NOAA, or the U.S. Department of Commerce
 
-[^2]: Fastloc-GPS was used sparingly because the technology was relatively new
+[^2]: fastloc-GPS was used sparingly because the technology was relatively new
 at the time of this study and there is a significant increase in battery
 consumption when using Fastloc-GPS compared to Argos.
-
-## Bearded Seals
-
-Seven bearded seals were captured between 2009 and 2012.
 
 ## Data Gathering and Processing
 
@@ -93,7 +137,7 @@ There were three tag types/models deployed during this project
 
 #### SPOT5 Programming Summary
 
-### Argos Least-Squared vs Kalman Processing
+### Argos Least-Squared vs. Kalman Processing
 
 In 2011, Argos changed their location estimation algorithm to include a Kalman
 filter algorithm. This replaced their previous algorithm which relied on a 
@@ -105,15 +149,32 @@ corresponding Kalman filter estimate for that satellite pass.
 
 The reprocessed data and the originally delivered least-squares data were
 merged and reconciled by Wildlife Computers within their data portal. In this
-process, locations were matched by __ptt__, __date-time__, __satellite__ and 
-__pass duration__. __date-time__ and __pass duration__ were matched with fuzzy
+process, locations were matched by _ptt_, _date-time_, _satellite_ and 
+_pass duration_. _date-time_ and _pass duration_ were matched with fuzzy
 logic (i.e. they were allowed to match exactly). In all cases, the reprocessed
 kalman locations were determined to be authoritative.
 
 ### Wildlife Computers Data Portal
 
 Data included in this package were downloaded from the Wildlife Computers
-Data Portal using the *wcUtils* package.
+Data Portal using the **wcUtils** package.
 
-## Data Archiving and Availability
+## Publications and Data Availability
+
+The final contract report for this research is available from the [Bureau of
+Ocean and Energy Management](http://www.boem.gov/BOEM-Newsroom/Library/Publications/2013/BOEM_2013_001150_pdf.aspx)
+
+This R data package and associated vignette documents should be cited as
+
+> London, Josh M., M.F. Cameron, and P.L. Boveng. 2015. kotzeb0912: An R package
+of data from a satellite telemetry study of bearded seals in Alaska.
+
+## Acknowledgments and Funding
+
+The research described here and the included data were obtained with significant
+financial contributions from the U.S. Department of Interior's Bureau of Ocean
+and Energy Management (BOEM) [^3] and the U.S. Department of Commerce's National
+Oceanic and Atmospheric Administration.
+
+[^3]: funding administered under the Inter-agency Agreement M07RG13317
 
