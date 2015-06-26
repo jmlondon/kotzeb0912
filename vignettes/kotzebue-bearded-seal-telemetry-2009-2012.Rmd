@@ -1,6 +1,10 @@
 ---
 title: "Kotzebue Bearded Seal Telemetry Data 2009-2012"
 author: "Josh M. London"
+authors:
+- name: Josh M. London
+  orcid: 0000-0002-3647-5046
+  affiliation: National Marine Mammal Laboratory, Alaska Fisheries Science Center, NOAA, Seattle, WA, USA
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -20,7 +24,7 @@ library(leaflet)
 library(dplyr)
 ```
 
-```{r echo=FALSE,fig.width=3.5,fig.height=6,fig.cap='Tracklines derived from all Argos and GPS location estimates'}
+```{r echo=FALSE,fig.width=7,fig.height=6,fig.cap='Tracklines derived from all Argos and GPS location estimates'}
 knitr::opts_chunk$set(out.extra = 'style="float:right;"')  # left
 data("kotzeb0912_locs")
 
@@ -33,30 +37,21 @@ locs_sp <- kotzeb0912_locs %>%
 sp::coordinates(locs_sp) <- ~longitude+latitude
 sp::proj4string(locs_sp) <- CRS("+init=epsg:4326")
 
-## list of Lines per id, each with one Line in a list
-ll <- lapply(split(locs_sp, locs_sp$deployid), function(x) Lines(list(Line(coordinates(x))), x$deployid[1L]))
-
-# the corrected part goes here:
-lines <- SpatialLines(ll)
-data <- data.frame(id = unique(locs_sp$deployid))
-rownames(data) <- data$id
-lines_sp <- SpatialLinesDataFrame(lines, data)
-proj4string(lines_sp) <- CRS("+init=epsg:4326")
-lines_sp <- sp::spTransform(lines_sp,CRS("+proj=longlat +datum=WGS84 +lon_wrap=180"))
+locs_sp <- sp::spTransform(locs_sp,CRS("+proj=longlat +datum=WGS84 +lon_wrap=180"))
 
 med_lng <- median(coordinates(locs_sp)[,1])
-med_lat <- median(coordinates(locs_sp)[,2])
+med_lat <- median(coordinates(locs_sp)[,2]) -3
 
-m <- leaflet() %>% setView(lng = med_lng, lat = med_lat,zoom = 4)
-m %>% addProviderTiles("Esri.OceanBasemap") 
+m <- leaflet(locs_sp) %>% setView(lng = med_lng, lat = med_lat,zoom = 4)
+m %>% addProviderTiles("Esri.OceanBasemap") %>% addCircles()
 ```
 
 ## Summary
 
-The `kotzeb0912` package is a data package for distribution of core data products
+The *kotzeb0912* package is a data package for distribution of core data products
 resulting from a telemetry study of bearded seals captured near Kotzebue, Alaska.
 The telemetry devices were deployed on 7 adult/sub-adult animals and data from
-those tags spans 2009 to 2012.
+those tags spans 2009 to 2013.
 
 ## Telemetry Devices
 
@@ -64,7 +59,12 @@ All of the telemetry devices deployed in this study were manufactured by
 Wildlife Computers (Redmond, Washington, USA) [^1]. All of the tags relied on
 the Argos satellite network for location esimates and transfer of data. A few
 tags were equipped with Fastloc-GPS capabilities that provided a limited
-number of GPS quality locations [^2].
+number of GPS quality locations [^2]. In addition to the Fastloc-GPS tags, 
+flipper-mounted SPOT style tags were also deployed. These tags provided location
+and haul-out data for longer duration than the Mk10 tags (attached to the hair
+which molts each spring).
+
+
 
 [^1]: Mention of specific products or manufacturers does not constitute an 
 endorsement by NMFS, NOAA, or the U.S. Department of Commerce
@@ -75,14 +75,45 @@ consumption when using Fastloc-GPS compared to Argos.
 
 ## Bearded Seals
 
+Seven bearded seals were captured between 2009 and 2012.
 
 ## Data Gathering and Processing
 
 ### Tag Programming
 
+There were three tag types/models deployed during this project
+
+1. Mk10
+2. Mk10-AF
+3. SPOT5
+
+#### Mk10 Programming Summary
+
+#### Mk10-AF Programming Summary
+
+#### SPOT5 Programming Summary
+
 ### Argos Least-Squared vs Kalman Processing
 
+In 2011, Argos changed their location estimation algorithm to include a Kalman
+filter algorithm. This replaced their previous algorithm which relied on a 
+least-squares process. The Kalman filter algorithm provides additional error
+data which is critical for many movement models. When this change was made, 
+all data for tags in this project were reprocessed back to January of 2008. In
+most cases, for each location estimate in the least-squares dataset, there is a
+corresponding Kalman filter estimate for that satellite pass.
+
+The reprocessed data and the originally delivered least-squares data were
+merged and reconciled by Wildlife Computers within their data portal. In this
+process, locations were matched by __ptt__, __date-time__, __satellite__ and 
+__pass duration__. __date-time__ and __pass duration__ were matched with fuzzy
+logic (i.e. they were allowed to match exactly). In all cases, the reprocessed
+kalman locations were determined to be authoritative.
+
 ### Wildlife Computers Data Portal
+
+Data included in this package were downloaded from the Wildlife Computers
+Data Portal using the *wcUtils* package.
 
 ## Data Archiving and Availability
 
