@@ -35,6 +35,13 @@ kotz_data$locations <- arrange(kotz_data$locations,deployid,date_time) %>%
 kotz_data$status <-
   dplyr::rbind_all(plyr::llply(data_list,function (x) x$status))
 
+# timelines
+kotz_data$timelines <-
+  dplyr::rbind_all(plyr::llply(data_list,
+                               function(x) wcUtils::tidyTimelines(x$histos)
+                               )
+                   )
+
 # we need to now address all the histo data
 # first, we'll find all the histos with identified limits
 limits_idx <- unlist(lapply(data_list,function(x) !is.null(x$histos$limits)))
@@ -90,8 +97,10 @@ kotzeb0912_tad <- tad_dat
 # create our data products and save the RData files
 kotzeb0912_locs <- kotz_data$locations
 kotzeb0912_status <- kotz_data$status
+kotzeb0912_timelines <- kotz_data$timelines
 save(kotzeb0912_locs,file='data/kotzeb0912_locs.RData')
 save(kotzeb0912_status,file='data/kotzeb0912_status.RData')
+save(kotzeb0912_timelines,file='data/kotzeb0912_timelines.RData')
 
 save(kotzeb0912_depths,file='data/kotzeb0912_depths.RData')
 save(kotzeb0912_durations,file='data/kotzeb0912_durations.RData')
@@ -105,6 +114,11 @@ close(file.output)
 
 json.out <- toJSON(kotzeb0912_status,pretty=TRUE)
 file.output <- file("data-open/kotzeb0912_status.json")
+writeLines(json.out, file.output)
+close(file.output)
+
+json.out <- toJSON(kotzeb0912_timelines,pretty=TRUE)
+file.output <- file("data-open/kotzeb0912_timelines.json")
 writeLines(json.out, file.output)
 close(file.output)
 
