@@ -1,5 +1,5 @@
 ---
-title: "Kotzebue Bearded Seal Telemetry Data 2009-2013"
+title: "kotzeb0912: An R package of data from a satellite telemetry study of bearded seals in Alaska"
 authors:
 - name: Josh M. London
   orcid: 0000-0002-3647-5046
@@ -28,10 +28,23 @@ library(ggmap)
 
 ----------------------------
 
-**Josh M. London, Michael F. Cameron, and Peter L. Boveng**
- 
-_National Marine Mammal Laboratory, Alaska Fisheries Science Center, NOAA, Seattle, WA, USA_
- 
+**Josh M. London**  
+Polar Ecosystems Program  
+Alaska Fisheries Science Center, NOAA  
+Seattle, Washington, USA  
+orcid: 0000-0002-3647-5046  
+josh.london@noaa.gov  
+
+**Michael F. Cameron**  
+Polar Ecosystems Program  
+Alaska Fisheries Science Center, NOAA  
+Seattle, Washington, USA  
+
+**Peter L. Boveng**  
+Polar Ecosystems Program  
+Alaska Fisheries Science Center, NOAA  
+Seattle, Washington, USA  
+
 Last updated: `r Sys.Date()`
 
 ----------------------------
@@ -86,7 +99,17 @@ Argos estimates of location and dive behavior data.
 
 # Bearded Seals
 
-Seven bearded seals were captured between 2009 and 2012.
+Seven bearded seals were captured between 2009 and 2012 and 14 tags were deployed.
+Each animal was released with a head-mounted satellite tag and a flipper-mounted
+satellite tag.
+
+```{r deploy-table,echo=FALSE}
+data('kotzeb0912_deployments')
+d <- dplyr::arrange(kotzeb0912_deployments,speno,deployid) %>% 
+  dplyr::select(-ptt)
+hdrs <- c("Speno","Capture Time (UTC)","Age","Sex","DeployID","Tag Location")
+knitr::kable(d,col.names = hdrs)
+```
 
 ----------------------------
 
@@ -120,11 +143,127 @@ There were three tag types/models deployed during this project
 2. Mk10-AF
 3. SPOT5
 
-### Mk10 Programming Summary
+### Mk10 (-AF) Programming Summary
 
-### Mk10-AF Programming Summary
+#### Histogram Data
+
+    Histogram Data sampling interval
+      ~ 10 seconds
+    Dive Maximum Depth (m)
+      ~ 14 bins:	10;30;50;70;90;100;150;200;250;300;400;500;600;>600
+    Dive Duration (min)
+      ~ 14 bins:	1;2;3;4;6;8;10;12;16;20;30;40;50;>50
+    Time-at-Temperature (C)	
+      ~ disabled
+    Time-at-Depth (m)
+      ~ 14 bins:	4;10;30;50;70;90;100;150;200;250;300;400;500;>500
+    20-min time-line
+      ~ disabled
+    Hourly % time-line (low resolution)
+      ~ enabled
+    Hourly % time-line (high resolution)
+      ~ disabled
+    Light-level locations
+      ~ disabled
+  
+#### Histogram Collection
+
+    Hours of data summarized in each histogram
+      ~ 6
+    Histograms start at
+      ~ GMT	03:00
+
+#### Dive & Timeline Definition
+
+    Depth reading to determine start and end of dive
+      ~ Wet/Dry (Mk10)
+      ~ 2m (Mk20-A)
+    Ignore dives shallower than	
+      ~ 4m
+    Ignore dives shorter than
+      ~ 1 min
+    Depth threshold for timelines
+      ~ Wet/Dry
+    Haulout Definition
+      ~ A minute is "dry" if Wet/Dry sensor is dry for any **30** seconds in a minute
+      ~ Enter haulout state after **5** consecutive dry minutes
+      ~ Exit haulout state if wet for any **50** seconds in a minute
+  
+#### Argos Transmissions
+  
+    Transmission Hours
+      ~ 0-23
+    Transmission Days
+      ~ All Days
+    Transmission Monhts
+      ~ All Months
+    Daily Transmission Cap
+      ~ 250 Transmissions
+
+#### Fast-GPS Settings
+
+    Fast-GPS sampling interval
+      ~ 360 minutes
+    Deployment Latitude
+      ~ 66.75 degrees
+    Deployment Longitude
+      ~ -163 degrees
+    Deployment Altitude
+      ~ 0 m
+    Transmit hours
+      ~ 0 - 23
+    Fast-GPS Collection Days
+      ~ January	4, 8, 12, 16, 20, 24, 28
+      ~ February	1, 5, 9, 13, 17, 21, 25
+      ~ March	1, 5, 9, 13, 17, 21, 25, 29
+      ~ April	2, 6, 10, 14, 18, 22, 26, 30
+      ~ May	4, 8, 12, 16, 20, 24, 28
+      ~ June	1, 5, 9, 10, 14, 18, 22, 26, 30
+      ~ July	4, 8, 12, 16, 20, 24, 28
+      ~ August	1, 5, 9, 13, 17, 21, 25, 29
+      ~ September	2, 6, 10, 14, 18, 22, 26, 30
+      ~ October	4, 8, 12, 16, 20, 24, 28
+      ~ November	1, 5, 9, 13, 17, 21, 25, 29
+      ~ December	3, 7, 11, 15, 19, 23, 27, 31
+  
+#### Fast-GPS Control
+
+    Maximum successful Fast-GPS attempts
+      ~ 1 per hour; 4 per day
+    Maximum failed Fast-GPS attempts
+      ~ 3 per hour
+    Overall maximum Fast-GPS attempts
+      ~ 12 per day
+    Supress Fast-GPS after good haulout location
+      ~ enabled
 
 ### SPOT5 Programming Summary
+
+#### Argos Transmissions
+  
+    Unused transmissions will be added to the next day's allowance.
+    Maximum transmissions per day
+      ~ 150
+    Transmit on these hours
+      ~ 1 - 4, 20 - 23
+      ~ Tag will transmit during all of the hours before midnight on the first day of deployment
+    Transmit on these days, using an absolute calendar
+      ~ Jan: 1, 15, 
+      ~ Feb: 1, 7, 13, 19, 25, 
+      ~ Mar: 1, 7, 13, 19, 25, 31
+      ~ Apr: 6, 12, 18, 24, 30
+      ~ May: 6, 12, 18, 24, 30, 
+      ~ Jun: 6, 12, 18, 24, 30
+      ~ Jul: 6, 12, 18, 24, 30, 
+      ~ Aug: 1, 15, 
+      ~ Sep: 1, 15, 
+      ~ Oct: 1, 15, 
+      ~ Nov: 1, 15, 
+      ~ Dec: 1, 15, 
+
+    Time at temperature histograms **are not collected**
+    Percent dry timelines **are being collected**
+
 
 ## Argos Least-Squared vs. Kalman Processing
 
@@ -140,13 +279,16 @@ The reprocessed data and the originally delivered least-squares data were
 merged and reconciled by Wildlife Computers within their data portal. In this
 process, locations were matched by _ptt_, _date-time_, _satellite_ and 
 _pass duration_. _date-time_ and _pass duration_ were matched with fuzzy
-logic (i.e. they were allowed to match exactly). In all cases, the reprocessed
+logic (i.e. they were allowed to not match exactly). In all cases, the reprocessed
 kalman locations were determined to be authoritative.
 
 ## Wildlife Computers Data Portal
 
 Data included in this package were downloaded from the Wildlife Computers
-Data Portal using the **wcUtils** package.
+Data Portal using the **wcUtils** package. After download, additional re-structuring
+and processing of the data was also done with the **wcUtils** package. 
+
+Those with collaborator permissions can access these deployments directly by searching for the _kotzeb09_ projectid.
 
 ----------------------------
 
@@ -168,7 +310,7 @@ this package:
     - time-at-depth histogram data; cleaned and tidy'd
 6. `kotzeb0912_timelines`
     - hourly percent dry (haul-out) data; cleaned and tidy'd
-7. `kotzeb0912_deployments` [^1]
+7. `kotzeb0912_deployments`
     - bearded seal morphometric and tag deployment data
     
 ## kotzeb0912_locs
@@ -462,7 +604,12 @@ percent_dry
     Possible values include: *0*,*3*,*5,*,*10*,*20*,*30*,*40*,*50*,*60*,*70*,*80*,
     *90*,*95*,*97*, and *100*
 
-[^1]: not yet included
+## kotzeb0912_deployments
+
+```{r data-deployments}
+data("kotzeb0912_deployments")
+dplyr::glimpse(kotzeb0912_deployments)
+```
 
 ----------------------------
 

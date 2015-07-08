@@ -24,6 +24,13 @@ gg <- ggmap(map) + geom_point(data=locs,mapping=aes(x=longitude,y=latitude),
                               alpha=0.25,size=0.75)
 gg
 
+## ----deploy-table,echo=FALSE---------------------------------------------
+data('kotzeb0912_deployments')
+d <- dplyr::arrange(kotzeb0912_deployments,speno,deployid) %>% 
+  dplyr::select(-ptt)
+hdrs <- c("Speno","Capture Time (UTC)","Age","Sex","DeployID","Tag Location")
+knitr::kable(d,col.names = hdrs)
+
 ## ----data-locs-----------------------------------------------------------
 data("kotzeb0912_locs")
 dplyr::glimpse(kotzeb0912_locs)
@@ -59,4 +66,8 @@ dplyr::glimpse(kotzeb0912_tad)
 ## ----data-timelines------------------------------------------------------
 data("kotzeb0912_timelines")
 dplyr::glimpse(kotzeb0912_timelines)
+
+## ----data-deployments----------------------------------------------------
+data("kotzeb0912_deployments")
+dplyr::glimpse(kotzeb0912_deployments)
 
