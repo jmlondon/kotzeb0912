@@ -94,6 +94,32 @@ for(i in 1:length(tad_dat)) {
 tad_dat <- dplyr::bind_rows(tad_list)
 kotzeb0912_tad <- tad_dat
 
+library(ROracle)
+conn_or <- dbConnect(
+  dbDriver("Oracle"), getOption('oracle_usr'), getOption('oracle_pwd'),
+  "afscp1")
+
+capt_qry <- paste("
+                  SELECT pepcapturedata.speno,
+                  pepcapturedata.capture_dt,
+                  pepcapturedata.age,
+                  pepcapturedata.sex,
+                  pepdeployments.deployid,
+                  pepdeployments.attachmentlocation,
+                  peptaginfo.ptt
+                  FROM   peptel.pepcapturedata
+                  join peptel.pepdeployments
+                  ON pepdeployments.speno = pepcapturedata.speno
+                  join peptel.peptaginfo
+                  ON peptaginfo.serialnum = pepdeployments.serialnum
+                  WHERE  pepcapturedata.projectid = 'KotzEB09'")
+
+res <- dbGetQuery(conn_or,capt_qry)
+names(res) <- tolower(names(res))
+kotzeb0912_deployments <- tbl_df(res) %>%
+  dplyr::rename(tag_attach = attachmentlocation) %>%
+  dplyr::arrange(speno,deployid)
+
 # create our data products and save the RData files
 kotzeb0912_locs <- kotz_data$locations
 kotzeb0912_status <- kotz_data$status
@@ -101,6 +127,7 @@ kotzeb0912_timelines <- kotz_data$timelines
 save(kotzeb0912_locs,file='data/kotzeb0912_locs.RData')
 save(kotzeb0912_status,file='data/kotzeb0912_status.RData')
 save(kotzeb0912_timelines,file='data/kotzeb0912_timelines.RData')
+save(kotzeb0912_deployments,file='data/kotzeb0912_deployments.RData')
 
 save(kotzeb0912_depths,file='data/kotzeb0912_depths.RData')
 save(kotzeb0912_durations,file='data/kotzeb0912_durations.RData')
@@ -134,5 +161,10 @@ close(file.output)
 
 json.out <- toJSON(kotzeb0912_tad,pretty=TRUE)
 file.output <- file("data-open/kotzeb0912_tad.json")
+writeLines(json.out, file.output)
+close(file.output)
+
+json.out <- toJSON(kotzeb0912_deployments,pretty=TRUE)
+file.output <- file("data-open/kotzeb0912_deployments.json")
 writeLines(json.out, file.output)
 close(file.output)
