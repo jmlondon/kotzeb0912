@@ -124,47 +124,47 @@ kotzeb0912_deployments <- tbl_df(res) %>%
 kotzeb0912_locs <- kotz_data$locations
 kotzeb0912_status <- kotz_data$status
 kotzeb0912_timelines <- kotz_data$timelines
-save(kotzeb0912_locs,file='data/kotzeb0912_locs.RData')
-save(kotzeb0912_status,file='data/kotzeb0912_status.RData')
-save(kotzeb0912_timelines,file='data/kotzeb0912_timelines.RData')
-save(kotzeb0912_deployments,file='data/kotzeb0912_deployments.RData')
-
-save(kotzeb0912_depths,file='data/kotzeb0912_depths.RData')
-save(kotzeb0912_durations,file='data/kotzeb0912_durations.RData')
-save(kotzeb0912_tad,file='data/kotzeb0912_tad.RData')
+# save(kotzeb0912_locs,file='data/kotzeb0912_locs.RData')
+# save(kotzeb0912_status,file='data/kotzeb0912_status.RData')
+# save(kotzeb0912_timelines,file='data/kotzeb0912_timelines.RData')
+# save(kotzeb0912_deployments,file='data/kotzeb0912_deployments.RData')
+#
+# save(kotzeb0912_depths,file='data/kotzeb0912_depths.RData')
+# save(kotzeb0912_durations,file='data/kotzeb0912_durations.RData')
+# save(kotzeb0912_tad,file='data/kotzeb0912_tad.RData')
 
 # create open JSON formats and save to data-open
 json.out <- toJSON(kotzeb0912_locs,pretty=TRUE)
-file.output <- file("data-open/kotzeb0912_locs.json")
+file.output <- file("data-raw/kotzeb0912_locs.json")
 writeLines(json.out, file.output)
 close(file.output)
 
 json.out <- toJSON(kotzeb0912_status,pretty=TRUE)
-file.output <- file("data-open/kotzeb0912_status.json")
+file.output <- file("data-raw/kotzeb0912_status.json")
 writeLines(json.out, file.output)
 close(file.output)
 
 json.out <- toJSON(kotzeb0912_timelines,pretty=TRUE)
-file.output <- file("data-open/kotzeb0912_timelines.json")
+file.output <- file("data-raw/kotzeb0912_timelines.json")
 writeLines(json.out, file.output)
 close(file.output)
 
 json.out <- toJSON(kotzeb0912_depths,pretty=TRUE)
-file.output <- file("data-open/kotzeb0912_depths.json")
+file.output <- file("data-raw/kotzeb0912_depths.json")
 writeLines(json.out, file.output)
 close(file.output)
 
 json.out <- toJSON(kotzeb0912_durations,pretty=TRUE)
-file.output <- file("data-open/kotzeb0912_durations.json")
+file.output <- file("data-raw/kotzeb0912_durations.json")
 writeLines(json.out, file.output)
 close(file.output)
 
 json.out <- toJSON(kotzeb0912_tad,pretty=TRUE)
-file.output <- file("data-open/kotzeb0912_tad.json")
+file.output <- file("data-raw/kotzeb0912_tad.json")
 writeLines(json.out, file.output)
 close(file.output)
 
 json.out <- toJSON(kotzeb0912_deployments,pretty=TRUE)
-file.output <- file("data-open/kotzeb0912_deployments.json")
+file.output <- file("data-raw/kotzeb0912_deployments.json")
 writeLines(json.out, file.output)
 close(file.output)
