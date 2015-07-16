@@ -3,7 +3,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^previous$
-^create-data$
 ^pkg-build$
 ^data-raw$
-^data-open$
+^make$
