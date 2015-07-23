@@ -4,3 +4,4 @@
 pkg-build/*
 previous/*
 data/*.RData
+ggmapTemp.png
