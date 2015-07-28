@@ -35,6 +35,20 @@ kotz_data$locations <- arrange(kotz_data$locations,deployid,date_time) %>%
 kotz_data$status <-
   dplyr::rbind_all(plyr::llply(data_list,function (x) x$status))
 
+# we also need to bring in FastlocGPS data from local files for three deployids
+# we will use the wcUtils::read_gps() function for this
+
+gps_files <- list.files("inst/extdata",full.names = TRUE,pattern="*-FastGPS.csv")
+
+gps_list <- vector("list",length(gps_files))
+
+for(i in 1:length(gps_files)) {
+  gps_list[[i]] <- wcUtils::read_gps(gps_files[i])
+}
+
+kotz_data$gps <-
+  dplyr::rbind_all(gps_list)
+
 # timelines
 kotz_data$timelines <-
   dplyr::rbind_all(plyr::llply(data_list,
@@ -122,6 +136,7 @@ kotzeb0912_deployments <- tbl_df(res) %>%
 
 # create our data products and save the RData files
 kotzeb0912_locs <- kotz_data$locations
+kotzeb0912_gps <- kotz_data$gps
 kotzeb0912_status <- kotz_data$status
 kotzeb0912_timelines <- kotz_data$timelines
 # save(kotzeb0912_locs,file='data/kotzeb0912_locs.RData')
@@ -136,6 +151,11 @@ kotzeb0912_timelines <- kotz_data$timelines
 # create open JSON formats and save to data-open
 json.out <- toJSON(kotzeb0912_locs,pretty=TRUE)
 file.output <- file("data-raw/kotzeb0912_locs.json")
+writeLines(json.out, file.output)
+close(file.output)
+
+json.out <- toJSON(kotzeb0912_gps,pretty=TRUE)
+file.output <- file("data-raw/kotzeb0912_gps.json")
 writeLines(json.out, file.output)
 close(file.output)
 
