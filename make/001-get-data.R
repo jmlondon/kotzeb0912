@@ -139,14 +139,15 @@ kotzeb0912_locs <- kotz_data$locations
 kotzeb0912_gps <- kotz_data$gps
 kotzeb0912_status <- kotz_data$status
 kotzeb0912_timelines <- kotz_data$timelines
-# save(kotzeb0912_locs,file='data/kotzeb0912_locs.RData')
-# save(kotzeb0912_status,file='data/kotzeb0912_status.RData')
-# save(kotzeb0912_timelines,file='data/kotzeb0912_timelines.RData')
-# save(kotzeb0912_deployments,file='data/kotzeb0912_deployments.RData')
-#
-# save(kotzeb0912_depths,file='data/kotzeb0912_depths.RData')
-# save(kotzeb0912_durations,file='data/kotzeb0912_durations.RData')
-# save(kotzeb0912_tad,file='data/kotzeb0912_tad.RData')
+save(kotzeb0912_locs,file='data/kotzeb0912_locs.RData')
+save(kotzeb0912_gps,file='data/kotzeb0912_gps.RData')
+save(kotzeb0912_status,file='data/kotzeb0912_status.RData')
+save(kotzeb0912_timelines,file='data/kotzeb0912_timelines.RData')
+save(kotzeb0912_deployments,file='data/kotzeb0912_deployments.RData')
+
+save(kotzeb0912_depths,file='data/kotzeb0912_depths.RData')
+save(kotzeb0912_durations,file='data/kotzeb0912_durations.RData')
+save(kotzeb0912_tad,file='data/kotzeb0912_tad.RData')
 
 # create open JSON formats and save to data-open
 json.out <- toJSON(kotzeb0912_locs,pretty=TRUE)
