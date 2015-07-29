@@ -47,6 +47,13 @@ unique(kotzeb0912_locs$type)
 ## ----unique_quality------------------------------------------------------
 unique(kotzeb0912_locs$quality)
 
+## ----data-gps------------------------------------------------------------
+data("kotzeb0912_gps")
+dplyr::glimpse(kotzeb0912_gps)
+
+## ----range-gps-datetime--------------------------------------------------
+range(kotzeb0912_gps$date_time)
+
 ## ----data-status---------------------------------------------------------
 data("kotzeb0912_status")
 dplyr::glimpse(kotzeb0912_status)

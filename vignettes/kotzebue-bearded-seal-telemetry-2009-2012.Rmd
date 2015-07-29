@@ -9,7 +9,11 @@ authors:
 - name: Peter L. Boveng
   affiliation: National Marine Mammal Laboratory, Alaska Fisheries Science Center, NOAA, Seattle, WA, USA
 output: 
-  rmarkdown::html_vignette
+  rmarkdown::html_vignette:
+    css: https://raw.githubusercontent.com/jasonm23/markdown-css-themes/gh-pages/markdown7.css
+    fig_width: 4
+    fig_height: 4
+    number_sections: true
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}
@@ -28,19 +32,19 @@ library(ggmap)
 
 ----------------------------
 
-**Josh M. London**  
+> **Josh M. London**  
 Polar Ecosystems Program  
 Alaska Fisheries Science Center, NOAA  
 Seattle, Washington, USA  
 orcid: 0000-0002-3647-5046  
 josh.london@noaa.gov  
-
-**Michael F. Cameron**  
+>
+> **Michael F. Cameron**  
 Polar Ecosystems Program  
 Alaska Fisheries Science Center, NOAA  
 Seattle, Washington, USA  
-
-**Peter L. Boveng**  
+>
+> **Peter L. Boveng**  
 Polar Ecosystems Program  
 Alaska Fisheries Science Center, NOAA  
 Seattle, Washington, USA  
@@ -111,8 +115,6 @@ hdrs <- c("Speno","Capture Time (UTC)","Age","Sex","DeployID","Tag Location")
 knitr::kable(d,col.names = hdrs)
 ```
 
-----------------------------
-
 # Telemetry Devices
 
 All of the telemetry devices deployed in this study were manufactured by
@@ -130,8 +132,6 @@ endorsement by NMFS, NOAA, or the U.S. Department of Commerce
 [^3]: fastloc-GPS was used sparingly because the technology was relatively new
 at the time of this study and there is a significant increase in battery
 consumption when using Fastloc-GPS compared to Argos.
-
-----------------------------
 
 # Data Gathering and Processing
 
@@ -290,8 +290,6 @@ and processing of the data was also done with the **wcUtils** package.
 
 Those with collaborator permissions can access these deployments directly by searching for the _kotzeb09_ projectid.
 
-----------------------------
-
 # Data Components
 
 The **kotzeb0912** package is a data package for distribution of core data 
@@ -299,7 +297,9 @@ products resulting from this study. There are 7 data products distributed with
 this package:
 
 1. `kotzeb0912_locs`
-    - Argos and GPS location estimates for all deployments
+    - Argos location estimates for all deployments
+2. `kotzeb0912_gps`
+    - GPS location estimates from Fastloc solutions
 2. `kotzeb0912_status`
     - tag status and performance messages for all deployments
 3. `kotzeb0912_depths`
@@ -354,10 +354,9 @@ instr
     ```
     
     Mk10
-      ~ Argos (and, optionally, fastloc-GPS) location tags with additional
-        sensors for recording depth/dive behavior, temperature, conductivity.
-        For this project, _Mk10_ tags were adhered to the hair of the seal
-        on the head.
+      ~ Argos location tags with additional sensors for recording 
+        depth/dive behavior, temperature, conductivity. For this project, 
+        _Mk10_ tags were adhered to the hair of the seal on the head.
         
     SPOT
       ~ Argos location tags with conductivity. No pressure transducer for 
@@ -377,8 +376,8 @@ date_time
     duplicate times.
     
 type
-  ~ An character string that identifies whether the location estimate is
-    based on the Argos process or the fastloc-GPS
+  ~ An character string that specifies the location estimate is
+    based on the Argos process
     
     ```{r unique-type}
     unique(kotzeb0912_locs$type)
@@ -412,13 +411,83 @@ unique_posix
   ~ The same as **date_time** except duplicate values have been eliminated by
     increasing the value of one duplicate by 1 second.
 
+## kotzeb0912_gps
+
+```{r data-gps}
+data("kotzeb0912_gps")
+dplyr::glimpse(kotzeb0912_gps)
+```
+
+deployid
+  ~ An alphanumeric string that uniquely identifies the
+    deployment. 
+    
+    Since a deployment is a unqiue combination of animal and tag,
+    the **deployid** is a concatenation of the animal id (**speno**) and
+    the tag serial number (**serialnum**).
+    
+    By examining the **deployid**, one can discern several key details about
+    the particular deployment. The first two characters in the **deployid**
+    will specify the species of animal the tag was deployed on. These letters
+    correspond to the genus and species (e.g. bearded seals (*Erignathus barbatus*)
+    would be represented by *EB*). The next four characters represent the year
+    the deployment started. The next section is separated by an underscore
+    and is a unique number assigned to the animal. The first 11 characters in
+    the **deployid** correspond to the **speno** for the deployment animal. The 
+    next section (also separated by an underscore) corresponds to the serial
+    number for the tag.
+
+count
+  ~  
+  
+time_offset
+  ~  
+  
+locnumber
+  ~  
+
+hauled_out
+  ~ a binary (1,0) indication whether the tag was in haul-out mode at the time the fastloc
+  snapshot was captured
+
+satellites
+  ~ total number of satellites captured in the snapshot. substract the number of bad_sats to
+    get the total number of viable satellites
+
+initlat, initlon
+  ~ Coordinates (decimal degrees, datum=WGS84) of the seed location used
+  
+inittime
+  ~ A POSIXct value representing the UTC time for the seed location used
+  
+inittype
+  ~ the source data for the seed coordinates: GPS, User or an letter corresponding to the Argos satellite
+
+latitude, longitude
+  ~ Coordinates (decimal degrees, datum=WGS84) of the location estimate
+
+bad_sats
+  ~ number of satellites with poor information in the snapshot and not usable
+  
+residual
+  ~  
+
+time_error
+  ~  
+
+date_time
+  ~ A POSIXct value representing the UTC time for the fastloc location estimate.
+    
+    ```{r range-gps-datetime}
+    range(kotzeb0912_gps$date_time)
+    ```
+
 ## kotzeb0912_status
 
 ```{r data-status}
 data("kotzeb0912_status")
 dplyr::glimpse(kotzeb0912_status)
 ```
-
 
 ## kotzeb0912_depths
 
@@ -611,8 +680,6 @@ data("kotzeb0912_deployments")
 dplyr::glimpse(kotzeb0912_deployments)
 ```
 
-----------------------------
-
 # Publications and Data Availability
 
 The final contract report for this research is available from the [Bureau of
@@ -622,8 +689,6 @@ This R data package and associated vignette documents should be cited as
 
 > London, Josh M., M.F. Cameron, and P.L. Boveng. 2015. kotzeb0912: An R package
 of data from a satellite telemetry study of bearded seals in Alaska.
-
-----------------------------
 
 # Acknowledgments and Funding
 
