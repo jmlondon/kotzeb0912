@@ -1,0 +1,62 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+```{r echo=FALSE,fig.width=3.5,out.extra='style="float: right;"',fig.cap='Tracklines derived from all Argos and GPS location estimates',warning=FALSE,message=FALSE}
+library(kotzeb0912)
+library(dplyr)
+library(ggmap)
+
+data("kotzeb0912_locs")
+
+locs <- kotzeb0912_locs %>% 
+  dplyr::select(deployid,date_time,latitude,longitude) %>% 
+  dplyr::filter(!is.na(latitude)) %>% 
+  dplyr::arrange(deployid,date_time) %>% 
+  data.frame()
+
+med_lng <- median(locs$longitude)
+med_lat <- median(locs$latitude) -3
+
+map <- get_map(location=c(med_lng,med_lat),
+                     zoom=4,source="google",maptype='terrain',color="bw")
+gg <- ggmap(map) + geom_point(data=locs,mapping=aes(x=longitude,y=latitude),
+                              alpha=0.25,size=0.75)
+gg
+```
+
+Bearded seals (_Erignathus barbatus_) are one of the most important subsistence
+resources for the indigenous people of coastal northern and western Alaska, as
+well as key components of Arctic marine ecosystems, yet relatively little about
+their abundance, seasonal distribution, migrations, or foraging behaviors has
+been documented scientifically. Ice-associated seal populations may be
+negatively impacted by offshore oil and gas development as well as by climate
+change. Our ability to predict impacts, however, is limited by inadequate
+knowledge of seal population structure and foraging ecology. By working
+cooperatively with Alaska Native subsistence hunters we developed methods for
+live-capturing bearded seals in the Chukchi Sea using nets set in the shallow
+coastal waters where bearded seals were foraging.  Capture efforts were based
+out of Kotzebue and various locations in the North Slope Borough from Wainwright
+to Barrow in June and July from 2009 to 2012.  In all, 7 seals were caught (2
+adults and 5 sub-adults; 4 males and three females; ranging in length and weight
+from 159 cm and 116 kg to 216 cm and 253 kg), all from Kotzebue Sound.  Each
+seal was sampled for health and condition and released with three different types
+of satellite-linked bio-loggers: the SPOT5, attached
+to a rear flipper, provided information on the timing of hauling out and on the
+seal’s location for up to three years; the MK10, glued to the top of a
+seal’s head, provided Argos estimates of location and also provided
+data on the timing and depths of dives, for up to ten months; the Mk10-AF, also
+glued to the top of the head, provided GPS quality locations in addition to the
+Argos estimates of location and dive behavior data.
