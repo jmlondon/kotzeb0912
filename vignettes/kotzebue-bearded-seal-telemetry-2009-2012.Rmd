@@ -8,51 +8,57 @@ authors:
   affiliation: National Marine Mammal Laboratory, Alaska Fisheries Science Center, NOAA, Seattle, WA, USA
 - name: Peter L. Boveng
   affiliation: National Marine Mammal Laboratory, Alaska Fisheries Science Center, NOAA, Seattle, WA, USA
-output: 
-  rmarkdown::html_vignette:
-    css: https://raw.githubusercontent.com/jasonm23/markdown-css-themes/gh-pages/markdown7.css
-    fig_width: 4
-    fig_height: 4
-    number_sections: true
+output:
+  rmdformats::html_clean:
+    fig_width: 6
+    fig_height: 6
+    highlight: pygments
+    css: stylesheet.css
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup,include=FALSE}
-# opts_chunk$set()
-```
-
 ```{r libs,include=FALSE}
 library(kotzeb0912)
 library(dplyr)
 library(ggmap)
+library(knitr)
+library(rmdformats)
 ```
 
-----------------------------
+```{r knitr_init, echo=FALSE, cache=FALSE}
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=FALSE,
+	             cache=TRUE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
 
-> **Josh M. London**  
+**Josh M. London**  
 Polar Ecosystems Program  
 Alaska Fisheries Science Center, NOAA  
 Seattle, Washington, USA  
 orcid: 0000-0002-3647-5046  
 josh.london@noaa.gov  
->
-> **Michael F. Cameron**  
+
+**Michael F. Cameron**  
 Polar Ecosystems Program  
 Alaska Fisheries Science Center, NOAA  
 Seattle, Washington, USA  
->
-> **Peter L. Boveng**  
+
+**Peter L. Boveng**  
 Polar Ecosystems Program  
 Alaska Fisheries Science Center, NOAA  
 Seattle, Washington, USA  
 
 Last updated: `r Sys.Date()`
-
-----------------------------
-
 
 # Executive Summary
 
@@ -99,8 +105,6 @@ data on the timing and depths of dives, for up to ten months; the Mk10-AF, also
 glued to the top of the head, provided GPS quality locations in addition to the
 Argos estimates of location and dive behavior data.
 
-----------------------------
-
 # Bearded Seals
 
 Seven bearded seals were captured between 2009 and 2012 and 14 tags were deployed.
@@ -143,9 +147,9 @@ There were three tag types/models deployed during this project
 2. Mk10-AF
 3. SPOT5
 
-### Mk10 (-AF) Programming Summary
+#### Mk10 (-AF) Programming Summary
 
-#### Histogram Data
+*Histogram Data*
 
     Histogram Data sampling interval
       ~ 10 seconds
@@ -166,14 +170,14 @@ There were three tag types/models deployed during this project
     Light-level locations
       ~ disabled
   
-#### Histogram Collection
+*Histogram Collection*
 
     Hours of data summarized in each histogram
       ~ 6
     Histograms start at
       ~ GMT	03:00
 
-#### Dive & Timeline Definition
+*Dive & Timeline Definition*
 
     Depth reading to determine start and end of dive
       ~ Wet/Dry (Mk10)
@@ -189,7 +193,7 @@ There were three tag types/models deployed during this project
       ~ Enter haulout state after **5** consecutive dry minutes
       ~ Exit haulout state if wet for any **50** seconds in a minute
   
-#### Argos Transmissions
+*Argos Transmissions*
   
     Transmission Hours
       ~ 0-23
@@ -200,7 +204,7 @@ There were three tag types/models deployed during this project
     Daily Transmission Cap
       ~ 250 Transmissions
 
-#### Fast-GPS Settings
+*Fast-GPS Settings*
 
     Fast-GPS sampling interval
       ~ 360 minutes
@@ -226,7 +230,7 @@ There were three tag types/models deployed during this project
       ~ November	1, 5, 9, 13, 17, 21, 25, 29
       ~ December	3, 7, 11, 15, 19, 23, 27, 31
   
-#### Fast-GPS Control
+*Fast-GPS Control*
 
     Maximum successful Fast-GPS attempts
       ~ 1 per hour; 4 per day
@@ -237,9 +241,9 @@ There were three tag types/models deployed during this project
     Supress Fast-GPS after good haulout location
       ~ enabled
 
-### SPOT5 Programming Summary
+#### SPOT5 Programming Summary
 
-#### Argos Transmissions
+*Argos Transmissions*
   
     Unused transmissions will be added to the next day's allowance.
     Maximum transmissions per day
@@ -320,8 +324,8 @@ data("kotzeb0912_locs")
 dplyr::glimpse(kotzeb0912_locs)
 ```
 
-deployid
-  ~ An alphanumeric string that uniquely identifies the
+### deployid
+  - An alphanumeric string that uniquely identifies the
     deployment. 
     
     Since a deployment is a unqiue combination of animal and tag,
@@ -339,32 +343,32 @@ deployid
     next section (also separated by an underscore) corresponds to the serial
     number for the tag.
     
-ptt
-  ~ The Argos transmitter (PTT) identifier. 
+### ptt
+  - The Argos transmitter (PTT) identifier. 
     
     It is important to understand that a PTT identifier can be assigned to
     different tags over the years. The PTT identifier should not be considered a
     unique identifier.
     
-instr
-  ~ An alphanumeric string that identifies the make/model class of the tag
+### instr
+  - An alphanumeric string that identifies the make/model class of the tag
     
     ```{r unique-instr}
     unique(kotzeb0912_locs$instr)
     ```
     
-    Mk10
+    *Mk10*
       ~ Argos location tags with additional sensors for recording 
         depth/dive behavior, temperature, conductivity. For this project, 
         _Mk10_ tags were adhered to the hair of the seal on the head.
         
-    SPOT
+    *SPOT*
       ~ Argos location tags with conductivity. No pressure transducer for 
         recording depth or dive behavior. For this project, _SPOT_ tags were
         attached to the rear flipper.
         
-date_time
-  ~ A POSIXct value representing the UTC time for the location estimate.
+### date_time
+  - A POSIXct value representing the UTC time for the location estimate.
     
     ```{r range-datetime}
     range(kotzeb0912_locs$date_time)
@@ -375,16 +379,16 @@ date_time
     same deployment. See **unique_posix** for an adjusted value with no
     duplicate times.
     
-type
-  ~ An character string that specifies the location estimate is
+### type
+  - An character string that specifies the location estimate is
     based on the Argos process
     
     ```{r unique-type}
     unique(kotzeb0912_locs$type)
     ```
  
- quality
-  ~ An alphanumeric value cooresponding to the Argos location quality.
+### quality
+  - An alphanumeric value cooresponding to the Argos location quality.
     
     ```{r unique_quality}
     unique(kotzeb0912_locs$quality)
@@ -401,14 +405,14 @@ type
     **error_semimajor_axis**, **error_semiminor_axis**, and
     **error_ellipse_orientation**.
 
-latitude, longitude
-  ~ Coordinates (decimal degrees, datum=WGS84) of the location estimate
+### latitude, longitude
+  - Coordinates (decimal degrees, datum=WGS84) of the location estimate
   
-error\_radius, error\_semimajor\_axis, error\_semiminor\_axis,error\_ellipse\_orientation
-  ~ Error parameters provided as part of the Kalman filter algorithm
+### error\_radius, error\_semimajor\_axis, error\_semiminor\_axis,error\_ellipse\_orientation
+  - Error parameters provided as part of the Kalman filter algorithm
   
-unique_posix
-  ~ The same as **date_time** except duplicate values have been eliminated by
+### unique_posix
+  - The same as **date_time** except duplicate values have been eliminated by
     increasing the value of one duplicate by 1 second.
 
 ## kotzeb0912_gps
@@ -418,8 +422,8 @@ data("kotzeb0912_gps")
 dplyr::glimpse(kotzeb0912_gps)
 ```
 
-deployid
-  ~ An alphanumeric string that uniquely identifies the
+### deployid
+  - An alphanumeric string that uniquely identifies the
     deployment. 
     
     Since a deployment is a unqiue combination of animal and tag,
@@ -437,46 +441,46 @@ deployid
     next section (also separated by an underscore) corresponds to the serial
     number for the tag.
 
-count
-  ~  
+### count
+  -  
   
-time_offset
-  ~  
+### time_offset
+  -  
   
-locnumber
-  ~  
+### locnumber
+  -  
 
-hauled_out
-  ~ a binary (1,0) indication whether the tag was in haul-out mode at the time the fastloc
+### hauled_out
+  - a binary (1,0) indication whether the tag was in haul-out mode at the time the fastloc
   snapshot was captured
 
-satellites
-  ~ total number of satellites captured in the snapshot. substract the number of bad_sats to
+### satellites
+  - total number of satellites captured in the snapshot. substract the number of bad_sats to
     get the total number of viable satellites
 
-initlat, initlon
-  ~ Coordinates (decimal degrees, datum=WGS84) of the seed location used
+### initlat, initlon
+  - Coordinates (decimal degrees, datum=WGS84) of the seed location used
   
-inittime
-  ~ A POSIXct value representing the UTC time for the seed location used
+### inittime
+  - A POSIXct value representing the UTC time for the seed location used
   
-inittype
-  ~ the source data for the seed coordinates: GPS, User or an letter corresponding to the Argos satellite
+### inittype
+  - the source data for the seed coordinates: GPS, User or an letter corresponding to the Argos satellite
 
-latitude, longitude
-  ~ Coordinates (decimal degrees, datum=WGS84) of the location estimate
+### latitude, longitude
+  - Coordinates (decimal degrees, datum=WGS84) of the location estimate
 
-bad_sats
-  ~ number of satellites with poor information in the snapshot and not usable
+### bad_sats
+  - number of satellites with poor information in the snapshot and not usable
   
-residual
-  ~  
+### residual
+  -  
 
-time_error
-  ~  
+### time_error
+  -  
 
-date_time
-  ~ A POSIXct value representing the UTC time for the fastloc location estimate.
+### date_time
+  - A POSIXct value representing the UTC time for the fastloc location estimate.
     
     ```{r range-gps-datetime}
     range(kotzeb0912_gps$date_time)
@@ -496,8 +500,8 @@ data("kotzeb0912_depths")
 dplyr::glimpse(kotzeb0912_depths)
 ```
 
-deployid
-  ~ An alphanumeric string that uniquely identifies the
+### deployid
+  - An alphanumeric string that uniquely identifies the
     deployment. 
     
     Since a deployment is a unqiue combination of animal and tag,
@@ -515,23 +519,23 @@ deployid
     next section (also separated by an underscore) corresponds to the serial
     number for the tag.
 
-datadatetime
-  ~ A POSIXct value representing the UTC time for the start of the time bin.
+### datadatetime
+  - A POSIXct value representing the UTC time for the start of the time bin.
   
     Dive behavior is summarized into user specified time bins. In this
     study, 6 hour bins were chosen.
 
-num_dives
-  ~ The number of dives with a max depth that occured during the corresponding
+### num_dives
+  - The number of dives with a max depth that occured during the corresponding
     time period and within the corresponding depth bin. This value is capped
     at 255. Thus, in cases when the actual number of dives exceeds 255 some 
     scaling occurs.
     
-bin
-  ~ The bin label in the original data files provided by Wildlife Computers
+### bin
+  - The bin label in the original data files provided by Wildlife Computers
 
-limits
-  ~ The upper (numerically, not in the water column) limit of the depth bin in meters.
+### limits
+  - The upper (numerically, not in the water column) limit of the depth bin in meters.
   
     The limits are determined from examining the data files provided from the
     Wildife Computers Data Portal. If the user has properly specified the 
@@ -545,8 +549,8 @@ data("kotzeb0912_durations")
 dplyr::glimpse(kotzeb0912_durations)
 ```
 
-deployid
-  ~ An alphanumeric string that uniquely identifies the
+### deployid
+  - An alphanumeric string that uniquely identifies the
     deployment. 
     
     Since a deployment is a unqiue combination of animal and tag,
@@ -564,23 +568,23 @@ deployid
     next section (also separated by an underscore) corresponds to the serial
     number for the tag.
 
-datadatetime
-  ~ A POSIXct value representing the UTC time for the start of the time bin.
+### datadatetime
+  - A POSIXct value representing the UTC time for the start of the time bin.
   
     Dive behavior is summarized into user specified time bins. In this
     study, 6 hour bins were chosen.
     
-num_dives
-  ~ The number of dives with a duration (seconds) that occured during the corresponding
+### num_dives
+  - The number of dives with a duration (seconds) that occured during the corresponding
     time period and within the corresponding duration bin. This value is capped
     at 255. Thus, in cases when the actual number of dives exceeds 255 some 
     scaling occurs. 
 
-bin
-  ~ The bin label in the original data files provided by Wildlife Computers
+### bin
+  - The bin label in the original data files provided by Wildlife Computers
 
-limits
-  ~ The upper limit of the duration bin in seconds.
+### limits
+  - The upper limit of the duration bin in seconds.
   
     The limits are determined from examining the data files provided from the
     Wildife Computers Data Portal. If the user has properly specified the 
@@ -594,8 +598,8 @@ data("kotzeb0912_tad")
 dplyr::glimpse(kotzeb0912_tad)
 ```
 
-deployid
-  ~ An alphanumeric string that uniquely identifies the
+### deployid
+  - An alphanumeric string that uniquely identifies the
     deployment. 
     
     Since a deployment is a unqiue combination of animal and tag,
@@ -613,22 +617,22 @@ deployid
     next section (also separated by an underscore) corresponds to the serial
     number for the tag.
 
-datadatetime
-  ~ A POSIXct value representing the UTC time for the start of the time bin.
+### datadatetime
+  - A POSIXct value representing the UTC time for the start of the time bin.
   
     Dive behavior is summarized into user specified time bins. In this
     study, 6 hour bins were chosen.
 
-pct_tad
-  ~ Percent time-at-depth represents the percentage of time the tag
+### pct_tad
+  - Percent time-at-depth represents the percentage of time the tag
     spent within the corresponding depth bin. Values across the depth bins for
     a given 6 hour time period should add to approximately 100.
 
-bin
-  ~ The bin label in the original data files provided by Wildlife Computers
+### bin
+  - The bin label in the original data files provided by Wildlife Computers
 
-limits
-  ~ The upper (numerically, not in the water column) limit of the dive depth 
+### limits
+  - The upper (numerically, not in the water column) limit of the dive depth 
     bin in meters
   
     The limits are determined from examining the data files provided from the
@@ -643,8 +647,8 @@ data("kotzeb0912_timelines")
 dplyr::glimpse(kotzeb0912_timelines)
 ```
 
-deployid
-  ~ An alphanumeric string that uniquely identifies the
+### deployid
+  - An alphanumeric string that uniquely identifies the
     deployment. 
     
     Since a deployment is a unqiue combination of animal and tag,
@@ -662,13 +666,13 @@ deployid
     next section (also separated by an underscore) corresponds to the serial
     number for the tag.
 
-datadatetime
-  ~ A POSIXct value representing the UTC time for the start of the hour bin.
+### datadatetime
+  - A POSIXct value representing the UTC time for the start of the hour bin.
   
     Percent timeline data is summarized into hourly time bins.
 
-percent_dry
-  ~ A percentage of the given hour the tag was dry (out of the water)
+### percent_dry
+  - A percentage of the given hour the tag was dry (out of the water)
   
     Possible values include: *0*,*3*,*5,*,*10*,*20*,*30*,*40*,*50*,*60*,*70*,*80*,
     *90*,*95*,*97*, and *100*
