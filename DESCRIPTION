@@ -7,9 +7,11 @@ Authors@R: "Josh M London <josh.london@noaa.gov> [aut, cre]"
 Description: This package provides access to telemetry data collected from
     satellite telemetry devices deployed on adult and sub-adult bearded seals.
     The bearded seals were captured near Kotzebue, Alaska between 2009 and 2012.
-Depends: 
+Depends:
     R (>= 3.1.1)
 License: file LICENSE
 LazyData: TRUE
-Suggests: knitr
+Suggests:
+    knitr
 VignetteBuilder: knitr
+RoxygenNote: 5.0.1

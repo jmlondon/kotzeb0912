@@ -8,16 +8,14 @@ authors:
   affiliation: National Marine Mammal Laboratory, Alaska Fisheries Science Center, NOAA, Seattle, WA, USA
 - name: Peter L. Boveng
   affiliation: National Marine Mammal Laboratory, Alaska Fisheries Science Center, NOAA, Seattle, WA, USA
-output:
-  rmdformats::html_clean:
+output: 
+  rmarkdown::html_vignette:
     fig_width: 6
     fig_height: 6
-    highlight: pygments
-    css: stylesheet.css
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+  \usepackage[utf8]{inputenc}
 ---
 
 ```{r libs,include=FALSE}
@@ -25,14 +23,12 @@ library(kotzeb0912)
 library(dplyr)
 library(ggmap)
 library(knitr)
-library(rmdformats)
 ```
 
 ```{r knitr_init, echo=FALSE, cache=FALSE}
 ## Global options
 options(max.print="75")
 opts_chunk$set(echo=FALSE,
-	             cache=TRUE,
                prompt=FALSE,
                tidy=TRUE,
                comment=NA,
