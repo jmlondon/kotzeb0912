@@ -5,6 +5,7 @@ output:
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+[![DOI](https://zenodo.org/badge/22898/jmlondon/kotzeb0912.svg)](https://zenodo.org/badge/latestdoi/22898/jmlondon/kotzeb0912)
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
