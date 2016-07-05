@@ -3,6 +3,10 @@ output:
   md_document:
     variant: markdown_github
 ---
+## kotzeb0912: An R package of data from a satellite telemetry study of bearded seals in Alaska
+
+#### Josh M. London, Michael F. Cameron, and Peter L. Boveng
+#### NOAA Fisheries (NMFS) Alaska Fisheries Science Center
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 [![DOI](https://zenodo.org/badge/22898/jmlondon/kotzeb0912.svg)](https://zenodo.org/badge/latestdoi/22898/jmlondon/kotzeb0912)
@@ -10,32 +14,8 @@ output:
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
+  comment = "#>"
 )
-```
-
-```{r echo=FALSE,fig.width=3.5,out.extra='style="float: right;"',fig.cap='Tracklines derived from all Argos and GPS location estimates',warning=FALSE,message=FALSE}
-library(kotzeb0912)
-library(dplyr)
-library(ggmap)
-
-data("kotzeb0912_locs")
-
-locs <- kotzeb0912_locs %>% 
-  dplyr::select(deployid,date_time,latitude,longitude) %>% 
-  dplyr::filter(!is.na(latitude)) %>% 
-  dplyr::arrange(deployid,date_time) %>% 
-  data.frame()
-
-med_lng <- median(locs$longitude)
-med_lat <- median(locs$latitude) -3
-
-map <- get_map(location=c(med_lng,med_lat),
-                     zoom=4,source="google",maptype='terrain',color="bw")
-gg <- ggmap(map) + geom_point(data=locs,mapping=aes(x=longitude,y=latitude),
-                              alpha=0.25,size=0.75)
-gg
 ```
 
 Bearded seals (_Erignathus barbatus_) are one of the most important subsistence
