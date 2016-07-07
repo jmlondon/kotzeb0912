@@ -9,9 +9,11 @@ authors:
 - name: Peter L. Boveng
   affiliation: National Marine Mammal Laboratory, Alaska Fisheries Science Center, NOAA, Seattle, WA, USA
 output: 
-  rmarkdown::html_vignette:
+  BiocStyle::html_document:
     fig_width: 6
     fig_height: 6
+    toc: false
+    number_sections: false
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}
@@ -56,7 +58,7 @@ Seattle, Washington, USA
 
 Last updated: `r Sys.Date()`
 
-## Executive Summary
+# Executive Summary
 
 ```{r echo=FALSE,fig.width=3.5,out.extra='style="float: right;"',fig.cap='Tracklines derived from all Argos and GPS location estimates',warning=FALSE,message=FALSE}
 data("kotzeb0912_locs")
@@ -101,7 +103,7 @@ data on the timing and depths of dives, for up to ten months; the Mk10-AF, also
 glued to the top of the head, provided GPS quality locations in addition to the
 Argos estimates of location and dive behavior data.
 
-## Bearded Seals
+# Bearded Seals
 
 Seven bearded seals were captured between 2009 and 2012 and 14 tags were deployed.
 Each animal was released with a head-mounted satellite tag and a flipper-mounted
@@ -115,7 +117,7 @@ hdrs <- c("Speno","Capture Time (UTC)","Age","Sex","DeployID","Tag Location")
 knitr::kable(d,col.names = hdrs)
 ```
 
-## Telemetry Devices
+# Telemetry Devices
 
 All of the telemetry devices deployed in this study were manufactured by
 Wildlife Computers (Redmond, Washington, USA) [^2]. All of the tags relied on
@@ -133,9 +135,9 @@ endorsement by NMFS, NOAA, or the U.S. Department of Commerce
 at the time of this study and there is a significant increase in battery
 consumption when using Fastloc-GPS compared to Argos.
 
-## Data Gathering and Processing
+# Data Gathering and Processing
 
-### Tag Programming
+## Tag Programming
 
 There were three tag types/models deployed during this project
 
@@ -143,7 +145,7 @@ There were three tag types/models deployed during this project
 2. Mk10-AF
 3. SPOT5
 
-#### Mk10 (-AF) Programming Summary
+### Mk10 (-AF) Programming Summary
 
 *Histogram Data*
 
@@ -237,7 +239,7 @@ There were three tag types/models deployed during this project
     Supress Fast-GPS after good haulout location
       ~ enabled
 
-#### SPOT5 Programming Summary
+### SPOT5 Programming Summary
 
 *Argos Transmissions*
   
@@ -265,7 +267,7 @@ There were three tag types/models deployed during this project
     Percent dry timelines **are being collected**
 
 
-### Argos Least-Squared vs. Kalman Processing
+## Argos Least-Squared vs. Kalman Processing
 
 In 2011, Argos changed their location estimation algorithm to include a Kalman
 filter algorithm. This replaced their previous algorithm which relied on a 
@@ -282,15 +284,15 @@ _pass duration_. _date-time_ and _pass duration_ were matched with fuzzy
 logic (i.e. they were allowed to not match exactly). In all cases, the reprocessed
 kalman locations were determined to be authoritative.
 
-### Wildlife Computers Data Portal
+## Wildlife Computers Data Portal
 
 Data included in this package were downloaded from the Wildlife Computers
 Data Portal using the **wcUtils** package. After download, additional re-structuring
 and processing of the data was also done with the **wcUtils** package. 
 
-Those with collaborator permissions can access these deployments directly by searching for the _kotzeb09_ projectid.
+Those with collaborator permissions can access these deployments directly by searching for the _kotzeb0912_ projectid.
 
-## Data Components
+# Data Components
 
 The **kotzeb0912** package is a data package for distribution of core data 
 products resulting from this study. There are 7 data products distributed with
@@ -313,14 +315,14 @@ this package:
 7. `kotzeb0912_deployments`
     - bearded seal morphometric and tag deployment data
     
-### kotzeb0912_locs
+## kotzeb0912_locs
 
 ```{r data-locs}
 data("kotzeb0912_locs")
 dplyr::glimpse(kotzeb0912_locs)
 ```
 
-#### deployid
+### deployid
   - An alphanumeric string that uniquely identifies the
     deployment. 
     
@@ -339,14 +341,14 @@ dplyr::glimpse(kotzeb0912_locs)
     next section (also separated by an underscore) corresponds to the serial
     number for the tag.
     
-#### ptt
+### ptt
   - The Argos transmitter (PTT) identifier. 
     
     It is important to understand that a PTT identifier can be assigned to
     different tags over the years. The PTT identifier should not be considered a
     unique identifier.
     
-#### instr
+### instr
   - An alphanumeric string that identifies the make/model class of the tag
     
     ```{r unique-instr}
@@ -363,7 +365,7 @@ dplyr::glimpse(kotzeb0912_locs)
         recording depth or dive behavior. For this project, _SPOT_ tags were
         attached to the rear flipper.
         
-#### date_time
+### date_time
   - A POSIXct value representing the UTC time for the location estimate.
     
     ```{r range-datetime}
@@ -375,7 +377,7 @@ dplyr::glimpse(kotzeb0912_locs)
     same deployment. See **unique_posix** for an adjusted value with no
     duplicate times.
     
-#### type
+### type
   - An character string that specifies the location estimate is
     based on the Argos process
     
@@ -383,7 +385,7 @@ dplyr::glimpse(kotzeb0912_locs)
     unique(kotzeb0912_locs$type)
     ```
  
-#### quality
+### quality
   - An alphanumeric value cooresponding to the Argos location quality.
     
     ```{r unique_quality}
@@ -401,24 +403,24 @@ dplyr::glimpse(kotzeb0912_locs)
     **error_semimajor_axis**, **error_semiminor_axis**, and
     **error_ellipse_orientation**.
 
-#### latitude, longitude
+### latitude, longitude
   - Coordinates (decimal degrees, datum=WGS84) of the location estimate
   
-#### error\_radius, error\_semimajor\_axis, error\_semiminor\_axis,error\_ellipse\_orientation
+### error\_radius, error\_semimajor\_axis, error\_semiminor\_axis,error\_ellipse\_orientation
   - Error parameters provided as part of the Kalman filter algorithm
   
-#### unique_posix
+### unique_posix
   - The same as **date_time** except duplicate values have been eliminated by
     increasing the value of one duplicate by 1 second.
 
-### kotzeb0912_gps
+## kotzeb0912_gps
 
 ```{r data-gps}
 data("kotzeb0912_gps")
 dplyr::glimpse(kotzeb0912_gps)
 ```
 
-#### deployid
+### deployid
   - An alphanumeric string that uniquely identifies the
     deployment. 
     
@@ -437,66 +439,66 @@ dplyr::glimpse(kotzeb0912_gps)
     next section (also separated by an underscore) corresponds to the serial
     number for the tag.
 
-#### count
+### count
   -  
   
-#### time_offset
+### time_offset
   -  
   
-#### locnumber
+### locnumber
   -  
 
-#### hauled_out
+### hauled_out
   - a binary (1,0) indication whether the tag was in haul-out mode at the time the fastloc
   snapshot was captured
 
-#### satellites
+### satellites
   - total number of satellites captured in the snapshot. substract the number of bad_sats to
     get the total number of viable satellites
 
-#### initlat, initlon
+### initlat, initlon
   - Coordinates (decimal degrees, datum=WGS84) of the seed location used
   
-#### inittime
+### inittime
   - A POSIXct value representing the UTC time for the seed location used
   
-#### inittype
+### inittype
   - the source data for the seed coordinates: GPS, User or an letter corresponding to the Argos satellite
 
-#### latitude, longitude
+### latitude, longitude
   - Coordinates (decimal degrees, datum=WGS84) of the location estimate
 
-#### bad_sats
+### bad_sats
   - number of satellites with poor information in the snapshot and not usable
   
-#### residual
+### residual
   -  
 
-#### time_error
+### time_error
   -  
 
-#### date_time
+### date_time
   - A POSIXct value representing the UTC time for the fastloc location estimate.
     
     ```{r range-gps-datetime}
     range(kotzeb0912_gps$date_time)
     ```
 
-### kotzeb0912_status
+## kotzeb0912_status
 
 ```{r data-status}
 data("kotzeb0912_status")
 dplyr::glimpse(kotzeb0912_status)
 ```
 
-### kotzeb0912_depths
+## kotzeb0912_depths
 
 ```{r data-depths}
 data("kotzeb0912_depths")
 dplyr::glimpse(kotzeb0912_depths)
 ```
 
-#### deployid
+### deployid
   - An alphanumeric string that uniquely identifies the
     deployment. 
     
@@ -515,22 +517,22 @@ dplyr::glimpse(kotzeb0912_depths)
     next section (also separated by an underscore) corresponds to the serial
     number for the tag.
 
-#### datadatetime
+### datadatetime
   - A POSIXct value representing the UTC time for the start of the time bin.
   
     Dive behavior is summarized into user specified time bins. In this
     study, 6 hour bins were chosen.
 
-#### num_dives
+### num_dives
   - The number of dives with a max depth that occured during the corresponding
     time period and within the corresponding depth bin. This value is capped
     at 255. Thus, in cases when the actual number of dives exceeds 255 some 
     scaling occurs.
     
-#### bin
+### bin
   - The bin label in the original data files provided by Wildlife Computers
 
-#### limits
+### limits
   - The upper (numerically, not in the water column) limit of the depth bin in meters.
   
     The limits are determined from examining the data files provided from the
@@ -538,14 +540,14 @@ dplyr::glimpse(kotzeb0912_depths)
     programming schema for this deployment, those values are extracted and
     included in the data frame for easy reference.
 
-### kotzeb0912_durations
+## kotzeb0912_durations
 
 ```{r data-durations}
 data("kotzeb0912_durations")
 dplyr::glimpse(kotzeb0912_durations)
 ```
 
-#### deployid
+### deployid
   - An alphanumeric string that uniquely identifies the
     deployment. 
     
@@ -564,22 +566,22 @@ dplyr::glimpse(kotzeb0912_durations)
     next section (also separated by an underscore) corresponds to the serial
     number for the tag.
 
-#### datadatetime
+### datadatetime
   - A POSIXct value representing the UTC time for the start of the time bin.
   
     Dive behavior is summarized into user specified time bins. In this
     study, 6 hour bins were chosen.
     
-#### num_dives
+### num_dives
   - The number of dives with a duration (seconds) that occured during the corresponding
     time period and within the corresponding duration bin. This value is capped
     at 255. Thus, in cases when the actual number of dives exceeds 255 some 
     scaling occurs. 
 
-#### bin
+### bin
   - The bin label in the original data files provided by Wildlife Computers
 
-#### limits
+### limits
   - The upper limit of the duration bin in seconds.
   
     The limits are determined from examining the data files provided from the
@@ -587,14 +589,14 @@ dplyr::glimpse(kotzeb0912_durations)
     programming schema for this deployment, those values are extracted and
     included in the data frame for easy reference.
 
-### kotzeb0912_tad
+## kotzeb0912_tad
 
 ```{r data-tad}
 data("kotzeb0912_tad")
 dplyr::glimpse(kotzeb0912_tad)
 ```
 
-#### deployid
+### deployid
   - An alphanumeric string that uniquely identifies the
     deployment. 
     
@@ -613,21 +615,21 @@ dplyr::glimpse(kotzeb0912_tad)
     next section (also separated by an underscore) corresponds to the serial
     number for the tag.
 
-#### datadatetime
+### datadatetime
   - A POSIXct value representing the UTC time for the start of the time bin.
   
     Dive behavior is summarized into user specified time bins. In this
     study, 6 hour bins were chosen.
 
-#### pct_tad
+### pct_tad
   - Percent time-at-depth represents the percentage of time the tag
     spent within the corresponding depth bin. Values across the depth bins for
     a given 6 hour time period should add to approximately 100.
 
-#### bin
+### bin
   - The bin label in the original data files provided by Wildlife Computers
 
-#### limits
+### limits
   - The upper (numerically, not in the water column) limit of the dive depth 
     bin in meters
   
@@ -636,14 +638,14 @@ dplyr::glimpse(kotzeb0912_tad)
     programming schema for this deployment, those values are extracted and
     included in the data frame for easy reference.
 
-### kotzeb0912_timelines
+## kotzeb0912_timelines
 
 ```{r data-timelines}
 data("kotzeb0912_timelines")
 dplyr::glimpse(kotzeb0912_timelines)
 ```
 
-#### deployid
+### deployid
   - An alphanumeric string that uniquely identifies the
     deployment. 
     
@@ -662,35 +664,34 @@ dplyr::glimpse(kotzeb0912_timelines)
     next section (also separated by an underscore) corresponds to the serial
     number for the tag.
 
-#### datadatetime
+### datadatetime
   - A POSIXct value representing the UTC time for the start of the hour bin.
   
     Percent timeline data is summarized into hourly time bins.
 
-#### percent_dry
+### percent_dry
   - A percentage of the given hour the tag was dry (out of the water)
   
     Possible values include: *0*,*3*,*5,*,*10*,*20*,*30*,*40*,*50*,*60*,*70*,*80*,
     *90*,*95*,*97*, and *100*
 
-### kotzeb0912_deployments
+## kotzeb0912_deployments
 
 ```{r data-deployments}
 data("kotzeb0912_deployments")
 dplyr::glimpse(kotzeb0912_deployments)
 ```
 
-## Publications and Data Availability
+# Publications and Data Availability
 
 The final contract report for this research is available from the [Bureau of
 Ocean and Energy Management](http://www.boem.gov/BOEM-Newsroom/Library/Publications/2013/BOEM_2013_001150_pdf.aspx)
 
-This R data package and associated vignette documents should be cited as
+This R data package and associated vignette documents are [archived with Zenodo](https://zenodo.org/badge/latestdoi/22898/jmlondon/kotzeb0912). Please note each release of the R package generates a new, unique, and citable DOI. If you use this package and the data within, please cite the work as described in the DOI link below.
 
-> London, Josh M., M.F. Cameron, and P.L. Boveng. 2015. kotzeb0912: An R package
-of data from a satellite telemetry study of bearded seals in Alaska. DOI: 10.5281/zenodo.57100
+<a href="https://zenodo.org/badge/latestdoi/22898/jmlondon/kotzeb0912"><img src="https://zenodo.org/badge/22898/jmlondon/kotzeb0912.svg" alt="10.5281/zenodo.57100" style="float: left"><br style="clear:both" /></a>
 
-## Acknowledgments and Funding
+# Acknowledgments and Funding
 
 The research described here and the included data were obtained with significant
 financial contributions from the U.S. Department of Interior's Bureau of Ocean

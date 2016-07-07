@@ -12,6 +12,8 @@ Depends:
 License: file LICENSE
 LazyData: TRUE
 Suggests:
-    knitr
+    BiocStyle,
+    knitr,
+    rmarkdown
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1
