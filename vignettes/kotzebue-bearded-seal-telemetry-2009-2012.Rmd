@@ -128,6 +128,13 @@ flipper-mounted SPOT style tags were also deployed. These tags provided location
 and haul-out data for longer duration than the Mk10 tags (attached to the hair
 which molts each spring).
 
+**IMPORTANT NOTICE**
+
+> Percent dry timeline data from the flipper-mounted SPOT style tags should NOT
+be used for any analysis. Several of the tags reported prolonged periods of 100%
+dry when we know this not to be true. The source of this is unknown but likely
+a result of sensor failure or compromise due to environmental conditions.
+
 [^2]: mention of specific products or manufacturers does not constitute an 
 endorsement by NMFS, NOAA, or the U.S. Department of Commerce
 
