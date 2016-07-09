@@ -8,7 +8,8 @@ output:
 #### Josh M. London, Michael F. Cameron, and Peter L. Boveng
 #### NOAA Fisheries (NMFS) Alaska Fisheries Science Center
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+This R package has been archived with Zenodo and a citable DOI created for each release.
+
 [![DOI](https://zenodo.org/badge/22898/jmlondon/kotzeb0912.svg)](https://zenodo.org/badge/latestdoi/22898/jmlondon/kotzeb0912)
 
 ```{r, echo = FALSE}
@@ -46,6 +47,16 @@ Argos estimates of location and dive behavior data.
 
 The final contract report for this research is available from the [Bureau of
 Ocean and Energy Management](http://www.boem.gov/BOEM-Newsroom/Library/Publications/2013/BOEM_2013_001150_pdf.aspx)
+
+## Installation
+
+Installation of this R data package is done through the `devtools::install_github()`
+function or by downloading the [source package from the latest release](https://github.com/jmlondon/kotzeb0912/releases).
+
+```r
+library("devtools")
+install_github("jmlondon/wcUtils")
+```
 
 #####Disclaimer
 
