@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+## Executive Summary
+
 Bearded seals (_Erignathus barbatus_) are one of the most important subsistence
 resources for the indigenous people of coastal northern and western Alaska, as
 well as key components of Arctic marine ecosystems, yet relatively little about
@@ -41,3 +43,10 @@ seal’s head, provided Argos estimates of location and also provided
 data on the timing and depths of dives, for up to ten months; the Mk10-AF, also
 glued to the top of the head, provided GPS quality locations in addition to the
 Argos estimates of location and dive behavior data.
+
+The final contract report for this research is available from the [Bureau of
+Ocean and Energy Management](http://www.boem.gov/BOEM-Newsroom/Library/Publications/2013/BOEM_2013_001150_pdf.aspx)
+
+#####Disclaimer
+
+<small>This repository is a scientific product and is not official communication of the Alaska Fisheries Science Center, the National Oceanic and Atmospheric Administration, or the United States Department of Commerce. All AFSC Marine Mammal Laboratory (AFSC-MML) GitHub project code is provided on an ‘as is’ basis and the user assumes responsibility for its use. AFSC-MML has relinquished control of the information and no longer has responsibility to protect the integrity, confidentiality, or availability of the information. Any claims against the Department of Commerce or Department of Commerce bureaus stemming from the use of this GitHub project will be governed by all applicable Federal law. Any reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or favoring by the Department of Commerce. The Department of Commerce seal and logo, or the seal and logo of a DOC bureau, shall not be used in any manner to imply endorsement of any commercial product or activity by DOC or the United States Government.</small>
