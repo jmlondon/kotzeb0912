@@ -7,7 +7,7 @@ kotzeb0912: An R package of data from a satellite telemetry study of bearded sea
 
 This R package has been archived with Zenodo and a citable DOI created for each release.
 
-[![DOI](https://zenodo.org/badge/22898/jmlondon/kotzeb0912.svg)](https://zenodo.org/badge/latestdoi/22898/jmlondon/kotzeb0912)
+<a href="https://zenodo.org/badge/latestdoi/22898/jmlondon/kotzeb0912"><img src="https://zenodo.org/badge/22898/jmlondon/kotzeb0912.svg"></a>
 
 Executive Summary
 -----------------
