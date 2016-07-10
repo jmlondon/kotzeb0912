@@ -9,6 +9,8 @@ This R package has been archived with Zenodo and a citable DOI created for each 
 
 <a href="https://zenodo.org/badge/latestdoi/22898/jmlondon/kotzeb0912"><img src="https://zenodo.org/badge/22898/jmlondon/kotzeb0912.svg"></a>
 
+As a scientific work, an in keeping with common scientific practicies, we kindly request that you cite our research project and applicable publications if you use our work(s) or data in your publications or presentations. Additionally, we strongly encourage and welcome collaboration to promote use of these data in the proper context and scope.
+
 Executive Summary
 -----------------
 
