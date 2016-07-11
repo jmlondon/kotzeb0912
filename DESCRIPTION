@@ -1,7 +1,7 @@
 Package: kotzeb0912
 Title: kotzeb0912: An R package of data from a satellite telemetry study of
     bearded seals in Alaska
-Version: 1.0
+Version: 1.0.1
 Date: 2016-07-08
 Authors@R: c(
     person(c("Josh","M."), "London",email="josh.london@noaa.gov",role = c("aut", "cre")),
