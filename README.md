@@ -1,3 +1,7 @@
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 
 ------------------------------------------------------------------------
@@ -6,7 +10,10 @@
 
 ------------------------------------------------------------------------
 
-[![Last-changedate](https://img.shields.io/badge/last%20change-2016--07--11-yellowgreen.svg)](/commits/master) \#\# kotzeb0912: An R package of data from a satellite telemetry study of bearded seals in Alaska
+[![Last-changedate](https://img.shields.io/badge/last%20change-2016--07--11-yellowgreen.svg)](/commits/master)
+
+kotzeb0912: An R package of data from a satellite telemetry study of bearded seals in Alaska
+--------------------------------------------------------------------------------------------
 
 #### Josh M. London, Michael F. Cameron, and Peter L. Boveng
 
