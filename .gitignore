@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+pkg-build/*
+previous/*
+ggmapTemp.png
+vignettes/kotzebue-bearded-seal-telemetry-2009-2012_cache/*
+vignettes/kotzebue-bearded-seal-telemetry-2009-2012_files/*
+vignettes/stylesheet.css
