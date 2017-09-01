@@ -1,9 +1,0 @@
-^\.Rprofile$
-^.*\.Rproj$
-^\.Rproj\.user$
-^previous$
-^pkg-build$
-^data-raw$
-^make$
-^README\.Rmd$
-^README-.*\.png$
