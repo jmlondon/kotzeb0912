@@ -1,0 +1,23 @@
+Package: kotzeb0912
+Title: kotzeb0912: An R package of data from a satellite telemetry study of
+    bearded seals in Alaska
+Version: 2.0
+Date: 2017-00-01
+Authors@R: c(
+    person(c("Josh","M."), "London",email="josh.london@noaa.gov",role = c("aut", "cre")),
+    person(c("Michael","F."), "Cameron",role = c("aut")),
+    person(c("Peter","L."), "Boveng", role = c("aut"))
+    )
+Description: This package provides access to telemetry data collected from
+    satellite telemetry devices deployed on adult and sub-adult bearded seals.
+    The bearded seals were captured near Kotzebue, Alaska between 2009 and 2012.
+Depends:
+    R (>= 3.1.1)
+License: CC0 | file LICENSE
+LazyData: TRUE
+Suggests:
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 5.0.1
+Imports: bookdown
