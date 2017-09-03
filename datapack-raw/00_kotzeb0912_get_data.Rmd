@@ -2,11 +2,9 @@
 title: "kotzeb0912: Get Data from Wildlife Computers Data Portal"
 date: '`r Sys.Date()`'
 output: bookdown::html_document2
+params:
+   get_data: FALSE
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
 
 ## Connect to Wildlife Computers Data Portal
 
@@ -25,7 +23,8 @@ The `wcUtils` package is available for install from GitHub:
 if (!require('devtools')) install.packages('devtools')
 if (!require('wcUtils')) {
   devtools::install_github('jmlondon/wcUtils')
-  }
+}
+if (!require('tidyverse')) install.packages('tidyverse')
 ```
 
 
@@ -33,10 +32,10 @@ if (!require('wcUtils')) {
 
 All of the deployments have been labeled within the data portal as *ProjectID = KotzEB09*. We will use that information to only download the relevant data.
 
-```{r get-data-from-wc, results='hide', warning = FALSE, message = FALSE, eval = TRUE}
+```{r get-data-from-wc, eval = as.logical(params$get_data)}
 # first thing, get deployment data from WCDP
 r <- wcUtils::wcPOST()
-# get AleutPV ids and download the data
+# get KotzEB09 ids and download the data
 aleut_ids <- wcUtils::wcGetProjectIDs(r,project = 'KotzEB09')
 
 for (i in 1:length(aleut_ids)) {
@@ -56,7 +55,7 @@ functionality could be implemented within the `wcUtils` package and the API,
 but for now, we'll just open each zip file and examine the data files to
 extract the assigned `DeployID`.
 
-```{r}
+```{r rename-zip-files, eval = as.logical(params$get_data)}
 for (zipfile in list.files(pattern = ".zip",full.names = TRUE)) {
   summary_name <- grep('*-Summary.csv',
                       unzip(file.path(
@@ -71,3 +70,15 @@ for (zipfile in list.files(pattern = ".zip",full.names = TRUE)) {
   )
 }
 ```
+
+### List of Archive Files
+
+```{r list-downloaded-files}
+tibble(file_name = (list.files(pattern = ".zip"))) %>% knitr::kable()
+```
+
+## Establish Connection with DataONE Node
+
+## Create datapack
+
+## Send datapack to DataONE Node

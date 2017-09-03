@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2017-09-02" />
+<meta name="date" content="2017-09-03" />
 
 <title>kotzeb0912: Get Data from Wildlife Computers Data Portal</title>
 
@@ -117,7 +117,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">kotzeb0912: Get Data from Wildlife Computers Data Portal</h1>
-<h4 class="date"><em>2017-09-02</em></h4>
+<h4 class="date"><em>2017-09-03</em></h4>
 
 </div>
 
@@ -127,13 +127,117 @@ $(document).ready(function () {
 <p>Wildlife Computers (Redmond, Washington, USA) provides an API for their data portal that allows us to download the latest telemetry data for any deployment. To facilitate connection and use of this API within R, the <code>wcUtils</code> package has been developed.</p>
 <p>The data portal is not a public repository. Data access is controlled by the data owner. Thus, only those users who are either owners of the deployment data or users who have been granted access by the owner can access the API.</p>
 <p>The <code>wcUtils</code> package is available for install from GitHub:</p>
+<pre class="r"><code>if (!require('devtools')) install.packages('devtools')</code></pre>
 <pre><code>## Loading required package: devtools</code></pre>
+<pre class="r"><code>if (!require('wcUtils')) {
+  devtools::install_github('jmlondon/wcUtils')
+}</code></pre>
 <pre><code>## Loading required package: wcUtils</code></pre>
+<pre class="r"><code>if (!require('tidyverse')) install.packages('tidyverse')</code></pre>
+<pre><code>## Loading required package: tidyverse</code></pre>
+<pre><code>## Loading tidyverse: ggplot2
+## Loading tidyverse: tibble
+## Loading tidyverse: tidyr
+## Loading tidyverse: readr
+## Loading tidyverse: purrr
+## Loading tidyverse: dplyr</code></pre>
+<pre><code>## Conflicts with tidy packages ----------------------------------------------</code></pre>
+<pre><code>## filter(): dplyr, stats
+## lag():    dplyr, stats</code></pre>
 </div>
 <div id="download-kotzeb0912-telemetry" class="section level2">
 <h2><span class="header-section-number">0.2</span> Download <code>kotzeb0912</code> Telemetry</h2>
 <p>All of the deployments have been labeled within the data portal as <em>ProjectID = KotzEB09</em>. We will use that information to only download the relevant data.</p>
+<pre class="r"><code># first thing, get deployment data from WCDP
+r &lt;- wcUtils::wcPOST()
+# get KotzEB09 ids and download the data
+aleut_ids &lt;- wcUtils::wcGetProjectIDs(r,project = 'KotzEB09')
+
+for (i in 1:length(aleut_ids)) {
+  zipfile &lt;- wcUtils::wcGetZip(id = aleut_ids[i])
+  file.copy(zipfile,'.',overwrite = TRUE)
+  file.rename(file.path(basename(zipfile)),
+              file.path(paste(aleut_ids[i],&quot;zip&quot;,sep = '.'))
+  )
+}</code></pre>
 <p>The zip files downloaded from the data portal are named based on the unique id assigned within the data portal. For our deployments, we have assigned each a unique <code>DeployID</code>. It would be more informative if we could rename all of these zip files to the assigned <code>DeployID</code>. Eventually, this functionality could be implemented within the <code>wcUtils</code> package and the API, but for now, we’ll just open each zip file and examine the data files to extract the assigned <code>DeployID</code>.</p>
+<pre class="r"><code>for (zipfile in list.files(pattern = &quot;.zip&quot;,full.names = TRUE)) {
+  summary_name &lt;- grep('*-Summary.csv',
+                      unzip(file.path(
+                                      basename(zipfile)),
+                            list = TRUE)$Name,
+                       value = TRUE)
+  deployid &lt;- read.csv(unzip(zipfile, files = summary_name))$DeployID
+  deployid &lt;- as.character(deployid)
+  file.remove(summary_name)
+  file.rename(file.path(zipfile),
+              file.path(paste(deployid,&quot;zip&quot;,sep = '.'))
+  )
+}</code></pre>
+<div id="list-of-archive-files" class="section level3">
+<h3><span class="header-section-number">0.2.1</span> List of Archive Files</h3>
+<pre class="r"><code>tibble(file_name = (list.files(pattern = &quot;.zip&quot;))) %&gt;% knitr::kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">file_name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">EB2009_3000_06A1346.zip</td>
+</tr>
+<tr class="even">
+<td align="left">EB2009_3000_09S0188.zip</td>
+</tr>
+<tr class="odd">
+<td align="left">EB2009_3001_06A1332.zip</td>
+</tr>
+<tr class="even">
+<td align="left">EB2009_3001_08S0215.zip</td>
+</tr>
+<tr class="odd">
+<td align="left">EB2009_3002_06A1357.zip</td>
+</tr>
+<tr class="even">
+<td align="left">EB2009_3002_09S0185.zip</td>
+</tr>
+<tr class="odd">
+<td align="left">EB2011_3000_10A0219.zip</td>
+</tr>
+<tr class="even">
+<td align="left">EB2011_3000_10S0628.zip</td>
+</tr>
+<tr class="odd">
+<td align="left">EB2011_3001_09S1225.zip</td>
+</tr>
+<tr class="even">
+<td align="left">EB2011_3001_10A0552.zip</td>
+</tr>
+<tr class="odd">
+<td align="left">EB2011_3002_10A0200.zip</td>
+</tr>
+<tr class="even">
+<td align="left">EB2011_3002_10S0494.zip</td>
+</tr>
+<tr class="odd">
+<td align="left">EB2012_3003_09A0888.zip</td>
+</tr>
+<tr class="even">
+<td align="left">EB2012_3003_10S0625.zip</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="establish-connection-with-dataone-node" class="section level2">
+<h2><span class="header-section-number">0.3</span> Establish Connection with DataONE Node</h2>
+</div>
+<div id="create-datapack" class="section level2">
+<h2><span class="header-section-number">0.4</span> Create datapack</h2>
+</div>
+<div id="send-datapack-to-dataone-node" class="section level2">
+<h2><span class="header-section-number">0.5</span> Send datapack to DataONE Node</h2>
 </div>
 
 
