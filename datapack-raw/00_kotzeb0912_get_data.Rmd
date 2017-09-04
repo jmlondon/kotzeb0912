@@ -77,8 +77,44 @@ for (zipfile in list.files(pattern = ".zip",full.names = TRUE)) {
 tibble(file_name = (list.files(pattern = ".zip"))) %>% knitr::kable()
 ```
 
-## Establish Connection with DataONE Node
-
 ## Create datapack
+
+Now that we have our files downloaded and stored locally, we want to create a
+datapack for upload to DataONE. The process described here borrows heavily from
+the [vignette provided DataONE](https://cran.r-project.org/web/packages/dataone/vignettes/upload-data.html) in the `dataone` package.
+
+First, we load the required libraries and then create an empty DataPackage.
+
+```{r create-datapack}
+if(!require('dataone')) install.packages('dataone')
+if(!require('datapack')) install.packages('datapack')
+if(!require('uuid')) install.packages('uuid')
+
+dp <- new("DataPackage")
+```
+
+```{r add-files-datapack}
+metadataObj <- new("DataObject", 
+                   format = "https://www.iso.org/standard/53798.html",
+                   filename = "kotzeb0912_raw_iso19115.xml")
+dp <- addMember(dp, metadataObj)
+
+for (zipfile in list.files(pattern = ".zip")) {
+ sourceObj <- new("DataObject",format = "application/zip",filename = zipfile)
+ dp <- addMember(dp, sourceObj, metadataObj)
+}
+
+progObj <- new("DataObject", format = "application/R", 
+               filename = "00_kotzeb0912_get_data.Rmd", 
+               mediaType = "text/x-rsrc")
+dp <- addMember(dp, progObj, mo = metadataObj)
+
+outputObj <- new("DataObject", format="text/html", 
+                 filename="00_kotzeb0912_get_data.html") 
+dp <- addMember(dp, outputObj, mo = metadataObj)
+
+```
+
+## Establish Connection with DataONE Node
 
 ## Send datapack to DataONE Node

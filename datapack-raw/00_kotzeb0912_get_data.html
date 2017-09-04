@@ -230,11 +230,38 @@ for (i in 1:length(aleut_ids)) {
 </table>
 </div>
 </div>
-<div id="establish-connection-with-dataone-node" class="section level2">
-<h2><span class="header-section-number">0.3</span> Establish Connection with DataONE Node</h2>
-</div>
 <div id="create-datapack" class="section level2">
-<h2><span class="header-section-number">0.4</span> Create datapack</h2>
+<h2><span class="header-section-number">0.3</span> Create datapack</h2>
+<p>Now that we have our files downloaded and stored locally, we want to create a datapack for upload to DataONE. The process described here borrows heavily from the <a href="https://cran.r-project.org/web/packages/dataone/vignettes/upload-data.html">vignette provided DataONE</a> in the <code>dataone</code> package.</p>
+<p>First, we load the required libraries and then create an empty DataPackage.</p>
+<pre class="r"><code>if(!require('dataone')) install.packages('dataone')</code></pre>
+<pre><code>## Loading required package: dataone</code></pre>
+<pre class="r"><code>if(!require('datapack')) install.packages('datapack')</code></pre>
+<pre><code>## Loading required package: datapack</code></pre>
+<pre class="r"><code>if(!require('uuid')) install.packages('uuid')</code></pre>
+<pre><code>## Loading required package: uuid</code></pre>
+<pre class="r"><code>dp &lt;- new(&quot;DataPackage&quot;)</code></pre>
+<pre class="r"><code>metadataObj &lt;- new(&quot;DataObject&quot;, 
+                   format = &quot;https://www.iso.org/standard/53798.html&quot;,
+                   filename = &quot;kotzeb0912_raw_iso19115.xml&quot;)
+dp &lt;- addMember(dp, metadataObj)
+
+for (zipfile in list.files(pattern = &quot;.zip&quot;)) {
+ sourceObj &lt;- new(&quot;DataObject&quot;,format = &quot;application/zip&quot;,filename = zipfile)
+ dp &lt;- addMember(dp, sourceObj, metadataObj)
+}
+
+progObj &lt;- new(&quot;DataObject&quot;, format = &quot;application/R&quot;, 
+               filename = &quot;00_kotzeb0912_get_data.Rmd&quot;, 
+               mediaType = &quot;text/x-rsrc&quot;)
+dp &lt;- addMember(dp, progObj, mo = metadataObj)
+
+outputObj &lt;- new(&quot;DataObject&quot;, format=&quot;text/html&quot;, 
+                 filename=&quot;00_kotzeb0912_get_data.html&quot;) 
+dp &lt;- addMember(dp, outputObj, mo = metadataObj)</code></pre>
+</div>
+<div id="establish-connection-with-dataone-node" class="section level2">
+<h2><span class="header-section-number">0.4</span> Establish Connection with DataONE Node</h2>
 </div>
 <div id="send-datapack-to-dataone-node" class="section level2">
 <h2><span class="header-section-number">0.5</span> Send datapack to DataONE Node</h2>
