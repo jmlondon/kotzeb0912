@@ -1,0 +1,2556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inport-metadata xmlns:xs="http://www.w3.org/2001/XMLSchema" version="0.9">
+   <item-identification>
+      <catalog-item-id>47178</catalog-item-id>
+      <title>Wildlife Computers Deployment Archive Data Files</title>
+      <short-name>Wildlife Computers Archive Data Files</short-name>
+      <catalog-item-type>Data Set</catalog-item-type>
+      <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+      <parent-catalog-item-id>47176</parent-catalog-item-id>
+      <parent-title>Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive)</parent-title>
+      <parent-catalog-item-type>Data Set</parent-catalog-item-type>
+      <abstract>The Wildlife Computers Data Portal allows users to organize deployments for each unique combination of tag and animal. Each deployment archive consists of a series of data files that can be downloaded as a single zipped archive. Most files within are comma-separated files with a few other file types. This metadata record describes entities and attributes for each of the file types that are likely to be found within an archive.</abstract>
+      <purpose>This metadata record serves as a generic representation of deployment archives downloaded from the Wildlife Computers Data Portal</purpose>
+      <supplemental-information>Wildlife Computers is located in Redmond, Washington, USA. https://wildlifecomputers.com/. In addition to contacting the data owners and other points of contact, Wildlife Computers may also be able to provide additional information and documentation upon request.</supplemental-information>
+   </item-identification>
+   <keywords>
+      <keyword>
+         <keyword-type>Theme</keyword-type>
+         <thesaurus>Integrated Taxonomic Information systems (ITIS)</thesaurus>
+         <keyword>Bearded Seal</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Theme</keyword-type>
+         <thesaurus>ISO 19115 Topic Category</thesaurus>
+         <keyword>biota</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Theme</keyword-type>
+         <thesaurus>ISO 19115 Topic Category</thesaurus>
+         <keyword>environment</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Spatial</keyword-type>
+         <thesaurus>Geographic Names Information System</thesaurus>
+         <keyword>Alaska</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Spatial</keyword-type>
+         <thesaurus>Geographic Names Information System</thesaurus>
+         <keyword>Arctic Ocean</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Spatial</keyword-type>
+         <thesaurus>Geographic Names Information System</thesaurus>
+         <keyword>Beaufort Sea</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Spatial</keyword-type>
+         <thesaurus>Geographic Names Information System</thesaurus>
+         <keyword>Bering Sea</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Spatial</keyword-type>
+         <thesaurus>Geographic Names Information System</thesaurus>
+         <keyword>Chukchi Sea</keyword>
+      </keyword>
+   </keywords>
+   <physical-location>
+      <organization>Alaska Fisheries Science Center</organization>
+      <city>Seattle</city>
+      <state-province>WA</state-province>
+      <country>USA</country>
+   </physical-location>
+   <data-set-information>
+      <data-set-type>CSV Files</data-set-type>
+      <maintenance-frequency>Irregular</maintenance-frequency>
+      <data-set-publication-status>Unpublished</data-set-publication-status>
+      <data-presentation-form>Table (digital)</data-presentation-form>
+      <source-media-type>online</source-media-type>
+      <entity-attribute-overview>The entity-attributes documented here are meant to representative of the typical files found within a deployment archive pulled from the Wildlife Computers Data Portal. Exactly which files are present in an archive will vary depending upon the programming scheme and the tag hardware configuration</entity-attribute-overview>
+      <instrument>Animal Mounted Instrument - Argos Satellite Transmitter</instrument>
+      <platform>Animal Based Platform - Mammal - Phocid</platform>
+      <physical-collection-fishing-gear>N/A</physical-collection-fishing-gear>
+   </data-set-information>
+   <entity-attribute-information>
+      <entity>
+         <catalog-item-id>47182</catalog-item-id>
+         <title>*-Locations.csv</title>
+         <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+         <entity-information>
+            <entity-type>Data Table</entity-type>
+            <alias>Locations.csv</alias>
+            <description>Each archive contains a series of CSV and other files. One of these is the *-Locations.csv file describing all of the location data from each deployment. At a minimum, includes Argos location estimates but may also include GPS-Fastloc location estimates (if GPS-fastloc location data are included, there will likely be two *-Locations.csv files in the archive. The second will include 'FastGPS' in the file name and this one will include both Argos and FastGPS locations). Key information for each row is date-time (UTC), latitude, longitude, quality estimate, and ellipse error information associated with each location estimate.</description>
+         </entity-information>
+         <data-attributes>
+            <data-attribute cc-id="580831">
+               <name>Comment</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>free form comments</description>
+            </data-attribute>
+            <data-attribute cc-id="580803">
+               <name>Type</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>location type (Argos or FastGPS)</description>
+            </data-attribute>
+            <data-attribute cc-id="580802">
+               <name>Date</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>date + time (UTC) in the format of HH:MM:SS dd-Mm-YYYY</description>
+            </data-attribute>
+            <data-attribute cc-id="580799">
+               <name>DeployID</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>unique identifier for this deployment (animal id + tag id)</description>
+            </data-attribute>
+            <data-attribute cc-id="580810">
+               <name>Error Ellipse orientation</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The orientation of the semi-major axis of the error elipse, Argos diagnostic data (definition from Argos User's Manual 2011). units: degrees (from north when heading east)</description>
+            </data-attribute>
+            <data-attribute cc-id="580808">
+               <name>Error Semi-major axis</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Length of the semi-major axis of the error ellipse, Argos diagnostic data (definition from Argos User's Manual 2011). units: meters</description>
+            </data-attribute>
+            <data-attribute cc-id="580809">
+               <name>Error Semi-minor axis</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Length of the semi-minor axis of the error ellipse, Argos diagnostic data (definition from Argos User's Manual 2011). units: meters</description>
+            </data-attribute>
+            <data-attribute cc-id="580807">
+               <name>Error radius</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Geometric dilution of precision, a measure of the effect of the geometry of the satellite-beacon configuration on location accuracy, Argos diagnostic data (definition from Argos User's Manual 2011). units: meters</description>
+            </data-attribute>
+            <data-attribute cc-id="580813">
+               <name>GPE MSD</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>undocumented</description>
+            </data-attribute>
+            <data-attribute cc-id="580829">
+               <name>GPE U</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>undocumented</description>
+            </data-attribute>
+            <data-attribute cc-id="580801">
+               <name>Instr</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Instrument type/family</description>
+            </data-attribute>
+            <data-attribute cc-id="580805">
+               <name>Latitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform latitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="580806">
+               <name>Longitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform longitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="580811">
+               <name>Offset</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>undocumented</description>
+            </data-attribute>
+            <data-attribute cc-id="580812">
+               <name>Offset orientation</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>undocumented</description>
+            </data-attribute>
+            <data-attribute cc-id="580800">
+               <name>Ptt</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Argos assigned PTT id</description>
+            </data-attribute>
+            <data-attribute cc-id="580804">
+               <name>Quality</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The location class retrieved from Argos. Allowed values are 0, 1, 2, 3, A, B, and Z (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580830">
+               <name>Count</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The number of messages received [to calculate location], Argos DIAG format file (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+         </data-attributes>
+      </entity>
+      <entity>
+         <catalog-item-id>47183</catalog-item-id>
+         <title>*-All.csv</title>
+         <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+         <entity-information>
+            <entity-type>Data Table</entity-type>
+            <alias>All.csv</alias>
+            <description>CSV file that contains all of the transmitted data, including the raw sensor data. Each record represents a single received message.</description>
+         </entity-information>
+         <data-attributes>
+            <data-attribute cc-id="580866">
+               <name>&gt; - 120 DB</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The number of messages received by the satellite at a signal strength greater than -120 decibels, Argos DIAG format file (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580877">
+               <name>Semi-minor axis</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Length of the semi-minor axis of the error ellipse, Argos diagnostic data (definition from Argos User's Manual 2011). units: meters</description>
+            </data-attribute>
+            <data-attribute cc-id="580867">
+               <name>Best level</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Best signal strength, Argos DIAG format file (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580864">
+               <name>Comp.</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>undocumented</description>
+            </data-attribute>
+            <data-attribute cc-id="580868">
+               <name>Delta freq.</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>undocumented</description>
+            </data-attribute>
+            <data-attribute cc-id="580850">
+               <name>DeployID</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>unique identifier for this deployment (sealid + tagid)</description>
+            </data-attribute>
+            <data-attribute cc-id="580878">
+               <name>Ellipse orientation</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The orientation of the semi-major axis of the error elipse, Argos diagnostic data (definition from Argos User's Manual 2011). units: degrees (from north when heading east)</description>
+            </data-attribute>
+            <data-attribute cc-id="580875">
+               <name>Error radius</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Geometric dilution of precision, a measure of the effect of the geometry of the satellite-beacon configuration on location accuracy, Argos diagnostic data (definition from Argos User's Manual 2011). units: meters</description>
+            </data-attribute>
+            <data-attribute cc-id="580862">
+               <name>Frequency</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Calculated frequency, Argos DIAG format file (definition from Argos User's Manual 2011). units: hertz</description>
+            </data-attribute>
+            <data-attribute cc-id="580879">
+               <name>GDOP</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>One standard deviation (sigma) of the estimated location error, assuming isotropic error, Argos Diagnostic Data (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580870">
+               <name>Lat. sol. 1</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform latitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="580872">
+               <name>Lat. sol. 2</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 2. platform latitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="580853">
+               <name>Latitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform latitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580856">
+               <name>Loc. date</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>date + time (UTC) in the format of mm/dd/yyyy HH:MM:SS</description>
+            </data-attribute>
+            <data-attribute cc-id="580873">
+               <name>Loc. idx</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>undocumented</description>
+            </data-attribute>
+            <data-attribute cc-id="580855">
+               <name>Loc. quality</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The location class retrieved from Argos. Allowed values are 0, 1, 2, 3, A, B, and Z (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580857">
+               <name>Loc. type</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>location type (Argos)</description>
+            </data-attribute>
+            <data-attribute cc-id="580869">
+               <name>Long. 1</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform longitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="580871">
+               <name>Long. 2</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 2. platform longitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="580854">
+               <name>Longitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform longitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580861">
+               <name>Mote Id</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>undocumented</description>
+            </data-attribute>
+            <data-attribute cc-id="580865">
+               <name>Msg</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The number of messages received [to calculate location], Argos DIAG format file (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580863">
+               <name>Msg Date</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>date + time (UTC) message was received in the format of mm/dd/yyyy HH:MM:SS</description>
+            </data-attribute>
+            <data-attribute cc-id="580874">
+               <name>Nopc</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The number of plausibility checks successful (from 0-4), Argos DIAG format file (definition from Argos User's Manual 2011).
+example: 3</description>
+            </data-attribute>
+            <data-attribute cc-id="580859">
+               <name>Pass</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>satellite pass identifier</description>
+            </data-attribute>
+            <data-attribute cc-id="580851">
+               <name>Platform ID No.</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Argos assigned PTT id</description>
+            </data-attribute>
+            <data-attribute cc-id="580852">
+               <name>Prg No.</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>unique identifier for the Argos program associated with the platform</description>
+            </data-attribute>
+            <data-attribute cc-id="580910">
+               <name>SENSOR #01 - #32</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>sensor data (32 columns) used by vendor to encode behavior data</description>
+            </data-attribute>
+            <data-attribute cc-id="580860">
+               <name>Sat.</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The satellite identifier, Argos diagnostic data (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580876">
+               <name>Semi-major axis</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Length of the semi-major axis of the error ellipse, Argos diagnostic data (definition from Argos User's Manual 2011). units: meters</description>
+            </data-attribute>
+            <data-attribute cc-id="580858">
+               <name>Altitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Altitude used for location calculation, Argos DIAG format file (definition from Argos User's Manual 2011). units: meters. (fixed at 0 for marine mammals)</description>
+            </data-attribute>
+         </data-attributes>
+      </entity>
+      <entity>
+         <catalog-item-id>47184</catalog-item-id>
+         <title>*-Argos.csv</title>
+         <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+         <entity-information>
+            <entity-type>Data Table</entity-type>
+            <alias>Argos.csv</alias>
+            <description>A CSV file that represents Argos locations calculated from each satellite pass where a transmission was received. Each record in the file represents a single satellite pass.</description>
+         </entity-information>
+         <data-attributes>
+            <data-attribute cc-id="580949">
+               <name>AvgInterval</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>average interval between message transmissions</description>
+            </data-attribute>
+            <data-attribute cc-id="580952">
+               <name>Satellite</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The satellite identifier, Argos diagnostic data (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580951">
+               <name>Date</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>date + time (UTC) in the format of HH:MM:SS dd-Mm-YYYY. represents the midpoint of the satellite pass</description>
+            </data-attribute>
+            <data-attribute cc-id="580942">
+               <name>DeployID</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>unique identifier for this deployment (sealid + tagid)</description>
+            </data-attribute>
+            <data-attribute cc-id="580947">
+               <name>Duplicates</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>number of duplicate messages in the pass</description>
+            </data-attribute>
+            <data-attribute cc-id="580959">
+               <name>Duration</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Time elapsed between the first and last message received by the satellite, Argos DIAG format file (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580960">
+               <name>Frequency</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Calculated frequency, Argos DIAG format file (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580958">
+               <name>IQ</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>This indicator gives information on the transmitter in terms of two digits, X and Y. X is the first digit and indicates residual error on the frequency calculation; Y is the second digit and indicates transmitter oscillator frequency drift between two satellite passes. Values provided in Argos DIAG format files (definition from Argos User's Manual 2011). Values obtained through some Argos channels do not include leading 0s, so 1-digit values indicate X = 0 and blank values or values of "0" indicate both X and Y = 0. Allowed values are
+
+X=0: No calculation of residual frequency error (fewer than four messages received)
+X=1,2,3: Unsatisfactory convergence of calculation
+X=4: Residual frequency error &gt; 1.5 Hz
+X=5: 0.15 Hz &lt; residual frequency error &lt; 1.5 Hz
+X=6: Residual frequency error &lt; 0.15 Hz
+Y=0: No check on transmit frequency drift, as the two results are more than 12 hours apart.
+Y=1: Frequency discrepancy &gt; 400 Hz Probably due to transmit frequency discrepancy, change of oscillator, etc.
+Y=2: Previous location is less than 1/2 hour old. Frequency discrepancy &gt; 30 Hz, i.e. F/F (over 10 min) &gt;2.5 E-8
+Y=3: Frequency drift &gt; 4 Hz/minute, i.e. F/F (10 min) &gt; 1.10-7
+Y=4: Frequency drift &lt; 4 Hz/minute, i.e. F/F (10 min) &lt; 1.10-7
+Y=5: Frequency drift &lt; 2 Hz/minute, i.e. F/F (10 min) &lt; 5.10-8
+Y=6: Frequency drift &lt; 1 Hz/minute, i.e. F/F (10 min) &lt; 2.5 . 10-8
+Y=7: Frequency drift &lt; 0.4 Hz/minute, i.e. F/F (10 min) &lt; 1.10-8
+Y=8: Frequency drift &lt; 0.2 Hz/minute, i.e. F/F (10 min) &lt; 5.10-9</description>
+            </data-attribute>
+            <data-attribute cc-id="580944">
+               <name>Instr</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Instrument type/family</description>
+            </data-attribute>
+            <data-attribute cc-id="580956">
+               <name>Latitude2</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description> Solution 2. platform latitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="580954">
+               <name>Latitute</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform latitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="580953">
+               <name>LocationQuality</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The location class retrieved from Argos. Allowed values are 0, 1, 2, 3, A, B, and Z (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580955">
+               <name>Longitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description> Solution 1. platform longitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="580957">
+               <name>Longitude2</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description> Solution 2. platform longitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="580950">
+               <name>MinInterval</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>minimum interval between message transmissions</description>
+            </data-attribute>
+            <data-attribute cc-id="580946">
+               <name>MsgCount</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The number of messages received [to calculate location], Argos DIAG format file (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="580961">
+               <name>Power</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>average transmission power</description>
+            </data-attribute>
+            <data-attribute cc-id="580943">
+               <name>Ptt</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Argos assigned PTT id</description>
+            </data-attribute>
+            <data-attribute cc-id="580945">
+               <name>RecordType</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Argos message type (DS or DIAG)</description>
+            </data-attribute>
+            <data-attribute cc-id="580948">
+               <name>Corrupt</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>binary value (1,0) indicating whether the data are corrupt</description>
+            </data-attribute>
+         </data-attributes>
+      </entity>
+      <entity>
+         <catalog-item-id>47185</catalog-item-id>
+         <title>*-Corrupt.csv</title>
+         <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+         <entity-information>
+            <entity-type>Data Table</entity-type>
+            <alias>Corrupt.csv</alias>
+            <description>comma-separated file of messages detected as corrupt</description>
+         </entity-information>
+         <data-attributes>
+            <data-attribute cc-id="581114">
+               <name>Byte 0 - 31</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>byte encoded data</description>
+            </data-attribute>
+            <data-attribute cc-id="581105">
+               <name>Date</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>date + time (UTC) in the format of HH:MM:SS dd-Mm-YYYY</description>
+            </data-attribute>
+            <data-attribute cc-id="581102">
+               <name>DeployID</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>unique identifier for this deployment (animal id + tag id)</description>
+            </data-attribute>
+            <data-attribute cc-id="581106">
+               <name>Duplicates</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>number of duplicate messages in the pass</description>
+            </data-attribute>
+            <data-attribute cc-id="581104">
+               <name>Instr</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Instrument type/family</description>
+            </data-attribute>
+            <data-attribute cc-id="581109">
+               <name>Latitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform latitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="581107">
+               <name>Satellite</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The satellite identifier, Argos diagnostic data (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="581110">
+               <name>Longitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform longitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="581112">
+               <name>Possible Timestamp</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>possible timestamp for the message</description>
+            </data-attribute>
+            <data-attribute cc-id="581113">
+               <name>Possible Type</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>possible message type</description>
+            </data-attribute>
+            <data-attribute cc-id="581103">
+               <name>Ptt</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Argos assigned PTT id</description>
+            </data-attribute>
+            <data-attribute cc-id="581111">
+               <name>Reason</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Reason the record was determined corrupt (e.g. CRC value)</description>
+            </data-attribute>
+            <data-attribute cc-id="581108">
+               <name>LocationQuality</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The location class retrieved from Argos. Allowed values are 0, 1, 2, 3, A, B, and Z (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+         </data-attributes>
+      </entity>
+      <entity>
+         <catalog-item-id>47186</catalog-item-id>
+         <title>*-FastGPS.csv</title>
+         <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+         <entity-information>
+            <entity-type>Data Table</entity-type>
+            <alias>FastGPS.csv</alias>
+            <description>comma-separated file of data associated with the FastLoc GPS calculation</description>
+         </entity-information>
+         <data-attributes>
+            <data-attribute cc-id="581131">
+               <name>Bad Sats</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581119">
+               <name>Time Offset</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581118">
+               <name>Count</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581116">
+               <name>Day</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581141">
+               <name>Doppler</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581121">
+               <name>Failures</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581135">
+               <name>Fastloc Power</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581122">
+               <name>Hauled Out</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581130">
+               <name>Height</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581138">
+               <name>Id</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581124">
+               <name>InitLat</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581125">
+               <name>InitLon</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581126">
+               <name>InitTime</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581127">
+               <name>InitType</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581128">
+               <name>Latitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581120">
+               <name>LocNumber</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581129">
+               <name>Longitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581115">
+               <name>Name</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581136">
+               <name>Noise</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581139">
+               <name>Range</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581137">
+               <name>Range Bits</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581132">
+               <name>Residual</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581123">
+               <name>Satellites</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581140">
+               <name>Signal</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581134">
+               <name>TWIC Power</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581117">
+               <name>Time</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581133">
+               <name>Time Error</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581142">
+               <name>CNR</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+         </data-attributes>
+      </entity>
+      <entity>
+         <catalog-item-id>47187</catalog-item-id>
+         <title>*-Histos.csv</title>
+         <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+         <entity-information>
+            <entity-type>Data Table</entity-type>
+            <alias>Histos.csv</alias>
+            <description>Depending on how the tag is programmed and the sensors onboard, a variety of behavior data can be represented in the Histos.csv file. Each record represents a type of behavior data for a given period and, then, up to 72 bin columns. What data are represented in the bin columns depends on the histogram data type and the way the tag was programmed.</description>
+         </entity-information>
+         <data-attributes>
+            <data-attribute cc-id="581168">
+               <name>BadTherm</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581166">
+               <name>Time Offset</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581167">
+               <name>Count</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Number of messages received with the same histogram data</description>
+            </data-attribute>
+            <data-attribute cc-id="581165">
+               <name>Date</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>date + time (UTC) in the format of HH:MM:SS dd-Mm-YYYY</description>
+            </data-attribute>
+            <data-attribute cc-id="581159">
+               <name>DeployID</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>unique identifier for this deployment (animal id + tag id)</description>
+            </data-attribute>
+            <data-attribute cc-id="581161">
+               <name>DepthSensor</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581164">
+               <name>HistType</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581163">
+               <name>Instr</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Instrument type/family</description>
+            </data-attribute>
+            <data-attribute cc-id="581170">
+               <name>Latitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform latitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="581169">
+               <name>LocationQuality</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The location class retrieved from Argos. Allowed values are 0, 1, 2, 3, A, B, and Z (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="581171">
+               <name>Longitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform longitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="581172">
+               <name>NumBins</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Number of histogram bins in the data message</description>
+            </data-attribute>
+            <data-attribute cc-id="581160">
+               <name>Ptt</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Argos assigned PTT id</description>
+            </data-attribute>
+            <data-attribute cc-id="581162">
+               <name>Source</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581173">
+               <name>Sum</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581174">
+               <name>Bin1 - Bin72</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Histogram bin values ... meaning of the bins depends on the histogram type. For example, percent timeline bins represent hour of the day with 'Bin1' equal to the 00:00 to 01:00 UTC hour.</description>
+            </data-attribute>
+         </data-attributes>
+      </entity>
+      <entity>
+         <catalog-item-id>47188</catalog-item-id>
+         <title>*-Labels.csv</title>
+         <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+         <entity-information>
+            <entity-type>Data Table</entity-type>
+            <alias>Labels.csv</alias>
+            <description>key-value pairs for the data portal metadata labels associated with this deployment</description>
+         </entity-information>
+         <data-attributes>
+            <data-attribute cc-id="581144">
+               <name>Value(s)</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>comma separated list of values</description>
+            </data-attribute>
+            <data-attribute cc-id="581143">
+               <name>Key</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>metadata key name</description>
+            </data-attribute>
+         </data-attributes>
+      </entity>
+      <entity>
+         <catalog-item-id>47189</catalog-item-id>
+         <title>*-MinMaxDepth.csv</title>
+         <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+         <data-attributes>
+            <data-attribute cc-id="581149">
+               <name>Date</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>date + time (UTC) in the format of HH:MM:SS dd-Mm-YYYY</description>
+            </data-attribute>
+            <data-attribute cc-id="581145">
+               <name>DeployID</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>unique identifier for this deployment (animal id + tag id)</description>
+            </data-attribute>
+            <data-attribute cc-id="581147">
+               <name>DepthSensor</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581148">
+               <name>Instr</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Instrument type/family</description>
+            </data-attribute>
+            <data-attribute cc-id="581151">
+               <name>Latitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform latitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="581150">
+               <name>LocationQuality</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The location class retrieved from Argos. Allowed values are 0, 1, 2, 3, A, B, and Z (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="581146">
+               <name>Ptt</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Argos assigned PTT id</description>
+            </data-attribute>
+            <data-attribute cc-id="581157">
+               <name>MaxAccuracy</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581156">
+               <name>MaxDepth</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Maximum depth value recorded during the time period</description>
+            </data-attribute>
+            <data-attribute cc-id="581158">
+               <name>MaxSource</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581154">
+               <name>MinAccuracy</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581153">
+               <name>MinDepth</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Minimum depth value recorded during the time period</description>
+            </data-attribute>
+            <data-attribute cc-id="581155">
+               <name>MinSource</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581152">
+               <name>Longitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform longitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+         </data-attributes>
+      </entity>
+      <entity>
+         <catalog-item-id>47190</catalog-item-id>
+         <title>RawArgos.csv</title>
+         <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+         <data-attributes>
+            <data-attribute cc-id="581249">
+               <name>Class</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581248">
+               <name>Satellite</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581259">
+               <name>Dups</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581264">
+               <name>Duration</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581268">
+               <name>Error Ellipse orientation</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581266">
+               <name>Error Semi-major axis</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581267">
+               <name>Error Semi-minor axis</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581265">
+               <name>Error radius</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581256">
+               <name>Frequency</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581258">
+               <name>IQ</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581253">
+               <name>Latitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581262">
+               <name>Latitude2</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581247">
+               <name>Len</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581254">
+               <name>Longitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581263">
+               <name>Longitude2</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581260">
+               <name>MsgDate</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581261">
+               <name>MsgTime</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581269">
+               <name>Offset</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581270">
+               <name>Offset orientation</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581246">
+               <name>PTT</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581250">
+               <name>Pass</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581251">
+               <name>PassDate</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581252">
+               <name>PassTime</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581257">
+               <name>Power</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581245">
+               <name>Prog</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581271">
+               <name>SENSOR #01 - #32</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581255">
+               <name>Comment</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+         </data-attributes>
+      </entity>
+      <entity>
+         <catalog-item-id>47191</catalog-item-id>
+         <title>*-RTC.csv</title>
+         <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+         <entity-information>
+            <entity-type>Data Table</entity-type>
+            <alias>RTC.csv</alias>
+            <description>comma-separated log of comparisons between the clock onboard the tag and the real date and time.</description>
+         </entity-information>
+         <data-attributes>
+            <data-attribute cc-id="581444">
+               <name>CorrectionType</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581441">
+               <name>DeployID</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>unique identifier for this deployment (animal id + tag id)</description>
+            </data-attribute>
+            <data-attribute cc-id="581443">
+               <name>Instr</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Instrument type/family</description>
+            </data-attribute>
+            <data-attribute cc-id="581446">
+               <name>TagTime</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Time recorded from the onboard Real Time Clock (UTC)</description>
+            </data-attribute>
+            <data-attribute cc-id="581447">
+               <name>RealDate</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Actual time (UTC)</description>
+            </data-attribute>
+            <data-attribute cc-id="581448">
+               <name>RealTime</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Actual date (UTC)</description>
+            </data-attribute>
+            <data-attribute cc-id="581445">
+               <name>TagDate</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Date recorded from the onboard Real Time Clock (UTC)</description>
+            </data-attribute>
+            <data-attribute cc-id="581442">
+               <name>Ptt</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Argos assigned PTT id</description>
+            </data-attribute>
+         </data-attributes>
+      </entity>
+      <entity>
+         <catalog-item-id>47192</catalog-item-id>
+         <title>*-Status.csv</title>
+         <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+         <entity-information>
+            <entity-type>Data Table</entity-type>
+            <alias>Status.csv</alias>
+            <description>The Status.csv file contains all of the status messages received from the tag. These messages are sent at a low frequency but can provide key troubleshooting information (e.g. battery voltage, transmission current, wet/dry threshold, number of transmissions)</description>
+         </entity-information>
+         <data-attributes>
+            <data-attribute cc-id="581221">
+               <name>BattDiscon</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581197">
+               <name>ZeroDepthOffset</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581189">
+               <name>BrokenLink</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581188">
+               <name>BrokenThermistor</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581203">
+               <name>BurnMinutes</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581175">
+               <name>DeployID</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>unique identifier for this deployment (animal id + tag id)</description>
+            </data-attribute>
+            <data-attribute cc-id="581195">
+               <name>Depth</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581177">
+               <name>DepthSensor</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581220">
+               <name>FastGPSFailures</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581219">
+               <name>FastGPSLocNumber</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581205">
+               <name>FastGPSPower</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581187">
+               <name>HauledOut</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Was the tag in haul-out mode when the status message was transmitted.</description>
+            </data-attribute>
+            <data-attribute cc-id="581202">
+               <name>InitiallyBroken</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581178">
+               <name>Instr</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Instrument type/family</description>
+            </data-attribute>
+            <data-attribute cc-id="581184">
+               <name>Latitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform latitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="581198">
+               <name>LightLevel</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581183">
+               <name>LocationQuality</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>The location class retrieved from Argos. Allowed values are 0, 1, 2, 3, A, B, and Z (definition from Argos User's Manual 2011).</description>
+            </data-attribute>
+            <data-attribute cc-id="581185">
+               <name>Longitude</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Solution 1. platform longitude in degrees and thousandths of degrees, Argos DIAG format file (definition from Argos User's Manual 2011). units: decimal degrees, WGS84 reference system</description>
+            </data-attribute>
+            <data-attribute cc-id="581196">
+               <name>MaxDepth</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581210">
+               <name>MaxWetDry</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581209">
+               <name>MinWetDry</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581199">
+               <name>NoDawnDusk</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581207">
+               <name>PowerLimit</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581215">
+               <name>PreReleaseTilt</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581217">
+               <name>PreReleaseTiltCount</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581216">
+               <name>PreReleaseTiltSd</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581176">
+               <name>Ptt</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Argos assigned PTT id</description>
+            </data-attribute>
+            <data-attribute cc-id="581180">
+               <name>RTC</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581181">
+               <name>Received</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581204">
+               <name>ReleaseDepth</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581201">
+               <name>ReleaseTime</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581200">
+               <name>ReleaseType</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581214">
+               <name>Resets</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581179">
+               <name>SW</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581212">
+               <name>StatusWord</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581206">
+               <name>TWICPower</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581194">
+               <name>Temperature</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Onboard temperature reading. units: C</description>
+            </data-attribute>
+            <data-attribute cc-id="581182">
+               <name>Time Offset</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581193">
+               <name>TransmitCurrent</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Transmission current measured onboard</description>
+            </data-attribute>
+            <data-attribute cc-id="581213">
+               <name>TransmitPower</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581192">
+               <name>TransmitVoltage</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Transmission voltage measured onboard</description>
+            </data-attribute>
+            <data-attribute cc-id="581190">
+               <name>Transmits</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Number of total transmissions to date</description>
+            </data-attribute>
+            <data-attribute cc-id="581186">
+               <name>Type</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581208">
+               <name>WetDry</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581211">
+               <name>WetDryThreshold</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581218">
+               <name>XmitQueue</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581191">
+               <name>BattVoltage</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Onboard battery voltage</description>
+            </data-attribute>
+         </data-attributes>
+      </entity>
+      <entity>
+         <catalog-item-id>47193</catalog-item-id>
+         <title>*-Summary.csv</title>
+         <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+         <data-attributes>
+            <data-attribute cc-id="581233">
+               <name>AvgPower</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581238">
+               <name>XmitDays</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Number of days between the earliest transmission and the latest transmission</description>
+            </data-attribute>
+            <data-attribute cc-id="581230">
+               <name>DS</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581241">
+               <name>DataDays</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Number of days with data messages</description>
+            </data-attribute>
+            <data-attribute cc-id="581244">
+               <name>DeployDate</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Date the tag deployment began</description>
+            </data-attribute>
+            <data-attribute cc-id="581222">
+               <name>DeployID</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>unique identifier for this deployment (animal id + tag id)</description>
+            </data-attribute>
+            <data-attribute cc-id="581239">
+               <name>EarliestDataTime</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Date and time of the earliest data message</description>
+            </data-attribute>
+            <data-attribute cc-id="581236">
+               <name>EarliestXmitTime</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Date and time of the earliest received transmission</description>
+            </data-attribute>
+            <data-attribute cc-id="581224">
+               <name>Instr</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Instrument type/family</description>
+            </data-attribute>
+            <data-attribute cc-id="581240">
+               <name>LatestDataTime</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Date and time of the latest data message</description>
+            </data-attribute>
+            <data-attribute cc-id="581237">
+               <name>LatestXmitTime</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Date and time of the most recent transmission</description>
+            </data-attribute>
+            <data-attribute cc-id="581234">
+               <name>MaxPower</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581235">
+               <name>MinInterval</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Minimum interval (in seconds) between transmissions</description>
+            </data-attribute>
+            <data-attribute cc-id="581232">
+               <name>MinPower</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581229">
+               <name>MsgPerPass</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Average number of messages received per satellite pass</description>
+            </data-attribute>
+            <data-attribute cc-id="581227">
+               <name>Passes</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581228">
+               <name>PercentArgosLoc</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581226">
+               <name>PercentDecoded</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581223">
+               <name>Ptt</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+               <description>Argos assigned PTT id</description>
+            </data-attribute>
+            <data-attribute cc-id="581242">
+               <name>ReleaseDate</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581243">
+               <name>ReleaseType</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581225">
+               <name>SW</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+            <data-attribute cc-id="581231">
+               <name>DI</name>
+               <data-storage-type>text</data-storage-type>
+               <max-length/>
+               <is-required>No</is-required>
+               <is-pkey>No</is-pkey>
+               <status>Active</status>
+            </data-attribute>
+         </data-attributes>
+      </entity>
+   </entity-attribute-information>
+   <support-roles>
+      <support-role cc-id="581532">
+         <support-role-type>Data Steward</support-role-type>
+         <from-date>20151101</from-date>
+         <person>London, Josh </person>
+         <person-email>josh.london@noaa.gov</person-email>
+         <person-address-type>Mailing</person-address-type>
+         <person-address>7600 Sand Point Way N.E., Building 4</person-address>
+         <person-address-city>Seattle</person-address-city>
+         <person-address-state>WA</person-address-state>
+         <person-address-zip>98115</person-address-zip>
+         <person-phone-number>206-526-4296</person-phone-number>
+         <organization>Alaska Fisheries Science Center</organization>
+         <organization-address>7600 Sand Point Way N.E., Building 4</organization-address>
+         <organization-address-city>Seattle</organization-address-city>
+         <organization-address-zip>98115</organization-address-zip>
+         <organization-address-country>USA</organization-address-country>
+         <organization-url>http://www.afsc.noaa.gov</organization-url>
+         <organization-business-hours>0700-1700 Pacific Time</organization-business-hours>
+      </support-role>
+      <support-role cc-id="581533">
+         <support-role-type>Distributor</support-role-type>
+         <from-date>20151101</from-date>
+         <person>London, Josh </person>
+         <person-email>josh.london@noaa.gov</person-email>
+         <person-address-type>Mailing</person-address-type>
+         <person-address>7600 Sand Point Way N.E., Building 4</person-address>
+         <person-address-city>Seattle</person-address-city>
+         <person-address-state>WA</person-address-state>
+         <person-address-zip>98115</person-address-zip>
+         <person-phone-number>206-526-4296</person-phone-number>
+         <organization>Alaska Fisheries Science Center</organization>
+         <organization-address>7600 Sand Point Way N.E., Building 4</organization-address>
+         <organization-address-city>Seattle</organization-address-city>
+         <organization-address-zip>98115</organization-address-zip>
+         <organization-address-country>USA</organization-address-country>
+         <organization-url>http://www.afsc.noaa.gov</organization-url>
+         <organization-business-hours>0700-1700 Pacific Time</organization-business-hours>
+      </support-role>
+      <support-role cc-id="581534">
+         <support-role-type>Metadata Contact</support-role-type>
+         <from-date>20151101</from-date>
+         <person>London, Josh </person>
+         <person-email>josh.london@noaa.gov</person-email>
+         <person-address-type>Mailing</person-address-type>
+         <person-address>7600 Sand Point Way N.E., Building 4</person-address>
+         <person-address-city>Seattle</person-address-city>
+         <person-address-state>WA</person-address-state>
+         <person-address-zip>98115</person-address-zip>
+         <person-phone-number>206-526-4296</person-phone-number>
+         <organization>Alaska Fisheries Science Center</organization>
+         <organization-address>7600 Sand Point Way N.E., Building 4</organization-address>
+         <organization-address-city>Seattle</organization-address-city>
+         <organization-address-zip>98115</organization-address-zip>
+         <organization-address-country>USA</organization-address-country>
+         <organization-url>http://www.afsc.noaa.gov</organization-url>
+         <organization-business-hours>0700-1700 Pacific Time</organization-business-hours>
+      </support-role>
+      <support-role cc-id="581535">
+         <support-role-type>Originator</support-role-type>
+         <from-date>20151101</from-date>
+         <person>London, Josh </person>
+         <person-email>josh.london@noaa.gov</person-email>
+         <person-address-type>Mailing</person-address-type>
+         <person-address>7600 Sand Point Way N.E., Building 4</person-address>
+         <person-address-city>Seattle</person-address-city>
+         <person-address-state>WA</person-address-state>
+         <person-address-zip>98115</person-address-zip>
+         <person-phone-number>206-526-4296</person-phone-number>
+         <organization>Alaska Fisheries Science Center</organization>
+         <organization-address>7600 Sand Point Way N.E., Building 4</organization-address>
+         <organization-address-city>Seattle</organization-address-city>
+         <organization-address-zip>98115</organization-address-zip>
+         <organization-address-country>USA</organization-address-country>
+         <organization-url>http://www.afsc.noaa.gov</organization-url>
+         <organization-business-hours>0700-1700 Pacific Time</organization-business-hours>
+      </support-role>
+      <support-role cc-id="581536">
+         <support-role-type>Point of Contact</support-role-type>
+         <from-date>20151101</from-date>
+         <person>Boveng, Peter </person>
+         <person-email>peter.boveng@noaa.gov</person-email>
+         <person-address-type>Mailing</person-address-type>
+         <organization>Alaska Fisheries Science Center</organization>
+         <organization-address>7600 Sand Point Way N.E., Building 4</organization-address>
+         <organization-address-city>Seattle</organization-address-city>
+         <organization-address-zip>98115</organization-address-zip>
+         <organization-address-country>USA</organization-address-country>
+         <organization-url>http://www.afsc.noaa.gov</organization-url>
+         <organization-business-hours>0700-1700 Pacific Time</organization-business-hours>
+      </support-role>
+   </support-roles>
+   <access-information>
+      <security-class>Unclassified</security-class>
+      <data-access-policy>The data set is in the process of being archived with the NOAA National Centers for Environmental Information. Once the archival process is complete and verified, the data set will be publicly available. Acknowledge NOAA/NMFS/AFSC as the source from which these data were obtained in any publications and/or other representations of these data. Communication and collaboration with dataset authors is strongly encouraged prior to use.
+</data-access-policy>
+      <data-access-procedure>The data set is in the process of being archived with the NOAA National Centers for Environmental Information. Once the archival process is complete and verified, the data set will be publicly available.</data-access-procedure>
+      <data-access-constraints>The data set is in the process of being archived with the NOAA National Centers for Environmental Information. Once the archival process is complete and verified, the data set will be publicly available.</data-access-constraints>
+      <data-use-constraints>User must read and fully comprehend the metadata prior to use. Applications or inferences derived from the data should be carefully considered for accuracy. While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. Acknowledge NOAA/NMFS/AFSC or the specified citation as the source from which these data were obtained in any publications and/or other representations of these data. Communication and collaboration with dataset authors is strongly encouraged.</data-use-constraints>
+      <metadata-access-constraints>no metadata access constraints</metadata-access-constraints>
+      <metadata-use-constraints>Metadata are subject to revision at any time and information within the metadata record should not be cited without author consent. While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. </metadata-use-constraints>
+   </access-information>
+   <distribution-information>
+      <distribution cc-id="581539">
+         <download-url>http://www.nmfs.noaa.gov/data_not_yet_available</download-url>
+      </distribution>
+   </distribution-information>
+   <data-quality>
+      <quality-control-procedures>Limited quality control procedures have been employed. This dataset is an archive of the processed output from the Wildlife Computers data processing software. These tags were deployed on free-ranging, wild animals in challenging environments. In all cases, additional quality control procedures and evaluation from experts familiar with the tags, programming and species will be required.</quality-control-procedures>
+   </data-quality>
+   <data-management>
+      <resources-identified>Yes</resources-identified>
+      <resources-budget-percentage>Unknown</resources-budget-percentage>
+      <data-access-directive-compliant>No</data-access-directive-compliant>
+      <data-access-directive-waiver>No</data-access-directive-waiver>
+      <hosting-service-needed>not needed; </hosting-service-needed>
+      <delay-collection-dissemination>unknown</delay-collection-dissemination>
+      <delay-collection-dissemination-explanation>data not automatically processed</delay-collection-dissemination-explanation>
+      <archive-location>To Be Determined</archive-location>
+      <archive-location-explanation-none>This metadata record serves as a generic description. See parent or linked record for archiving location and details.</archive-location-explanation-none>
+      <delay-collection-archive>unknown</delay-collection-archive>
+      <data-protection-plan>IT Security and Contingency Plan for the system establishes procedures and applies to the functions, operations, and resources necessary to recover and restore data as hosted in the Western Regional Support Center in Seattle, Washington, following a disruption.</data-protection-plan>
+   </data-management>
+   <lineage>
+      <lineage-statement>These data are represented as an archive of all data files pulled from the Wildlife Computers data portal. See the included R/Rmarkdown file for the R code used to download and create the archives.</lineage-statement>
+   </lineage>
+   <child-items>
+      <child-item>
+         <catalog-item-id>47199</catalog-item-id>
+         <catalog-item-type>Document</catalog-item-type>
+         <title>*-FastLocGPS.kmz</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47194</catalog-item-id>
+         <catalog-item-type>Document</catalog-item-type>
+         <title>*.kmz</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47195</catalog-item-id>
+         <catalog-item-type>Document</catalog-item-type>
+         <title>*.prv</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47196</catalog-item-id>
+         <catalog-item-type>Document</catalog-item-type>
+         <title>*.pxp</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47197</catalog-item-id>
+         <catalog-item-type>Document</catalog-item-type>
+         <title>sources.txt</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47183</catalog-item-id>
+         <catalog-item-type>Entity</catalog-item-type>
+         <title>*-All.csv</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47184</catalog-item-id>
+         <catalog-item-type>Entity</catalog-item-type>
+         <title>*-Argos.csv</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47185</catalog-item-id>
+         <catalog-item-type>Entity</catalog-item-type>
+         <title>*-Corrupt.csv</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47186</catalog-item-id>
+         <catalog-item-type>Entity</catalog-item-type>
+         <title>*-FastGPS.csv</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47187</catalog-item-id>
+         <catalog-item-type>Entity</catalog-item-type>
+         <title>*-Histos.csv</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47188</catalog-item-id>
+         <catalog-item-type>Entity</catalog-item-type>
+         <title>*-Labels.csv</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47182</catalog-item-id>
+         <catalog-item-type>Entity</catalog-item-type>
+         <title>*-Locations.csv</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47189</catalog-item-id>
+         <catalog-item-type>Entity</catalog-item-type>
+         <title>*-MinMaxDepth.csv</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47191</catalog-item-id>
+         <catalog-item-type>Entity</catalog-item-type>
+         <title>*-RTC.csv</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47192</catalog-item-id>
+         <catalog-item-type>Entity</catalog-item-type>
+         <title>*-Status.csv</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47193</catalog-item-id>
+         <catalog-item-type>Entity</catalog-item-type>
+         <title>*-Summary.csv</title>
+      </child-item>
+      <child-item>
+         <catalog-item-id>47190</catalog-item-id>
+         <catalog-item-type>Entity</catalog-item-type>
+         <title>RawArgos.csv</title>
+      </child-item>
+   </child-items>
+   <catalog-details>
+      <metadata-record-created-by pers-id="11324">Josh London</metadata-record-created-by>
+      <metadata-record-created>20170906T163821</metadata-record-created>
+      <metadata-record-last-modified-by pers-id="11324">Josh London</metadata-record-last-modified-by>
+      <metadata-record-last-modified>20170907T144346</metadata-record-last-modified>
+      <owner-organization>Alaska Fisheries Science Center</owner-organization>
+      <owner-organization-acronym>AFSC</owner-organization-acronym>
+      <publication-status>Never Published</publication-status>
+      <is-do-not-publish>No</is-do-not-publish>
+      <linking-share-level>Public</linking-share-level>
+   </catalog-details>
+</inport-metadata>

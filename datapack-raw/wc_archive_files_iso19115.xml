@@ -10,7 +10,7 @@
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:schemaLocation="http://www.isotc211.org/2005/gmi https://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd">
    <gmd:fileIdentifier>
-      <gco:CharacterString>gov.noaa.nmfs.inport:47176</gco:CharacterString>
+      <gco:CharacterString>gov.noaa.nmfs.inport:47178</gco:CharacterString>
    </gmd:fileIdentifier>
    <gmd:language>
       <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php"
@@ -20,6 +20,9 @@
       <gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode"
                                codeListValue="UTF8">UTF8</gmd:MD_CharacterSetCode>
    </gmd:characterSet>
+   <gmd:parentIdentifier>
+      <gco:CharacterString>47176</gco:CharacterString>
+   </gmd:parentIdentifier>
    <gmd:hierarchyLevel>
       <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode"
                         codeListValue="dataset">dataset</gmd:MD_ScopeCode>
@@ -98,7 +101,7 @@
       </gmd:CI_ResponsibleParty>
    </gmd:contact>
    <gmd:dateStamp>
-      <gco:DateTime>2017-09-07T15:09:38</gco:DateTime>
+      <gco:DateTime>2017-09-07T14:43:46</gco:DateTime>
    </gmd:dateStamp>
    <gmd:metadataStandardName>
       <gco:CharacterString>ISO 19115-2 Geographic Information - Metadata Part 2 Extensions for imagery and gridded data</gco:CharacterString>
@@ -111,10 +114,10 @@
          <gmd:citation>
             <gmd:CI_Citation>
                <gmd:title>
-                  <gco:CharacterString>Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive)</gco:CharacterString>
+                  <gco:CharacterString>Wildlife Computers Deployment Archive Data Files</gco:CharacterString>
                </gmd:title>
                <gmd:alternateTitle>
-                  <gco:CharacterString>Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive)</gco:CharacterString>
+                  <gco:CharacterString>Wildlife Computers Archive Data Files</gco:CharacterString>
                </gmd:alternateTitle>
                <gmd:date>
                   <gmd:CI_Date>
@@ -136,9 +139,9 @@
                         </gmd:CI_Citation>
                      </gmd:authority>
                      <gmd:code>
-                        <gmx:Anchor xlink:href="https://inport.nmfs.noaa.gov/inport/item/47176"
+                        <gmx:Anchor xlink:href="https://inport.nmfs.noaa.gov/inport/item/47178"
                                     xlink:actuate="onRequest"
-                                    xlink:title="InPort Catalog ID">47176</gmx:Anchor>
+                                    xlink:title="InPort Catalog ID">47178</gmx:Anchor>
                      </gmd:code>
                   </gmd:MD_Identifier>
                </gmd:identifier>
@@ -215,57 +218,22 @@
                      </gmd:role>
                   </gmd:CI_ResponsibleParty>
                </gmd:citedResponsibleParty>
-               <gmd:citedResponsibleParty>
-                  <gmd:CI_ResponsibleParty>
-                     <gmd:organisationName gco:nilReason="inapplicable"/>
-                     <gmd:contactInfo>
-                        <gmd:CI_Contact>
-                           <gmd:onlineResource>
-                              <gmd:CI_OnlineResource>
-                                 <gmd:linkage>
-                                    <gmd:URL>http://www.boem.gov/BOEM-Newsroom/Library/Publications/2013/BOEM_2013_001150_pdf.aspx</gmd:URL>
-                                 </gmd:linkage>
-                                 <gmd:protocol>
-                                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
-                                 </gmd:protocol>
-                                 <gmd:name>
-                                    <gco:CharacterString>Citation URL</gco:CharacterString>
-                                 </gmd:name>
-                                 <gmd:description>
-                                    <gco:CharacterString>This online resource provides the user with a copy of the final contract report to BOEM. This document thoroughly describes the project objectives, methods, and initial outcomes.
-
-Boveng, P.L. and M.F. Cameron. 2013. Pinniped movements and foraging: seasonal movements, habitat selection, foraging and haul-out behavior of adult bearded seals in the Chukchi Sea. Final Report, BOEM Report 2013-01150. Bureau of Ocean Energy Management, Alaska Outer Continental Shelf Region, Anchorage, Alaska, USA. 91 Pp + Appendix.</gco:CharacterString>
-                                 </gmd:description>
-                                 <gmd:function>
-                                    <gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode"
-                                                               codeListValue="download">download</gmd:CI_OnLineFunctionCode>
-                                 </gmd:function>
-                              </gmd:CI_OnlineResource>
-                           </gmd:onlineResource>
-                        </gmd:CI_Contact>
-                     </gmd:contactInfo>
-                     <gmd:role gco:nilReason="inapplicable"/>
-                  </gmd:CI_ResponsibleParty>
-               </gmd:citedResponsibleParty>
                <gmd:presentationForm>
                   <gmd:CI_PresentationFormCode codeList="https://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode"
                                                codeListValue="tableDigital">tableDigital</gmd:CI_PresentationFormCode>
                </gmd:presentationForm>
-               <gmd:otherCitationDetails>
-                  <gco:CharacterString>London, J.M., P.L. Boveng, and M.F. Cameron (2015): Telemetry dataset from satellite tags deployed on adult bearded seals in Kotzebue, Alaska. Alaska Fisheries Science Center, National Oceanic and Atmospheric Administration. --doi:TBD, contact authors for updated citation details--</gco:CharacterString>
-               </gmd:otherCitationDetails>
+               <gmd:otherCitationDetails gco:nilReason="missing"/>
             </gmd:CI_Citation>
          </gmd:citation>
          <gmd:abstract>
-            <gco:CharacterString>Bearded seals (Erignathus barbatus) are one of the most important subsistence resources for the indigenous people of coastal northern and western Alaska, as well as key components of Arctic marine ecosystems, yet relatively little about their abundance, seasonal distribution, migrations, or foraging behaviors has been documented scientifically. Ice-associated seal populations may be negatively impacted by offshore oil and gas development as well as by climate change. Our ability to predict impacts, however, is limited by inadequate knowledge of seal population structure and foraging ecology. By working cooperatively with Alaska Native subsistence hunters we developed methods for live- capturing bearded seals in the Chukchi Sea using nets set in the shallow coastal waters where bearded seals were foraging.  Capture efforts were based out of Kotzebue and various locations in the North Slope Borough from Wainwright to Barrow in June and July from 2009 to 2012.  In all, 7 seals were caught (2 adults and 5 sub-adults; 4 males and three females; ranging in length and weight from 159 cm and 116 kg to 216 cm and 253 kg), all from Kotzebue Sound.  Each seal was released with two different types of satellite-linked, geo-locating data recorders (SDRs): the SPOT SDR, attached to a rear flipper, provided information on the timing of hauling out and on the seal’s location for up to three years; the MK10 SDR, glued to the top of a seal’s head, provided the same information as the SPOT SDR and also provided data on the timing and depths of dives, for up to ten months. </gco:CharacterString>
+            <gco:CharacterString>The Wildlife Computers Data Portal allows users to organize deployments for each unique combination of tag and animal. Each deployment archive consists of a series of data files that can be downloaded as a single zipped archive. Most files within are comma-separated files with a few other file types. This metadata record describes entities and attributes for each of the file types that are likely to be found within an archive.</gco:CharacterString>
          </gmd:abstract>
-         <gmd:purpose gco:nilReason="missing"/>
-         <gmd:credit>
-            <gco:CharacterString>London, J.M., P.L. Boveng, and M.F. Cameron (2015): Telemetry dataset from satellite tags deployed on adult bearded seals in Kotzebue, Alaska. Alaska Fisheries Science Center, National Oceanic and Atmospheric Administration. --doi:TBD, contact authors for updated citation details--</gco:CharacterString>
-         </gmd:credit>
+         <gmd:purpose>
+            <gco:CharacterString>This metadata record serves as a generic representation of deployment archives downloaded from the Wildlife Computers Data Portal</gco:CharacterString>
+         </gmd:purpose>
          <gmd:status>
             <gmd:MD_ProgressCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_ProgressCode"
-                                 codeListValue="completed">completed</gmd:MD_ProgressCode>
+                                 codeListValue=""/>
          </gmd:status>
          <gmd:pointOfContact>
             <gmd:CI_ResponsibleParty>
@@ -405,7 +373,7 @@ Boveng, P.L. and M.F. Cameron. 2013. Pinniped movements and foraging: seasonal m
             <gmd:MD_MaintenanceInformation>
                <gmd:maintenanceAndUpdateFrequency>
                   <gmd:MD_MaintenanceFrequencyCode codeList="http://www.tc211.org/ISO19139/resources/codeList.xml#MD_MaintenanceFrequencyCode"
-                                                   codeListValue="notPlanned"/>
+                                                   codeListValue="irregular"/>
                </gmd:maintenanceAndUpdateFrequency>
             </gmd:MD_MaintenanceInformation>
          </gmd:resourceMaintenance>
@@ -545,7 +513,7 @@ Boveng, P.L. and M.F. Cameron. 2013. Pinniped movements and foraging: seasonal m
          <gmd:descriptiveKeywords>
             <gmd:MD_Keywords>
                <gmd:keyword>
-                  <gco:CharacterString>Polar Ecosystems Program</gco:CharacterString>
+                  <gco:CharacterString>Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive)</gco:CharacterString>
                </gmd:keyword>
                <gmd:type>
                   <gmd:MD_KeywordTypeCode codeList="https://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode"
@@ -564,7 +532,7 @@ Boveng, P.L. and M.F. Cameron. 2013. Pinniped movements and foraging: seasonal m
                                           codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
                </gmd:useConstraints>
                <gmd:otherConstraints>
-                  <gco:CharacterString>Access Constraints: The data set is in the process of being archived with the NOAA National Centers for Environmental Information. Once the archival process is complete and verified, the data set will be publicly available. | Use Constraints: User must read and fully comprehend the metadata prior to use. Applications or inferences derived from the data should be carefully considered for accuracy. While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. Acknowledge NOAA/NMFS/AFSC or the specified citation as the source from which these data were obtained in any publications and/or other representations of these data. Communication and collaboration with dataset authors is strongly encouraged. | Distribution Liability: While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. </gco:CharacterString>
+                  <gco:CharacterString>Access Constraints: The data set is in the process of being archived with the NOAA National Centers for Environmental Information. Once the archival process is complete and verified, the data set will be publicly available. | Use Constraints: User must read and fully comprehend the metadata prior to use. Applications or inferences derived from the data should be carefully considered for accuracy. While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. Acknowledge NOAA/NMFS/AFSC or the specified citation as the source from which these data were obtained in any publications and/or other representations of these data. Communication and collaboration with dataset authors is strongly encouraged.</gco:CharacterString>
                </gmd:otherConstraints>
             </gmd:MD_LegalConstraints>
          </gmd:resourceConstraints>
@@ -587,43 +555,256 @@ Boveng, P.L. and M.F. Cameron. 2013. Pinniped movements and foraging: seasonal m
          <gmd:topicCategory>
             <gmd:MD_TopicCategoryCode>environment</gmd:MD_TopicCategoryCode>
          </gmd:topicCategory>
-         <gmd:extent>
-            <gmd:EX_Extent>
-               <gmd:description>
-                  <gco:CharacterString>Geographic Area Description: Bering Sea, Chukchi Sea, Beaufort Sea, Arctic Ocean | </gco:CharacterString>
-               </gmd:description>
-               <gmd:geographicElement>
-                  <gmd:EX_GeographicBoundingBox>
-                     <gmd:westBoundLongitude>
-                        <gco:Decimal>-174</gco:Decimal>
-                     </gmd:westBoundLongitude>
-                     <gmd:eastBoundLongitude>
-                        <gco:Decimal>-143</gco:Decimal>
-                     </gmd:eastBoundLongitude>
-                     <gmd:southBoundLatitude>
-                        <gco:Decimal>59</gco:Decimal>
-                     </gmd:southBoundLatitude>
-                     <gmd:northBoundLatitude>
-                        <gco:Decimal>74</gco:Decimal>
-                     </gmd:northBoundLatitude>
-                  </gmd:EX_GeographicBoundingBox>
-               </gmd:geographicElement>
-               <gmd:temporalElement>
-                  <gmd:EX_TemporalExtent>
-                     <gmd:extent>
-                        <gml:TimePeriod gml:id="boundingTemporalExtent-1-1">
-                           <gml:description> | Currentness: Ground Condition</gml:description>
-                           <gml:beginPosition>2008</gml:beginPosition>
-                           <gml:endPosition>2012</gml:endPosition>
-                        </gml:TimePeriod>
-                     </gmd:extent>
-                  </gmd:EX_TemporalExtent>
-               </gmd:temporalElement>
-            </gmd:EX_Extent>
-         </gmd:extent>
-         <gmd:supplementalInformation gco:nilReason="missing"/>
+         <gmd:supplementalInformation>
+            <gco:CharacterString>Wildlife Computers is located in Redmond, Washington, USA. https://wildlifecomputers.com/. In addition to contacting the data owners and other points of contact, Wildlife Computers may also be able to provide additional information and documentation upon request.</gco:CharacterString>
+         </gmd:supplementalInformation>
       </gmd:MD_DataIdentification>
    </gmd:identificationInfo>
+   <gmd:contentInfo>
+      <gmd:MD_FeatureCatalogueDescription>
+         <gmd:complianceCode>
+            <gco:Boolean>false</gco:Boolean>
+         </gmd:complianceCode>
+         <gmd:language>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php"
+                              codeListValue="eng">eng</gmd:LanguageCode>
+         </gmd:language>
+         <gmd:includedWithDataset>
+            <gco:Boolean>false</gco:Boolean>
+         </gmd:includedWithDataset>
+         <gmd:featureTypes>
+            <gco:LocalName>Data Table</gco:LocalName>
+         </gmd:featureTypes>
+         <gmd:featureCatalogueCitation xlink:href="https://inport.nmfs.noaa.gov/inport/item/47182"
+                                       xlink:actuate="onRequest">
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>*-Locations.csv</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2017-09-06</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+            </gmd:CI_Citation>
+         </gmd:featureCatalogueCitation>
+         <gmd:featureCatalogueCitation xlink:href="https://inport.nmfs.noaa.gov/inport/item/47183"
+                                       xlink:actuate="onRequest">
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>*-All.csv</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2017-09-06</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+            </gmd:CI_Citation>
+         </gmd:featureCatalogueCitation>
+         <gmd:featureCatalogueCitation xlink:href="https://inport.nmfs.noaa.gov/inport/item/47184"
+                                       xlink:actuate="onRequest">
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>*-Argos.csv</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2017-09-06</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+            </gmd:CI_Citation>
+         </gmd:featureCatalogueCitation>
+         <gmd:featureCatalogueCitation xlink:href="https://inport.nmfs.noaa.gov/inport/item/47185"
+                                       xlink:actuate="onRequest">
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>*-Corrupt.csv</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2017-09-06</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+            </gmd:CI_Citation>
+         </gmd:featureCatalogueCitation>
+         <gmd:featureCatalogueCitation xlink:href="https://inport.nmfs.noaa.gov/inport/item/47186"
+                                       xlink:actuate="onRequest">
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>*-FastGPS.csv</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2017-09-06</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+            </gmd:CI_Citation>
+         </gmd:featureCatalogueCitation>
+         <gmd:featureCatalogueCitation xlink:href="https://inport.nmfs.noaa.gov/inport/item/47187"
+                                       xlink:actuate="onRequest">
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>*-Histos.csv</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2017-09-07</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+            </gmd:CI_Citation>
+         </gmd:featureCatalogueCitation>
+         <gmd:featureCatalogueCitation xlink:href="https://inport.nmfs.noaa.gov/inport/item/47188"
+                                       xlink:actuate="onRequest">
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>*-Labels.csv</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2017-09-06</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+            </gmd:CI_Citation>
+         </gmd:featureCatalogueCitation>
+         <gmd:featureCatalogueCitation xlink:href="https://inport.nmfs.noaa.gov/inport/item/47189"
+                                       xlink:actuate="onRequest">
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>*-MinMaxDepth.csv</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2017-09-07</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+            </gmd:CI_Citation>
+         </gmd:featureCatalogueCitation>
+         <gmd:featureCatalogueCitation xlink:href="https://inport.nmfs.noaa.gov/inport/item/47190"
+                                       xlink:actuate="onRequest">
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>RawArgos.csv</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2017-09-06</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+            </gmd:CI_Citation>
+         </gmd:featureCatalogueCitation>
+         <gmd:featureCatalogueCitation xlink:href="https://inport.nmfs.noaa.gov/inport/item/47191"
+                                       xlink:actuate="onRequest">
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>*-RTC.csv</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2017-09-07</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+            </gmd:CI_Citation>
+         </gmd:featureCatalogueCitation>
+         <gmd:featureCatalogueCitation xlink:href="https://inport.nmfs.noaa.gov/inport/item/47192"
+                                       xlink:actuate="onRequest">
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>*-Status.csv</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2017-09-07</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+            </gmd:CI_Citation>
+         </gmd:featureCatalogueCitation>
+         <gmd:featureCatalogueCitation xlink:href="https://inport.nmfs.noaa.gov/inport/item/47193"
+                                       xlink:actuate="onRequest">
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>*-Summary.csv</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2017-09-07</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+            </gmd:CI_Citation>
+         </gmd:featureCatalogueCitation>
+      </gmd:MD_FeatureCatalogueDescription>
+   </gmd:contentInfo>
    <gmd:distributionInfo>
       <gmd:MD_Distribution>
          <gmd:distributor>
