@@ -98,7 +98,7 @@
       </gmd:CI_ResponsibleParty>
    </gmd:contact>
    <gmd:dateStamp>
-      <gco:DateTime>2017-09-07T15:09:38</gco:DateTime>
+      <gco:DateTime>2017-09-08T13:48:49</gco:DateTime>
    </gmd:dateStamp>
    <gmd:metadataStandardName>
       <gco:CharacterString>ISO 19115-2 Geographic Information - Metadata Part 2 Extensions for imagery and gridded data</gco:CharacterString>
@@ -252,16 +252,18 @@ Boveng, P.L. and M.F. Cameron. 2013. Pinniped movements and foraging: seasonal m
                                                codeListValue="tableDigital">tableDigital</gmd:CI_PresentationFormCode>
                </gmd:presentationForm>
                <gmd:otherCitationDetails>
-                  <gco:CharacterString>London, J.M., P.L. Boveng, and M.F. Cameron (2015): Telemetry dataset from satellite tags deployed on adult bearded seals in Kotzebue, Alaska. Alaska Fisheries Science Center, National Oceanic and Atmospheric Administration. --doi:TBD, contact authors for updated citation details--</gco:CharacterString>
+                  <gco:CharacterString>London, J.M., M.F. Cameron, and P.L Boveng (2017): Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive). Alaska Fisheries Science Center, National Oceanic and Atmospheric Administration. --doi:TBD, contact authors for updated citation details--</gco:CharacterString>
                </gmd:otherCitationDetails>
             </gmd:CI_Citation>
          </gmd:citation>
          <gmd:abstract>
-            <gco:CharacterString>Bearded seals (Erignathus barbatus) are one of the most important subsistence resources for the indigenous people of coastal northern and western Alaska, as well as key components of Arctic marine ecosystems, yet relatively little about their abundance, seasonal distribution, migrations, or foraging behaviors has been documented scientifically. Ice-associated seal populations may be negatively impacted by offshore oil and gas development as well as by climate change. Our ability to predict impacts, however, is limited by inadequate knowledge of seal population structure and foraging ecology. By working cooperatively with Alaska Native subsistence hunters we developed methods for live- capturing bearded seals in the Chukchi Sea using nets set in the shallow coastal waters where bearded seals were foraging.  Capture efforts were based out of Kotzebue and various locations in the North Slope Borough from Wainwright to Barrow in June and July from 2009 to 2012.  In all, 7 seals were caught (2 adults and 5 sub-adults; 4 males and three females; ranging in length and weight from 159 cm and 116 kg to 216 cm and 253 kg), all from Kotzebue Sound.  Each seal was released with two different types of satellite-linked, geo-locating data recorders (SDRs): the SPOT SDR, attached to a rear flipper, provided information on the timing of hauling out and on the seal’s location for up to three years; the MK10 SDR, glued to the top of a seal’s head, provided the same information as the SPOT SDR and also provided data on the timing and depths of dives, for up to ten months. </gco:CharacterString>
+            <gco:CharacterString>This dataset represents the satellite telemetry data from deployments on 7 adult Bearded seals (Erignathus barbatus) captured and released near Kotzebue, Alaska between 2009 and 2012. Bearded seals are one of the most important subsistence resources for the indigenous people of coastal northern and western Alaska, as well as key components of Arctic marine ecosystems, yet relatively little about their abundance, seasonal distribution, migrations, or foraging behaviors has been documented scientifically. Capture efforts were based out of Kotzebue in June and July from 2009 to 2012. In all, 2 adults and 5 sub-adults were released with satellite tags: 4 males and three females. Length and weight ranged from 159 cm and 116 kg to 216 cm and 253 kg. Each seal was released with two different types of satellite-linked, geo-locating data recorders from Wildlife Computers (Redmond, Washington, USA). The SPOT type tags were attached to a rear flipper. These tags provide information on the timing of haul out behavior and on the seal’s location for up to three years. The MK10 type was glued to hair on the top of a seal’s head. These tags provided the same information as the SPOT type and also provided data on the timing and depths of dives, for up to ten months. This dataset includes the 'raw archive' data as obtained from the Wildlife Computers data portal. A separate dataset includes a 'processed' dataset that has been cleaned and organized for more efficient data analysis. Most users will only be interested in the 'processed' dataset. Several R/Rmarkdown (*.Rmd) files describe the process in more detail along with source code used for any data manipulation.</gco:CharacterString>
          </gmd:abstract>
-         <gmd:purpose gco:nilReason="missing"/>
+         <gmd:purpose>
+            <gco:CharacterString>This dataset represents a complete archive of the satellite telemetry data from this research effort. This provides a preserved archive of these data.</gco:CharacterString>
+         </gmd:purpose>
          <gmd:credit>
-            <gco:CharacterString>London, J.M., P.L. Boveng, and M.F. Cameron (2015): Telemetry dataset from satellite tags deployed on adult bearded seals in Kotzebue, Alaska. Alaska Fisheries Science Center, National Oceanic and Atmospheric Administration. --doi:TBD, contact authors for updated citation details--</gco:CharacterString>
+            <gco:CharacterString>London, J.M., M.F. Cameron, and P.L Boveng (2017): Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive). Alaska Fisheries Science Center, National Oceanic and Atmospheric Administration. --doi:TBD, contact authors for updated citation details--</gco:CharacterString>
          </gmd:credit>
          <gmd:status>
             <gmd:MD_ProgressCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_ProgressCode"
@@ -405,7 +407,7 @@ Boveng, P.L. and M.F. Cameron. 2013. Pinniped movements and foraging: seasonal m
             <gmd:MD_MaintenanceInformation>
                <gmd:maintenanceAndUpdateFrequency>
                   <gmd:MD_MaintenanceFrequencyCode codeList="http://www.tc211.org/ISO19139/resources/codeList.xml#MD_MaintenanceFrequencyCode"
-                                                   codeListValue="notPlanned"/>
+                                                   codeListValue="asNeeded"/>
                </gmd:maintenanceAndUpdateFrequency>
             </gmd:MD_MaintenanceInformation>
          </gmd:resourceMaintenance>
@@ -564,7 +566,7 @@ Boveng, P.L. and M.F. Cameron. 2013. Pinniped movements and foraging: seasonal m
                                           codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
                </gmd:useConstraints>
                <gmd:otherConstraints>
-                  <gco:CharacterString>Access Constraints: The data set is in the process of being archived with the NOAA National Centers for Environmental Information. Once the archival process is complete and verified, the data set will be publicly available. | Use Constraints: User must read and fully comprehend the metadata prior to use. Applications or inferences derived from the data should be carefully considered for accuracy. While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. Acknowledge NOAA/NMFS/AFSC or the specified citation as the source from which these data were obtained in any publications and/or other representations of these data. Communication and collaboration with dataset authors is strongly encouraged. | Distribution Liability: While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. </gco:CharacterString>
+                  <gco:CharacterString>Access Constraints: The data set is intended to be archived with the Arctic Data Center (arcticdata.io) and the Data Observation Network for Earth (DataONE). Once the archival process is complete and verified, the data set will be publicly available. | Use Constraints: User must read and fully comprehend the metadata prior to use. Applications or inferences derived from the data should be carefully considered for accuracy. While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. Acknowledge NOAA/NMFS/AFSC or the specified citation as the source from which these data were obtained in any publications and/or other representations of these data. Communication and collaboration with dataset authors is strongly encouraged. | Distribution Liability: While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. </gco:CharacterString>
                </gmd:otherConstraints>
             </gmd:MD_LegalConstraints>
          </gmd:resourceConstraints>
@@ -621,7 +623,9 @@ Boveng, P.L. and M.F. Cameron. 2013. Pinniped movements and foraging: seasonal m
                </gmd:temporalElement>
             </gmd:EX_Extent>
          </gmd:extent>
-         <gmd:supplementalInformation gco:nilReason="missing"/>
+         <gmd:supplementalInformation>
+            <gco:CharacterString>The file 'kotzeb0912_get_data.Rmd' is an R/Rmarkdown file that includes more detailed description of the process as well as the source code use.</gco:CharacterString>
+         </gmd:supplementalInformation>
       </gmd:MD_DataIdentification>
    </gmd:identificationInfo>
    <gmd:distributionInfo>

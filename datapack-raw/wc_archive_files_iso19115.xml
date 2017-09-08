@@ -20,9 +20,6 @@
       <gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode"
                                codeListValue="UTF8">UTF8</gmd:MD_CharacterSetCode>
    </gmd:characterSet>
-   <gmd:parentIdentifier>
-      <gco:CharacterString>47176</gco:CharacterString>
-   </gmd:parentIdentifier>
    <gmd:hierarchyLevel>
       <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode"
                         codeListValue="dataset">dataset</gmd:MD_ScopeCode>
@@ -101,7 +98,7 @@
       </gmd:CI_ResponsibleParty>
    </gmd:contact>
    <gmd:dateStamp>
-      <gco:DateTime>2017-09-07T14:43:46</gco:DateTime>
+      <gco:DateTime>2017-09-08T15:47:40</gco:DateTime>
    </gmd:dateStamp>
    <gmd:metadataStandardName>
       <gco:CharacterString>ISO 19115-2 Geographic Information - Metadata Part 2 Extensions for imagery and gridded data</gco:CharacterString>
@@ -513,7 +510,7 @@
          <gmd:descriptiveKeywords>
             <gmd:MD_Keywords>
                <gmd:keyword>
-                  <gco:CharacterString>Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive)</gco:CharacterString>
+                  <gco:CharacterString>Polar Ecosystems Program</gco:CharacterString>
                </gmd:keyword>
                <gmd:type>
                   <gmd:MD_KeywordTypeCode codeList="https://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode"
@@ -555,6 +552,44 @@
          <gmd:topicCategory>
             <gmd:MD_TopicCategoryCode>environment</gmd:MD_TopicCategoryCode>
          </gmd:topicCategory>
+         <gmd:extent>
+            <gmd:EX_Extent>
+               <gmd:temporalElement>
+                  <gmd:EX_TemporalExtent>
+                     <gmd:extent>
+                        <gml:TimePeriod gml:id="boundingTemporalExtent-1-1">
+                           <gml:description> | Currentness: Ground Condition</gml:description>
+                           <gml:beginPosition>2017</gml:beginPosition>
+                           <gml:endPosition indeterminatePosition="now"/>
+                        </gml:TimePeriod>
+                     </gmd:extent>
+                  </gmd:EX_TemporalExtent>
+               </gmd:temporalElement>
+            </gmd:EX_Extent>
+         </gmd:extent>
+         <gmd:extent>
+            <gmd:EX_Extent>
+               <gmd:description>
+                  <gco:CharacterString>Geographic Area Description: This record represents a generic description of archive data files from Wildlife Computers satellite tags. These tags could be deployed on animals worldwide, therefore the extent is set accordingly. More applicable spatial extents should be derived from parent records.</gco:CharacterString>
+               </gmd:description>
+               <gmd:geographicElement>
+                  <gmd:EX_GeographicBoundingBox>
+                     <gmd:westBoundLongitude>
+                        <gco:Decimal>179.99</gco:Decimal>
+                     </gmd:westBoundLongitude>
+                     <gmd:eastBoundLongitude>
+                        <gco:Decimal>180</gco:Decimal>
+                     </gmd:eastBoundLongitude>
+                     <gmd:southBoundLatitude>
+                        <gco:Decimal>-90</gco:Decimal>
+                     </gmd:southBoundLatitude>
+                     <gmd:northBoundLatitude>
+                        <gco:Decimal>90</gco:Decimal>
+                     </gmd:northBoundLatitude>
+                  </gmd:EX_GeographicBoundingBox>
+               </gmd:geographicElement>
+            </gmd:EX_Extent>
+         </gmd:extent>
          <gmd:supplementalInformation>
             <gco:CharacterString>Wildlife Computers is located in Redmond, Washington, USA. https://wildlifecomputers.com/. In addition to contacting the data owners and other points of contact, Wildlife Computers may also be able to provide additional information and documentation upon request.</gco:CharacterString>
          </gmd:supplementalInformation>
@@ -584,11 +619,11 @@
                <gmd:date>
                   <gmd:CI_Date>
                      <gmd:date>
-                        <gco:Date>2017-09-06</gco:Date>
+                        <gco:Date>2017-09-08</gco:Date>
                      </gmd:date>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
-                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                             codeListValue="publication">publication</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
@@ -603,11 +638,11 @@
                <gmd:date>
                   <gmd:CI_Date>
                      <gmd:date>
-                        <gco:Date>2017-09-06</gco:Date>
+                        <gco:Date>2017-09-08</gco:Date>
                      </gmd:date>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
-                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                             codeListValue="publication">publication</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
@@ -622,11 +657,11 @@
                <gmd:date>
                   <gmd:CI_Date>
                      <gmd:date>
-                        <gco:Date>2017-09-06</gco:Date>
+                        <gco:Date>2017-09-08</gco:Date>
                      </gmd:date>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
-                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                             codeListValue="publication">publication</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
@@ -641,11 +676,11 @@
                <gmd:date>
                   <gmd:CI_Date>
                      <gmd:date>
-                        <gco:Date>2017-09-06</gco:Date>
+                        <gco:Date>2017-09-08</gco:Date>
                      </gmd:date>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
-                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                             codeListValue="publication">publication</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
@@ -660,11 +695,11 @@
                <gmd:date>
                   <gmd:CI_Date>
                      <gmd:date>
-                        <gco:Date>2017-09-06</gco:Date>
+                        <gco:Date>2017-09-08</gco:Date>
                      </gmd:date>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
-                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                             codeListValue="publication">publication</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
@@ -679,11 +714,11 @@
                <gmd:date>
                   <gmd:CI_Date>
                      <gmd:date>
-                        <gco:Date>2017-09-07</gco:Date>
+                        <gco:Date>2017-09-08</gco:Date>
                      </gmd:date>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
-                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                             codeListValue="publication">publication</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
@@ -698,11 +733,11 @@
                <gmd:date>
                   <gmd:CI_Date>
                      <gmd:date>
-                        <gco:Date>2017-09-06</gco:Date>
+                        <gco:Date>2017-09-08</gco:Date>
                      </gmd:date>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
-                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                             codeListValue="publication">publication</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
@@ -717,11 +752,11 @@
                <gmd:date>
                   <gmd:CI_Date>
                      <gmd:date>
-                        <gco:Date>2017-09-07</gco:Date>
+                        <gco:Date>2017-09-08</gco:Date>
                      </gmd:date>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
-                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                             codeListValue="publication">publication</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
@@ -736,11 +771,11 @@
                <gmd:date>
                   <gmd:CI_Date>
                      <gmd:date>
-                        <gco:Date>2017-09-06</gco:Date>
+                        <gco:Date>2017-09-08</gco:Date>
                      </gmd:date>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
-                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                             codeListValue="publication">publication</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
@@ -755,11 +790,11 @@
                <gmd:date>
                   <gmd:CI_Date>
                      <gmd:date>
-                        <gco:Date>2017-09-07</gco:Date>
+                        <gco:Date>2017-09-08</gco:Date>
                      </gmd:date>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
-                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                             codeListValue="publication">publication</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
@@ -774,11 +809,11 @@
                <gmd:date>
                   <gmd:CI_Date>
                      <gmd:date>
-                        <gco:Date>2017-09-07</gco:Date>
+                        <gco:Date>2017-09-08</gco:Date>
                      </gmd:date>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
-                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                             codeListValue="publication">publication</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
@@ -793,11 +828,11 @@
                <gmd:date>
                   <gmd:CI_Date>
                      <gmd:date>
-                        <gco:Date>2017-09-07</gco:Date>
+                        <gco:Date>2017-09-08</gco:Date>
                      </gmd:date>
                      <gmd:dateType>
                         <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
-                                             codeListValue="revision">revision</gmd:CI_DateTypeCode>
+                                             codeListValue="publication">publication</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
