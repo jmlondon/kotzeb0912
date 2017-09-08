@@ -1,768 +1,269 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmi:MI_Metadata xmlns:gmi="http://www.isotc211.org/2005/gmi"
-                 xmlns:gco="http://www.isotc211.org/2005/gco"
-                 xmlns:gmd="http://www.isotc211.org/2005/gmd"
-                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
-                 xmlns:gts="http://www.isotc211.org/2005/gts"
-                 xmlns:gml="http://www.opengis.net/gml/3.2"
-                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xsi:schemaLocation="http://www.isotc211.org/2005/gmi https://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd">
-   <gmd:fileIdentifier>
-      <gco:CharacterString>gov.noaa.nmfs.inport:47176</gco:CharacterString>
-   </gmd:fileIdentifier>
-   <gmd:language>
-      <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php"
-                        codeListValue="eng">eng</gmd:LanguageCode>
-   </gmd:language>
-   <gmd:characterSet>
-      <gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode"
-                               codeListValue="UTF8">UTF8</gmd:MD_CharacterSetCode>
-   </gmd:characterSet>
-   <gmd:hierarchyLevel>
-      <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode"
-                        codeListValue="dataset">dataset</gmd:MD_ScopeCode>
-   </gmd:hierarchyLevel>
-   <gmd:contact>
-      <gmd:CI_ResponsibleParty>
-         <gmd:individualName>
-            <gco:CharacterString>London, Josh </gco:CharacterString>
-         </gmd:individualName>
-         <gmd:organisationName>
-            <gco:CharacterString>Alaska Fisheries Science Center</gco:CharacterString>
-         </gmd:organisationName>
-         <gmd:contactInfo>
-            <gmd:CI_Contact>
-               <gmd:phone>
-                  <gmd:CI_Telephone>
-                     <gmd:voice>
-                        <gco:CharacterString>206-526-4296</gco:CharacterString>
-                     </gmd:voice>
-                     <gmd:facsimile gco:nilReason="missing"/>
-                  </gmd:CI_Telephone>
-               </gmd:phone>
-               <gmd:address>
-                  <gmd:CI_Address>
-                     <gmd:deliveryPoint>
-                        <gco:CharacterString>7600 Sand Point Way N.E., Building 4</gco:CharacterString>
-                     </gmd:deliveryPoint>
-                     <gmd:city>
-                        <gco:CharacterString>Seattle</gco:CharacterString>
-                     </gmd:city>
-                     <gmd:administrativeArea>
-                        <gco:CharacterString>WA</gco:CharacterString>
-                     </gmd:administrativeArea>
-                     <gmd:postalCode>
-                        <gco:CharacterString>98115</gco:CharacterString>
-                     </gmd:postalCode>
-                     <gmd:country>
-                        <gco:CharacterString>USA</gco:CharacterString>
-                     </gmd:country>
-                     <gmd:electronicMailAddress>
-                        <gco:CharacterString>josh.london@noaa.gov</gco:CharacterString>
-                     </gmd:electronicMailAddress>
-                  </gmd:CI_Address>
-               </gmd:address>
-               <gmd:onlineResource>
-                  <gmd:CI_OnlineResource>
-                     <gmd:linkage>
-                        <gmd:URL>http://www.afsc.noaa.gov</gmd:URL>
-                     </gmd:linkage>
-                     <gmd:protocol>
-                        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
-                     </gmd:protocol>
-                     <gmd:name>
-                        <gco:CharacterString>Website</gco:CharacterString>
-                     </gmd:name>
-                     <gmd:description>
-                        <gco:CharacterString>Website listed for this contact</gco:CharacterString>
-                     </gmd:description>
-                     <gmd:function>
-                        <gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode"
-                                                   codeListValue="information">information</gmd:CI_OnLineFunctionCode>
-                     </gmd:function>
-                  </gmd:CI_OnlineResource>
-               </gmd:onlineResource>
-               <gmd:hoursOfService>
-                  <gco:CharacterString>0700-1700 Pacific Time</gco:CharacterString>
-               </gmd:hoursOfService>
-               <gmd:contactInstructions gco:nilReason="missing"/>
-            </gmd:CI_Contact>
-         </gmd:contactInfo>
-         <gmd:role>
-            <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:CI_RoleCode"
-                             codeListValue="pointOfContact">pointOfContact
-                    </gmd:CI_RoleCode>
-         </gmd:role>
-      </gmd:CI_ResponsibleParty>
-   </gmd:contact>
-   <gmd:dateStamp>
-      <gco:DateTime>2017-09-08T13:48:49</gco:DateTime>
-   </gmd:dateStamp>
-   <gmd:metadataStandardName>
-      <gco:CharacterString>ISO 19115-2 Geographic Information - Metadata Part 2 Extensions for imagery and gridded data</gco:CharacterString>
-   </gmd:metadataStandardName>
-   <gmd:metadataStandardVersion>
-      <gco:CharacterString>ISO 19115-2:2009(E)</gco:CharacterString>
-   </gmd:metadataStandardVersion>
-   <gmd:identificationInfo>
-      <gmd:MD_DataIdentification>
-         <gmd:citation>
-            <gmd:CI_Citation>
-               <gmd:title>
-                  <gco:CharacterString>Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive)</gco:CharacterString>
-               </gmd:title>
-               <gmd:alternateTitle>
-                  <gco:CharacterString>Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive)</gco:CharacterString>
-               </gmd:alternateTitle>
-               <gmd:date>
-                  <gmd:CI_Date>
-                     <gmd:date gco:nilReason="unpublished"/>
-                     <gmd:dateType>
-                        <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/codeList.xml#CI_DateTypeCode"
-                                             codeListValue="publication">publication</gmd:CI_DateTypeCode>
-                     </gmd:dateType>
-                  </gmd:CI_Date>
-               </gmd:date>
-               <gmd:identifier>
-                  <gmd:MD_Identifier>
-                     <gmd:authority>
-                        <gmd:CI_Citation>
-                           <gmd:title>
-                              <gco:CharacterString>NOAA/NMFS/EDM</gco:CharacterString>
-                           </gmd:title>
-                           <gmd:date gco:nilReason="inapplicable"/>
-                        </gmd:CI_Citation>
-                     </gmd:authority>
-                     <gmd:code>
-                        <gmx:Anchor xlink:href="https://inport.nmfs.noaa.gov/inport/item/47176"
-                                    xlink:actuate="onRequest"
-                                    xlink:title="InPort Catalog ID">47176</gmx:Anchor>
-                     </gmd:code>
-                  </gmd:MD_Identifier>
-               </gmd:identifier>
-               <gmd:citedResponsibleParty>
-                  <gmd:CI_ResponsibleParty>
-                     <gmd:individualName>
-                        <gco:CharacterString>London, Josh </gco:CharacterString>
-                     </gmd:individualName>
-                     <gmd:organisationName>
-                        <gco:CharacterString>Alaska Fisheries Science Center</gco:CharacterString>
-                     </gmd:organisationName>
-                     <gmd:contactInfo>
-                        <gmd:CI_Contact>
-                           <gmd:phone>
-                              <gmd:CI_Telephone>
-                                 <gmd:voice>
-                                    <gco:CharacterString>206-526-4296</gco:CharacterString>
-                                 </gmd:voice>
-                                 <gmd:facsimile gco:nilReason="missing"/>
-                              </gmd:CI_Telephone>
-                           </gmd:phone>
-                           <gmd:address>
-                              <gmd:CI_Address>
-                                 <gmd:deliveryPoint>
-                                    <gco:CharacterString>7600 Sand Point Way N.E., Building 4</gco:CharacterString>
-                                 </gmd:deliveryPoint>
-                                 <gmd:city>
-                                    <gco:CharacterString>Seattle</gco:CharacterString>
-                                 </gmd:city>
-                                 <gmd:administrativeArea>
-                                    <gco:CharacterString>WA</gco:CharacterString>
-                                 </gmd:administrativeArea>
-                                 <gmd:postalCode>
-                                    <gco:CharacterString>98115</gco:CharacterString>
-                                 </gmd:postalCode>
-                                 <gmd:country>
-                                    <gco:CharacterString>USA</gco:CharacterString>
-                                 </gmd:country>
-                                 <gmd:electronicMailAddress>
-                                    <gco:CharacterString>josh.london@noaa.gov</gco:CharacterString>
-                                 </gmd:electronicMailAddress>
-                              </gmd:CI_Address>
-                           </gmd:address>
-                           <gmd:onlineResource>
-                              <gmd:CI_OnlineResource>
-                                 <gmd:linkage>
-                                    <gmd:URL>http://www.afsc.noaa.gov</gmd:URL>
-                                 </gmd:linkage>
-                                 <gmd:protocol>
-                                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
-                                 </gmd:protocol>
-                                 <gmd:name>
-                                    <gco:CharacterString>Website</gco:CharacterString>
-                                 </gmd:name>
-                                 <gmd:description>
-                                    <gco:CharacterString>Website listed for this contact</gco:CharacterString>
-                                 </gmd:description>
-                                 <gmd:function>
-                                    <gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode"
-                                                               codeListValue="information">information</gmd:CI_OnLineFunctionCode>
-                                 </gmd:function>
-                              </gmd:CI_OnlineResource>
-                           </gmd:onlineResource>
-                           <gmd:hoursOfService>
-                              <gco:CharacterString>0700-1700 Pacific Time</gco:CharacterString>
-                           </gmd:hoursOfService>
-                           <gmd:contactInstructions gco:nilReason="missing"/>
-                        </gmd:CI_Contact>
-                     </gmd:contactInfo>
-                     <gmd:role>
-                        <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:CI_RoleCode"
-                                         codeListValue="originator">originator
-                    </gmd:CI_RoleCode>
-                     </gmd:role>
-                  </gmd:CI_ResponsibleParty>
-               </gmd:citedResponsibleParty>
-               <gmd:citedResponsibleParty>
-                  <gmd:CI_ResponsibleParty>
-                     <gmd:organisationName gco:nilReason="inapplicable"/>
-                     <gmd:contactInfo>
-                        <gmd:CI_Contact>
-                           <gmd:onlineResource>
-                              <gmd:CI_OnlineResource>
-                                 <gmd:linkage>
-                                    <gmd:URL>http://www.boem.gov/BOEM-Newsroom/Library/Publications/2013/BOEM_2013_001150_pdf.aspx</gmd:URL>
-                                 </gmd:linkage>
-                                 <gmd:protocol>
-                                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
-                                 </gmd:protocol>
-                                 <gmd:name>
-                                    <gco:CharacterString>Citation URL</gco:CharacterString>
-                                 </gmd:name>
-                                 <gmd:description>
-                                    <gco:CharacterString>This online resource provides the user with a copy of the final contract report to BOEM. This document thoroughly describes the project objectives, methods, and initial outcomes.
+<inport-metadata xmlns:xs="http://www.w3.org/2001/XMLSchema" version="0.9">
+   <item-identification>
+      <catalog-item-id>47176</catalog-item-id>
+      <title>Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive)</title>
+      <short-name>Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive)</short-name>
+      <catalog-item-type>Data Set</catalog-item-type>
+      <metadata-workflow-state ccs-id="4">Draft</metadata-workflow-state>
+      <parent-catalog-item-id>23108</parent-catalog-item-id>
+      <parent-title>Polar Ecosystems Program</parent-title>
+      <parent-catalog-item-type>Project</parent-catalog-item-type>
+      <status>Complete</status>
+      <abstract>This dataset represents the satellite telemetry data from deployments on 7 adult Bearded seals (Erignathus barbatus) captured and released near Kotzebue, Alaska between 2009 and 2012. Bearded seals are one of the most important subsistence resources for the indigenous people of coastal northern and western Alaska, as well as key components of Arctic marine ecosystems, yet relatively little about their abundance, seasonal distribution, migrations, or foraging behaviors has been documented scientifically. Capture efforts were based out of Kotzebue in June and July from 2009 to 2012. In all, 2 adults and 5 sub-adults were released with satellite tags: 4 males and three females. Length and weight ranged from 159 cm and 116 kg to 216 cm and 253 kg. Each seal was released with two different types of satellite-linked, geo-locating data recorders from Wildlife Computers (Redmond, Washington, USA). The SPOT type tags were attached to a rear flipper. These tags provide information on the timing of haul out behavior and on the seal’s location for up to three years. The MK10 type was glued to hair on the top of a seal’s head. These tags provided the same information as the SPOT type and also provided data on the timing and depths of dives, for up to ten months. This dataset includes the 'raw archive' data as obtained from the Wildlife Computers data portal. A separate dataset includes a 'processed' dataset that has been cleaned and organized for more efficient data analysis. Most users will only be interested in the 'processed' dataset. Several R/Rmarkdown (*.Rmd) files describe the process in more detail along with source code used for any data manipulation.</abstract>
+      <purpose>This dataset represents a complete archive of the satellite telemetry data from this research effort. This provides a preserved archive of these data.</purpose>
+      <other-citation-details>London, J.M., M.F. Cameron, and P.L Boveng (2017): Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive). Alaska Fisheries Science Center, National Oceanic and Atmospheric Administration. --doi:TBD, contact authors for updated citation details--</other-citation-details>
+      <supplemental-information>The file 'kotzeb0912_get_data.Rmd' is an R/Rmarkdown file that includes more detailed description of the process as well as the source code use.</supplemental-information>
+   </item-identification>
+   <keywords>
+      <keyword>
+         <keyword-type>Theme</keyword-type>
+         <thesaurus>Integrated Taxonomic Information systems (ITIS)</thesaurus>
+         <keyword>Bearded Seal</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Theme</keyword-type>
+         <thesaurus>ISO 19115 Topic Category</thesaurus>
+         <keyword>biota</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Theme</keyword-type>
+         <thesaurus>ISO 19115 Topic Category</thesaurus>
+         <keyword>environment</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Spatial</keyword-type>
+         <thesaurus>Geographic Names Information System</thesaurus>
+         <keyword>Alaska</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Spatial</keyword-type>
+         <thesaurus>Geographic Names Information System</thesaurus>
+         <keyword>Arctic Ocean</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Spatial</keyword-type>
+         <thesaurus>Geographic Names Information System</thesaurus>
+         <keyword>Beaufort Sea</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Spatial</keyword-type>
+         <thesaurus>Geographic Names Information System</thesaurus>
+         <keyword>Bering Sea</keyword>
+      </keyword>
+      <keyword>
+         <keyword-type>Spatial</keyword-type>
+         <thesaurus>Geographic Names Information System</thesaurus>
+         <keyword>Chukchi Sea</keyword>
+      </keyword>
+   </keywords>
+   <physical-location>
+      <organization>Alaska Fisheries Science Center</organization>
+      <city>Seattle</city>
+      <state-province>WA</state-province>
+      <country>USA</country>
+   </physical-location>
+   <data-set-information>
+      <data-set-type>CSV Files</data-set-type>
+      <maintenance-frequency>As needed</maintenance-frequency>
+      <data-set-publication-status>Unpublished</data-set-publication-status>
+      <data-presentation-form>Table (digital)</data-presentation-form>
+      <source-media-type>online</source-media-type>
+      <distribution-liability>While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. </distribution-liability>
+      <data-set-credit>London, J.M., M.F. Cameron, and P.L Boveng (2017): Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive). Alaska Fisheries Science Center, National Oceanic and Atmospheric Administration. --doi:TBD, contact authors for updated citation details--</data-set-credit>
+      <instrument>Animal Mounted Instrument - Argos Satellite Transmitter</instrument>
+      <platform>Animal Based Platform - Mammal - Phocid</platform>
+      <physical-collection-fishing-gear>N/A</physical-collection-fishing-gear>
+   </data-set-information>
+   <support-roles>
+      <support-role cc-id="580793">
+         <support-role-type>Data Steward</support-role-type>
+         <from-date>20151101</from-date>
+         <person>London, Josh </person>
+         <person-email>josh.london@noaa.gov</person-email>
+         <person-address-type>Mailing</person-address-type>
+         <person-address>7600 Sand Point Way N.E., Building 4</person-address>
+         <person-address-city>Seattle</person-address-city>
+         <person-address-state>WA</person-address-state>
+         <person-address-zip>98115</person-address-zip>
+         <person-phone-number>206-526-4296</person-phone-number>
+         <organization>Alaska Fisheries Science Center</organization>
+         <organization-address>7600 Sand Point Way N.E., Building 4</organization-address>
+         <organization-address-city>Seattle</organization-address-city>
+         <organization-address-zip>98115</organization-address-zip>
+         <organization-address-country>USA</organization-address-country>
+         <organization-url>http://www.afsc.noaa.gov</organization-url>
+         <organization-business-hours>0700-1700 Pacific Time</organization-business-hours>
+      </support-role>
+      <support-role cc-id="580792">
+         <support-role-type>Distributor</support-role-type>
+         <from-date>20151101</from-date>
+         <person>London, Josh </person>
+         <person-email>josh.london@noaa.gov</person-email>
+         <person-address-type>Mailing</person-address-type>
+         <person-address>7600 Sand Point Way N.E., Building 4</person-address>
+         <person-address-city>Seattle</person-address-city>
+         <person-address-state>WA</person-address-state>
+         <person-address-zip>98115</person-address-zip>
+         <person-phone-number>206-526-4296</person-phone-number>
+         <organization>Alaska Fisheries Science Center</organization>
+         <organization-address>7600 Sand Point Way N.E., Building 4</organization-address>
+         <organization-address-city>Seattle</organization-address-city>
+         <organization-address-zip>98115</organization-address-zip>
+         <organization-address-country>USA</organization-address-country>
+         <organization-url>http://www.afsc.noaa.gov</organization-url>
+         <organization-business-hours>0700-1700 Pacific Time</organization-business-hours>
+      </support-role>
+      <support-role cc-id="580791">
+         <support-role-type>Metadata Contact</support-role-type>
+         <from-date>20151101</from-date>
+         <person>London, Josh </person>
+         <person-email>josh.london@noaa.gov</person-email>
+         <person-address-type>Mailing</person-address-type>
+         <person-address>7600 Sand Point Way N.E., Building 4</person-address>
+         <person-address-city>Seattle</person-address-city>
+         <person-address-state>WA</person-address-state>
+         <person-address-zip>98115</person-address-zip>
+         <person-phone-number>206-526-4296</person-phone-number>
+         <organization>Alaska Fisheries Science Center</organization>
+         <organization-address>7600 Sand Point Way N.E., Building 4</organization-address>
+         <organization-address-city>Seattle</organization-address-city>
+         <organization-address-zip>98115</organization-address-zip>
+         <organization-address-country>USA</organization-address-country>
+         <organization-url>http://www.afsc.noaa.gov</organization-url>
+         <organization-business-hours>0700-1700 Pacific Time</organization-business-hours>
+      </support-role>
+      <support-role cc-id="580790">
+         <support-role-type>Originator</support-role-type>
+         <from-date>20151101</from-date>
+         <person>London, Josh </person>
+         <person-email>josh.london@noaa.gov</person-email>
+         <person-address-type>Mailing</person-address-type>
+         <person-address>7600 Sand Point Way N.E., Building 4</person-address>
+         <person-address-city>Seattle</person-address-city>
+         <person-address-state>WA</person-address-state>
+         <person-address-zip>98115</person-address-zip>
+         <person-phone-number>206-526-4296</person-phone-number>
+         <organization>Alaska Fisheries Science Center</organization>
+         <organization-address>7600 Sand Point Way N.E., Building 4</organization-address>
+         <organization-address-city>Seattle</organization-address-city>
+         <organization-address-zip>98115</organization-address-zip>
+         <organization-address-country>USA</organization-address-country>
+         <organization-url>http://www.afsc.noaa.gov</organization-url>
+         <organization-business-hours>0700-1700 Pacific Time</organization-business-hours>
+      </support-role>
+      <support-role cc-id="580789">
+         <support-role-type>Point of Contact</support-role-type>
+         <from-date>20151101</from-date>
+         <person>Boveng, Peter </person>
+         <person-email>peter.boveng@noaa.gov</person-email>
+         <person-address-type>Mailing</person-address-type>
+         <organization>Alaska Fisheries Science Center</organization>
+         <organization-address>7600 Sand Point Way N.E., Building 4</organization-address>
+         <organization-address-city>Seattle</organization-address-city>
+         <organization-address-zip>98115</organization-address-zip>
+         <organization-address-country>USA</organization-address-country>
+         <organization-url>http://www.afsc.noaa.gov</organization-url>
+         <organization-business-hours>0700-1700 Pacific Time</organization-business-hours>
+      </support-role>
+   </support-roles>
+   <extents>
+      <currentness-reference>Ground Condition</currentness-reference>
+      <extent cc-id="580784">
+         <description/>
+         <geographic-areas>
+            <geographic-area cc-id="580786">
+               <description>Bering Sea, Chukchi Sea, Beaufort Sea, Arctic Ocean</description>
+            </geographic-area>
+            <geographic-area cc-id="580787">
+               <west-bound>-174</west-bound>
+               <east-bound>-143</east-bound>
+               <north-bound>74</north-bound>
+               <south-bound>59</south-bound>
+            </geographic-area>
+         </geographic-areas>
+         <vertical-extents/>
+         <time-frames>
+            <time-frame cc-id="580785">
+               <time-frame-type>Range</time-frame-type>
+               <start-date-time>2008</start-date-time>
+               <end-date-time>2012</end-date-time>
+               <alternate-start-as-of-info/>
+               <alternate-end-as-of-info/>
+               <description/>
+            </time-frame>
+         </time-frames>
+      </extent>
+   </extents>
+   <access-information>
+      <security-class>Unclassified</security-class>
+      <data-access-policy>The data set is intended to be archived with the Arctic Data Center (arcticdata.io) and the Data Observation Network for Earth (DataONE). Once the archival process is complete and verified, the data set will be publicly available. Acknowledge NOAA/NMFS/AFSC as the source from which these data were obtained in any publications and/or other representations of these data. Communication and collaboration with dataset authors is strongly encouraged prior to use.
+</data-access-policy>
+      <data-access-procedure>The data set is intended to be archived with the Arctic Data Center (arcticdata.io) and the Data Observation Network for Earth (DataONE). Once the archival process is complete and verified, the data set will be publicly available.</data-access-procedure>
+      <data-access-constraints>The data set is intended to be archived with the Arctic Data Center (arcticdata.io) and the Data Observation Network for Earth (DataONE). Once the archival process is complete and verified, the data set will be publicly available.</data-access-constraints>
+      <data-use-constraints>User must read and fully comprehend the metadata prior to use. Applications or inferences derived from the data should be carefully considered for accuracy. While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. Acknowledge NOAA/NMFS/AFSC or the specified citation as the source from which these data were obtained in any publications and/or other representations of these data. Communication and collaboration with dataset authors is strongly encouraged.</data-use-constraints>
+      <metadata-access-constraints>no metadata access constraints</metadata-access-constraints>
+      <metadata-use-constraints>Metadata are subject to revision at any time and information within the metadata record should not be cited without author consent. While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. </metadata-use-constraints>
+   </access-information>
+   <distribution-information>
+      <distribution cc-id="580794">
+         <download-url>http://www.nmfs.noaa.gov/data_not_yet_available</download-url>
+      </distribution>
+   </distribution-information>
+   <urls>
+      <url cc-id="580795">
+         <url>http://www.boem.gov/BOEM-Newsroom/Library/Publications/2013/BOEM_2013_001150_pdf.aspx</url>
+         <url-type>Online Resource</url-type>
+         <file-resource-format>PDF</file-resource-format>
+         <description>This online resource provides the user with a copy of the final contract report to BOEM. This document thoroughly describes the project objectives, methods, and initial outcomes.
 
-Boveng, P.L. and M.F. Cameron. 2013. Pinniped movements and foraging: seasonal movements, habitat selection, foraging and haul-out behavior of adult bearded seals in the Chukchi Sea. Final Report, BOEM Report 2013-01150. Bureau of Ocean Energy Management, Alaska Outer Continental Shelf Region, Anchorage, Alaska, USA. 91 Pp + Appendix.</gco:CharacterString>
-                                 </gmd:description>
-                                 <gmd:function>
-                                    <gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode"
-                                                               codeListValue="download">download</gmd:CI_OnLineFunctionCode>
-                                 </gmd:function>
-                              </gmd:CI_OnlineResource>
-                           </gmd:onlineResource>
-                        </gmd:CI_Contact>
-                     </gmd:contactInfo>
-                     <gmd:role gco:nilReason="inapplicable"/>
-                  </gmd:CI_ResponsibleParty>
-               </gmd:citedResponsibleParty>
-               <gmd:presentationForm>
-                  <gmd:CI_PresentationFormCode codeList="https://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode"
-                                               codeListValue="tableDigital">tableDigital</gmd:CI_PresentationFormCode>
-               </gmd:presentationForm>
-               <gmd:otherCitationDetails>
-                  <gco:CharacterString>London, J.M., M.F. Cameron, and P.L Boveng (2017): Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive). Alaska Fisheries Science Center, National Oceanic and Atmospheric Administration. --doi:TBD, contact authors for updated citation details--</gco:CharacterString>
-               </gmd:otherCitationDetails>
-            </gmd:CI_Citation>
-         </gmd:citation>
-         <gmd:abstract>
-            <gco:CharacterString>This dataset represents the satellite telemetry data from deployments on 7 adult Bearded seals (Erignathus barbatus) captured and released near Kotzebue, Alaska between 2009 and 2012. Bearded seals are one of the most important subsistence resources for the indigenous people of coastal northern and western Alaska, as well as key components of Arctic marine ecosystems, yet relatively little about their abundance, seasonal distribution, migrations, or foraging behaviors has been documented scientifically. Capture efforts were based out of Kotzebue in June and July from 2009 to 2012. In all, 2 adults and 5 sub-adults were released with satellite tags: 4 males and three females. Length and weight ranged from 159 cm and 116 kg to 216 cm and 253 kg. Each seal was released with two different types of satellite-linked, geo-locating data recorders from Wildlife Computers (Redmond, Washington, USA). The SPOT type tags were attached to a rear flipper. These tags provide information on the timing of haul out behavior and on the seal’s location for up to three years. The MK10 type was glued to hair on the top of a seal’s head. These tags provided the same information as the SPOT type and also provided data on the timing and depths of dives, for up to ten months. This dataset includes the 'raw archive' data as obtained from the Wildlife Computers data portal. A separate dataset includes a 'processed' dataset that has been cleaned and organized for more efficient data analysis. Most users will only be interested in the 'processed' dataset. Several R/Rmarkdown (*.Rmd) files describe the process in more detail along with source code used for any data manipulation.</gco:CharacterString>
-         </gmd:abstract>
-         <gmd:purpose>
-            <gco:CharacterString>This dataset represents a complete archive of the satellite telemetry data from this research effort. This provides a preserved archive of these data.</gco:CharacterString>
-         </gmd:purpose>
-         <gmd:credit>
-            <gco:CharacterString>London, J.M., M.F. Cameron, and P.L Boveng (2017): Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive). Alaska Fisheries Science Center, National Oceanic and Atmospheric Administration. --doi:TBD, contact authors for updated citation details--</gco:CharacterString>
-         </gmd:credit>
-         <gmd:status>
-            <gmd:MD_ProgressCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_ProgressCode"
-                                 codeListValue="completed">completed</gmd:MD_ProgressCode>
-         </gmd:status>
-         <gmd:pointOfContact>
-            <gmd:CI_ResponsibleParty>
-               <gmd:individualName>
-                  <gco:CharacterString>Boveng, Peter </gco:CharacterString>
-               </gmd:individualName>
-               <gmd:organisationName>
-                  <gco:CharacterString>Alaska Fisheries Science Center</gco:CharacterString>
-               </gmd:organisationName>
-               <gmd:contactInfo>
-                  <gmd:CI_Contact>
-                     <gmd:phone>
-                        <gmd:CI_Telephone>
-                           <gmd:voice gco:nilReason="missing"/>
-                           <gmd:facsimile gco:nilReason="missing"/>
-                        </gmd:CI_Telephone>
-                     </gmd:phone>
-                     <gmd:address>
-                        <gmd:CI_Address>
-                           <gmd:deliveryPoint gco:nilReason="missing"/>
-                           <gmd:city gco:nilReason="missing"/>
-                           <gmd:administrativeArea gco:nilReason="missing"/>
-                           <gmd:postalCode gco:nilReason="missing"/>
-                           <gmd:country gco:nilReason="missing"/>
-                           <gmd:electronicMailAddress>
-                              <gco:CharacterString>peter.boveng@noaa.gov</gco:CharacterString>
-                           </gmd:electronicMailAddress>
-                        </gmd:CI_Address>
-                     </gmd:address>
-                     <gmd:onlineResource>
-                        <gmd:CI_OnlineResource>
-                           <gmd:linkage>
-                              <gmd:URL>http://www.afsc.noaa.gov</gmd:URL>
-                           </gmd:linkage>
-                           <gmd:protocol>
-                              <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
-                           </gmd:protocol>
-                           <gmd:name>
-                              <gco:CharacterString>Website</gco:CharacterString>
-                           </gmd:name>
-                           <gmd:description>
-                              <gco:CharacterString>Website listed for this contact</gco:CharacterString>
-                           </gmd:description>
-                           <gmd:function>
-                              <gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode"
-                                                         codeListValue="information">information</gmd:CI_OnLineFunctionCode>
-                           </gmd:function>
-                        </gmd:CI_OnlineResource>
-                     </gmd:onlineResource>
-                     <gmd:hoursOfService>
-                        <gco:CharacterString>0700-1700 Pacific Time</gco:CharacterString>
-                     </gmd:hoursOfService>
-                     <gmd:contactInstructions gco:nilReason="missing"/>
-                  </gmd:CI_Contact>
-               </gmd:contactInfo>
-               <gmd:role>
-                  <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:CI_RoleCode"
-                                   codeListValue="pointOfContact">pointOfContact
-                    </gmd:CI_RoleCode>
-               </gmd:role>
-            </gmd:CI_ResponsibleParty>
-         </gmd:pointOfContact>
-         <gmd:pointOfContact>
-            <gmd:CI_ResponsibleParty>
-               <gmd:individualName>
-                  <gco:CharacterString>London, Josh </gco:CharacterString>
-               </gmd:individualName>
-               <gmd:organisationName>
-                  <gco:CharacterString>Alaska Fisheries Science Center</gco:CharacterString>
-               </gmd:organisationName>
-               <gmd:contactInfo>
-                  <gmd:CI_Contact>
-                     <gmd:phone>
-                        <gmd:CI_Telephone>
-                           <gmd:voice>
-                              <gco:CharacterString>206-526-4296</gco:CharacterString>
-                           </gmd:voice>
-                           <gmd:facsimile gco:nilReason="missing"/>
-                        </gmd:CI_Telephone>
-                     </gmd:phone>
-                     <gmd:address>
-                        <gmd:CI_Address>
-                           <gmd:deliveryPoint>
-                              <gco:CharacterString>7600 Sand Point Way N.E., Building 4</gco:CharacterString>
-                           </gmd:deliveryPoint>
-                           <gmd:city>
-                              <gco:CharacterString>Seattle</gco:CharacterString>
-                           </gmd:city>
-                           <gmd:administrativeArea>
-                              <gco:CharacterString>WA</gco:CharacterString>
-                           </gmd:administrativeArea>
-                           <gmd:postalCode>
-                              <gco:CharacterString>98115</gco:CharacterString>
-                           </gmd:postalCode>
-                           <gmd:country>
-                              <gco:CharacterString>USA</gco:CharacterString>
-                           </gmd:country>
-                           <gmd:electronicMailAddress>
-                              <gco:CharacterString>josh.london@noaa.gov</gco:CharacterString>
-                           </gmd:electronicMailAddress>
-                        </gmd:CI_Address>
-                     </gmd:address>
-                     <gmd:onlineResource>
-                        <gmd:CI_OnlineResource>
-                           <gmd:linkage>
-                              <gmd:URL>http://www.afsc.noaa.gov</gmd:URL>
-                           </gmd:linkage>
-                           <gmd:protocol>
-                              <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
-                           </gmd:protocol>
-                           <gmd:name>
-                              <gco:CharacterString>Website</gco:CharacterString>
-                           </gmd:name>
-                           <gmd:description>
-                              <gco:CharacterString>Website listed for this contact</gco:CharacterString>
-                           </gmd:description>
-                           <gmd:function>
-                              <gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode"
-                                                         codeListValue="information">information</gmd:CI_OnLineFunctionCode>
-                           </gmd:function>
-                        </gmd:CI_OnlineResource>
-                     </gmd:onlineResource>
-                     <gmd:hoursOfService>
-                        <gco:CharacterString>0700-1700 Pacific Time</gco:CharacterString>
-                     </gmd:hoursOfService>
-                     <gmd:contactInstructions gco:nilReason="missing"/>
-                  </gmd:CI_Contact>
-               </gmd:contactInfo>
-               <gmd:role>
-                  <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:CI_RoleCode"
-                                   codeListValue="custodian">custodian
-                    </gmd:CI_RoleCode>
-               </gmd:role>
-            </gmd:CI_ResponsibleParty>
-         </gmd:pointOfContact>
-         <gmd:resourceMaintenance>
-            <gmd:MD_MaintenanceInformation>
-               <gmd:maintenanceAndUpdateFrequency>
-                  <gmd:MD_MaintenanceFrequencyCode codeList="http://www.tc211.org/ISO19139/resources/codeList.xml#MD_MaintenanceFrequencyCode"
-                                                   codeListValue="asNeeded"/>
-               </gmd:maintenanceAndUpdateFrequency>
-            </gmd:MD_MaintenanceInformation>
-         </gmd:resourceMaintenance>
-         <gmd:descriptiveKeywords>
-            <gmd:MD_Keywords>
-               <gmd:keyword>
-                  <gco:CharacterString>Bearded Seal</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:type>
-                  <gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode"
-                                          codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
-               </gmd:type>
-               <gmd:thesaurusName>
-                  <gmd:CI_Citation>
-                     <gmd:title>
-                        <gco:CharacterString>Integrated Taxonomic Information systems (ITIS)</gco:CharacterString>
-                     </gmd:title>
-                     <gmd:date gco:nilReason="missing"/>
-                  </gmd:CI_Citation>
-               </gmd:thesaurusName>
-            </gmd:MD_Keywords>
-         </gmd:descriptiveKeywords>
-         <gmd:descriptiveKeywords>
-            <gmd:MD_Keywords>
-               <gmd:keyword>
-                  <gco:CharacterString>Alaska</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:keyword>
-                  <gco:CharacterString>Arctic Ocean</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:keyword>
-                  <gco:CharacterString>Beaufort Sea</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:keyword>
-                  <gco:CharacterString>Bering Sea</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:keyword>
-                  <gco:CharacterString>Chukchi Sea</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:type>
-                  <gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode"
-                                          codeListValue="place">place</gmd:MD_KeywordTypeCode>
-               </gmd:type>
-               <gmd:thesaurusName>
-                  <gmd:CI_Citation>
-                     <gmd:title>
-                        <gco:CharacterString>Geographic Names Information System</gco:CharacterString>
-                     </gmd:title>
-                     <gmd:date gco:nilReason="missing"/>
-                  </gmd:CI_Citation>
-               </gmd:thesaurusName>
-            </gmd:MD_Keywords>
-         </gmd:descriptiveKeywords>
-         <gmd:descriptiveKeywords>
-            <gmd:MD_Keywords>
-               <gmd:keyword>
-                  <gco:CharacterString>DOC/NOAA/NMFS/AFSC &gt; Alaska Fisheries Science Center, National Marine Fisheries Service, NOAA, U.S. Department of Commerce</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:type>
-                  <gmd:MD_KeywordTypeCode codeList="https://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode"
-                                          codeListValue="dataCenter">dataCenter</gmd:MD_KeywordTypeCode>
-               </gmd:type>
-               <gmd:thesaurusName xlink:title="NASA/GCMD Science Keyword Thesaurus">
-                  <gmd:CI_Citation xmlns="http://www.isotc211.org/2005/gmi"
-                                   xsi:schemaLocation="http://www.isotc211.org/2005/gmi  https://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd"
-                                   uuid="227737d0-428b-11df-9879-0800200c9a66">
-                     <gmd:title>
-                        <gco:CharacterString>NASA/GCMD Science Keywords</gco:CharacterString>
-                     </gmd:title>
-                     <gmd:date gco:nilReason="unknown"/>
-                     <gmd:citedResponsibleParty xlink:title="GCMD User Support Office">
-                        <gmd:CI_ResponsibleParty xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://metadata/published/xsd/schema.xsd"
-                                                 uuid="8294BEE08B11359FE040AC8C5AB460D1">
-                           <gmd:organisationName>
-                              <gco:CharacterString>NASA</gco:CharacterString>
-                           </gmd:organisationName>
-                           <gmd:positionName>
-                              <gco:CharacterString>GCMD User Support Office</gco:CharacterString>
-                           </gmd:positionName>
-                           <gmd:contactInfo>
-                              <gmd:CI_Contact>
-                                 <gmd:address>
-                                    <gmd:CI_Address>
-                                       <gmd:electronicMailAddress>
-                                          <gco:CharacterString>gcmduso@gcmd.gsfc.nasa.gov</gco:CharacterString>
-                                       </gmd:electronicMailAddress>
-                                    </gmd:CI_Address>
-                                 </gmd:address>
-                              </gmd:CI_Contact>
-                           </gmd:contactInfo>
-                           <gmd:role>
-                              <gmd:CI_RoleCode codeList="https://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode"
-                                               codeListValue="custodian">custodian</gmd:CI_RoleCode>
-                           </gmd:role>
-                        </gmd:CI_ResponsibleParty>
-                     </gmd:citedResponsibleParty>
-                     <gmd:citedResponsibleParty xlink:title="GCMD Valids">
-                        <gmd:CI_ResponsibleParty xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://metadata/published/xsd/schema.xsd"
-                                                 uuid="1edb41d0-428a-11df-9879-0800200c9a66">
-                           <gmd:organisationName gco:nilReason="inapplicable"/>
-                           <gmd:contactInfo>
-                              <gmd:CI_Contact>
-                                 <gmd:onlineResource xlink:title="GCMD Keyword Page">
-                                    <gmd:CI_OnlineResource uuid="18ec3410-4289-11df-9879-0800200c9a66">
-                                       <gmd:linkage>
-                                          <gmd:URL>http://gcmd.nasa.gov/learn/keyword_list.html</gmd:URL>
-                                       </gmd:linkage>
-                                       <gmd:protocol>
-                                          <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
-                                       </gmd:protocol>
-                                       <gmd:name>
-                                          <gco:CharacterString>GCMD Keywords Page</gco:CharacterString>
-                                       </gmd:name>
-                                       <gmd:description>
-                                          <gco:CharacterString>This page describes the NASA GCMD Keywords, how
-                                                            to reference those keywords and provides download instructions.
-                                                        </gco:CharacterString>
-                                       </gmd:description>
-                                       <gmd:function>
-                                          <gmd:CI_OnLineFunctionCode codeList="https://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode"
-                                                                     codeListValue="information">information</gmd:CI_OnLineFunctionCode>
-                                       </gmd:function>
-                                    </gmd:CI_OnlineResource>
-                                 </gmd:onlineResource>
-                              </gmd:CI_Contact>
-                           </gmd:contactInfo>
-                           <gmd:role>
-                              <gmd:CI_RoleCode codeList="https://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode"
-                                               codeListValue="custodian">custodian</gmd:CI_RoleCode>
-                           </gmd:role>
-                        </gmd:CI_ResponsibleParty>
-                     </gmd:citedResponsibleParty>
-                  </gmd:CI_Citation>
-               </gmd:thesaurusName>
-            </gmd:MD_Keywords>
-         </gmd:descriptiveKeywords>
-         <gmd:descriptiveKeywords>
-            <gmd:MD_Keywords>
-               <gmd:keyword>
-                  <gco:CharacterString>Polar Ecosystems Program</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:type>
-                  <gmd:MD_KeywordTypeCode codeList="https://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode"
-                                          codeListValue="project">project</gmd:MD_KeywordTypeCode>
-               </gmd:type>
-            </gmd:MD_Keywords>
-         </gmd:descriptiveKeywords>
-         <gmd:resourceConstraints>
-            <gmd:MD_LegalConstraints>
-               <gmd:accessConstraints>
-                  <gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_RestrictionCode"
-                                          codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
-               </gmd:accessConstraints>
-               <gmd:useConstraints>
-                  <gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_RestrictionCode"
-                                          codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
-               </gmd:useConstraints>
-               <gmd:otherConstraints>
-                  <gco:CharacterString>Access Constraints: The data set is intended to be archived with the Arctic Data Center (arcticdata.io) and the Data Observation Network for Earth (DataONE). Once the archival process is complete and verified, the data set will be publicly available. | Use Constraints: User must read and fully comprehend the metadata prior to use. Applications or inferences derived from the data should be carefully considered for accuracy. While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. Acknowledge NOAA/NMFS/AFSC or the specified citation as the source from which these data were obtained in any publications and/or other representations of these data. Communication and collaboration with dataset authors is strongly encouraged. | Distribution Liability: While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. </gco:CharacterString>
-               </gmd:otherConstraints>
-            </gmd:MD_LegalConstraints>
-         </gmd:resourceConstraints>
-         <gmd:resourceConstraints>
-            <gmd:MD_SecurityConstraints>
-               <gmd:classification>
-                  <gmd:MD_ClassificationCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_ClassificationCode"
-                                             codeListValue="unclassified">unclassified</gmd:MD_ClassificationCode>
-               </gmd:classification>
-               <gmd:classificationSystem gco:nilReason="missing"/>
-               <gmd:handlingDescription gco:nilReason="missing"/>
-            </gmd:MD_SecurityConstraints>
-         </gmd:resourceConstraints>
-         <gmd:language>
-            <gco:CharacterString>eng; US</gco:CharacterString>
-         </gmd:language>
-         <gmd:topicCategory>
-            <gmd:MD_TopicCategoryCode>biota</gmd:MD_TopicCategoryCode>
-         </gmd:topicCategory>
-         <gmd:topicCategory>
-            <gmd:MD_TopicCategoryCode>environment</gmd:MD_TopicCategoryCode>
-         </gmd:topicCategory>
-         <gmd:extent>
-            <gmd:EX_Extent>
-               <gmd:description>
-                  <gco:CharacterString>Geographic Area Description: Bering Sea, Chukchi Sea, Beaufort Sea, Arctic Ocean | </gco:CharacterString>
-               </gmd:description>
-               <gmd:geographicElement>
-                  <gmd:EX_GeographicBoundingBox>
-                     <gmd:westBoundLongitude>
-                        <gco:Decimal>-174</gco:Decimal>
-                     </gmd:westBoundLongitude>
-                     <gmd:eastBoundLongitude>
-                        <gco:Decimal>-143</gco:Decimal>
-                     </gmd:eastBoundLongitude>
-                     <gmd:southBoundLatitude>
-                        <gco:Decimal>59</gco:Decimal>
-                     </gmd:southBoundLatitude>
-                     <gmd:northBoundLatitude>
-                        <gco:Decimal>74</gco:Decimal>
-                     </gmd:northBoundLatitude>
-                  </gmd:EX_GeographicBoundingBox>
-               </gmd:geographicElement>
-               <gmd:temporalElement>
-                  <gmd:EX_TemporalExtent>
-                     <gmd:extent>
-                        <gml:TimePeriod gml:id="boundingTemporalExtent-1-1">
-                           <gml:description> | Currentness: Ground Condition</gml:description>
-                           <gml:beginPosition>2008</gml:beginPosition>
-                           <gml:endPosition>2012</gml:endPosition>
-                        </gml:TimePeriod>
-                     </gmd:extent>
-                  </gmd:EX_TemporalExtent>
-               </gmd:temporalElement>
-            </gmd:EX_Extent>
-         </gmd:extent>
-         <gmd:supplementalInformation>
-            <gco:CharacterString>The file 'kotzeb0912_get_data.Rmd' is an R/Rmarkdown file that includes more detailed description of the process as well as the source code use.</gco:CharacterString>
-         </gmd:supplementalInformation>
-      </gmd:MD_DataIdentification>
-   </gmd:identificationInfo>
-   <gmd:distributionInfo>
-      <gmd:MD_Distribution>
-         <gmd:distributor>
-            <gmd:MD_Distributor>
-               <gmd:distributorContact>
-                  <gmd:CI_ResponsibleParty>
-                     <gmd:individualName>
-                        <gco:CharacterString>London, Josh </gco:CharacterString>
-                     </gmd:individualName>
-                     <gmd:organisationName>
-                        <gco:CharacterString>Alaska Fisheries Science Center</gco:CharacterString>
-                     </gmd:organisationName>
-                     <gmd:contactInfo>
-                        <gmd:CI_Contact>
-                           <gmd:phone>
-                              <gmd:CI_Telephone>
-                                 <gmd:voice>
-                                    <gco:CharacterString>206-526-4296</gco:CharacterString>
-                                 </gmd:voice>
-                                 <gmd:facsimile gco:nilReason="missing"/>
-                              </gmd:CI_Telephone>
-                           </gmd:phone>
-                           <gmd:address>
-                              <gmd:CI_Address>
-                                 <gmd:deliveryPoint>
-                                    <gco:CharacterString>7600 Sand Point Way N.E., Building 4</gco:CharacterString>
-                                 </gmd:deliveryPoint>
-                                 <gmd:city>
-                                    <gco:CharacterString>Seattle</gco:CharacterString>
-                                 </gmd:city>
-                                 <gmd:administrativeArea>
-                                    <gco:CharacterString>WA</gco:CharacterString>
-                                 </gmd:administrativeArea>
-                                 <gmd:postalCode>
-                                    <gco:CharacterString>98115</gco:CharacterString>
-                                 </gmd:postalCode>
-                                 <gmd:country>
-                                    <gco:CharacterString>USA</gco:CharacterString>
-                                 </gmd:country>
-                                 <gmd:electronicMailAddress>
-                                    <gco:CharacterString>josh.london@noaa.gov</gco:CharacterString>
-                                 </gmd:electronicMailAddress>
-                              </gmd:CI_Address>
-                           </gmd:address>
-                           <gmd:onlineResource>
-                              <gmd:CI_OnlineResource>
-                                 <gmd:linkage>
-                                    <gmd:URL>http://www.afsc.noaa.gov</gmd:URL>
-                                 </gmd:linkage>
-                                 <gmd:protocol>
-                                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
-                                 </gmd:protocol>
-                                 <gmd:name>
-                                    <gco:CharacterString>Website</gco:CharacterString>
-                                 </gmd:name>
-                                 <gmd:description>
-                                    <gco:CharacterString>Website listed for this contact</gco:CharacterString>
-                                 </gmd:description>
-                                 <gmd:function>
-                                    <gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode"
-                                                               codeListValue="information">information</gmd:CI_OnLineFunctionCode>
-                                 </gmd:function>
-                              </gmd:CI_OnlineResource>
-                           </gmd:onlineResource>
-                           <gmd:hoursOfService>
-                              <gco:CharacterString>0700-1700 Pacific Time</gco:CharacterString>
-                           </gmd:hoursOfService>
-                           <gmd:contactInstructions gco:nilReason="missing"/>
-                        </gmd:CI_Contact>
-                     </gmd:contactInfo>
-                     <gmd:role>
-                        <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:CI_RoleCode"
-                                         codeListValue="distributor">distributor
-                    </gmd:CI_RoleCode>
-                     </gmd:role>
-                  </gmd:CI_ResponsibleParty>
-               </gmd:distributorContact>
-            </gmd:MD_Distributor>
-         </gmd:distributor>
-         <gmd:transferOptions>
-            <gmd:MD_DigitalTransferOptions>
-               <gmd:onLine>
-                  <gmd:CI_OnlineResource>
-                     <gmd:linkage>
-                        <gmd:URL>http://www.nmfs.noaa.gov/data_not_yet_available</gmd:URL>
-                     </gmd:linkage>
-                     <gmd:protocol>
-                        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
-                     </gmd:protocol>
-                     <gmd:name>
-                        <gco:CharacterString>http://www.nmfs.noaa.gov/data_not_yet_available</gco:CharacterString>
-                     </gmd:name>
-                     <gmd:description gco:nilReason="missing"/>
-                     <gmd:function>
-                        <gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode"
-                                                   codeListValue="download">download</gmd:CI_OnLineFunctionCode>
-                     </gmd:function>
-                  </gmd:CI_OnlineResource>
-               </gmd:onLine>
-            </gmd:MD_DigitalTransferOptions>
-         </gmd:transferOptions>
-      </gmd:MD_Distribution>
-   </gmd:distributionInfo>
-   <gmd:dataQualityInfo>
-      <gmd:DQ_DataQuality>
-         <gmd:scope>
-            <gmd:DQ_Scope>
-               <gmd:level>
-                  <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_ScopeCode"
-                                    codeListValue="dataset">dataset</gmd:MD_ScopeCode>
-               </gmd:level>
-            </gmd:DQ_Scope>
-         </gmd:scope>
-         <gmd:lineage>
-            <gmd:LI_Lineage>
-               <gmd:statement>
-                  <gco:CharacterString>These data are represented as an archive of all data files pulled from the Wildlife Computers data portal. See the included R/Rmarkdown file for the R code used to download and create the archives.</gco:CharacterString>
-               </gmd:statement>
-            </gmd:LI_Lineage>
-         </gmd:lineage>
-      </gmd:DQ_DataQuality>
-   </gmd:dataQualityInfo>
-   <gmd:metadataConstraints>
-      <gmd:MD_LegalConstraints>
-         <gmd:accessConstraints>
-            <gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_RestrictionCode"
-                                    codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
-         </gmd:accessConstraints>
-         <gmd:useConstraints>
-            <gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_RestrictionCode"
-                                    codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
-         </gmd:useConstraints>
-         <gmd:otherConstraints>
-            <gco:CharacterString>Access Constraints: no metadata access constraints | Use Constraints: Metadata are subject to revision at any time and information within the metadata record should not be cited without author consent. While every effort has been made to ensure that these data are accurate and reliable within the limits of the current state of the art, NOAA cannot assume liability for any damages caused by any errors or omissions in the data, nor as a result of the failure of the data to function on a particular system. NOAA makes no warranty, expressed or implied, nor does the fact of distribution constitute such a warranty. </gco:CharacterString>
-         </gmd:otherConstraints>
-      </gmd:MD_LegalConstraints>
-   </gmd:metadataConstraints>
-</gmi:MI_Metadata>
+Boveng, P.L. and M.F. Cameron. 2013. Pinniped movements and foraging: seasonal movements, habitat selection, foraging and haul-out behavior of adult bearded seals in the Chukchi Sea. Final Report, BOEM Report 2013-01150. Bureau of Ocean Energy Management, Alaska Outer Continental Shelf Region, Anchorage, Alaska, USA. 91 Pp + Appendix.</description>
+      </url>
+   </urls>
+   <data-quality>
+      <quality-control-procedures>Limited quality control procedures have been employed. This dataset is an archive of the processed output from the Wildlife Computers data processing software. These tags were deployed on free-ranging, wild animals  in challenging environments. In all cases, additional quality control procedures and evaluation from experts familiar with the tags, programming and species will be required.</quality-control-procedures>
+   </data-quality>
+   <data-management>
+      <resources-identified>No</resources-identified>
+      <resources-budget-percentage>Unknown</resources-budget-percentage>
+      <data-access-directive-compliant>No</data-access-directive-compliant>
+      <data-access-directive-waiver>No</data-access-directive-waiver>
+      <hosting-service-needed>not needed; planned for Arctic Data Center/DataONE</hosting-service-needed>
+      <delay-collection-dissemination>unknown</delay-collection-dissemination>
+      <delay-collection-dissemination-explanation>data not automatically processed</delay-collection-dissemination-explanation>
+      <archive-location>Other</archive-location>
+      <archive-location-explanation-other>Arctic Data Center/DataONE</archive-location-explanation-other>
+      <delay-collection-archive>unknown</delay-collection-archive>
+      <data-protection-plan>IT Security and Contingency Plan for the system establishes procedures and applies to the functions, operations, and resources necessary to recover and restore data as hosted in the Western Regional Support Center in Seattle, Washington, following a disruption.</data-protection-plan>
+   </data-management>
+   <lineage>
+      <lineage-statement>These data are represented as an archive of all data files pulled from the Wildlife Computers data portal. See the included R/Rmarkdown file for the R code used to download and create the archives.</lineage-statement>
+   </lineage>
+   <child-items>
+      <child-item>
+         <catalog-item-id>47177</catalog-item-id>
+         <catalog-item-type>Document</catalog-item-type>
+         <title>00_kotzeb0912_get_data.Rmd</title>
+      </child-item>
+   </child-items>
+   <related-items>
+      <related-item>
+         <catalog-item-id>47178</catalog-item-id>
+         <catalog-item-type>Data Set</catalog-item-type>
+         <title>Wildlife Computers Deployment Archive Data Files</title>
+         <notes>Provides detailed entity/attribute information for the file types within the Wildlife Computers Deployment Archive</notes>
+      </related-item>
+   </related-items>
+   <catalog-details>
+      <metadata-record-created-by pers-id="11324">Josh London</metadata-record-created-by>
+      <metadata-record-created>20170906T163403</metadata-record-created>
+      <metadata-record-last-modified-by pers-id="11324">Josh London</metadata-record-last-modified-by>
+      <metadata-record-last-modified>20170908T134849</metadata-record-last-modified>
+      <owner-organization>Alaska Fisheries Science Center</owner-organization>
+      <owner-organization-acronym>AFSC</owner-organization-acronym>
+      <publication-status>Never Published</publication-status>
+      <is-do-not-publish>No</is-do-not-publish>
+      <metadata-next-review-date>20170519</metadata-next-review-date>
+      <linking-share-level>Public</linking-share-level>
+   </catalog-details>
+</inport-metadata>
