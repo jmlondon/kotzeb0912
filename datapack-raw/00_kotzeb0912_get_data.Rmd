@@ -1,5 +1,5 @@
 ---
-title: "Telemetry dataset from satellite tags deployed on adult bearded seals in Kotzebue, Alaska"
+title: "Satellite Telemetry Dataset: adult bearded seals in Kotzebue, Alaska (raw archive)"
 subtitle: "Get Data from the Wildlife Computers Data Portal"
 draft: true
 author:
@@ -22,11 +22,12 @@ disclaimer: >
   those of NOAA or the Department of Commerce.
 abstract: >
   This document describes the process for downloading *raw* telemetry data from
-  the Wildlife Computers Data Portal via their API. The data are provided as
-  zipped archives for each deployment and are preserved as is. The archives
-  are uploaded to the Arctic Data Center repository along with relevant
-  metadata and provenance information. Fourteen tags were deployed on 7 adult 
-  bearded seals that were captured and released near Kotzebue, Alaska, USA. 
+  the Wildlife Computers (https://wildlifecomputers.com/) Data Portal via their
+  API. The data are provided as zipped archives for each deployment and are
+  preserved as is. The archives are uploaded to the Arctic Data Center
+  repository along with relevant metadata and provenance information. Fourteen
+  tags were deployed on 7 adult bearded seals that were captured and released
+  near Kotzebue, Alaska, USA.
 output: 
   uswebr::html_uswds:
     number_sections: FALSE
@@ -34,7 +35,11 @@ params:
   get_data: FALSE
 ---
 
-# Connect to Wildlife Computers Data Portal
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+# Connect to the Data Portal
 
 Wildlife Computers (Redmond, Washington, USA) provides an API for their data
 portal that allows us to download the latest telemetry data for any deployment. 
@@ -56,9 +61,11 @@ if (!require('tidyverse')) install.packages('tidyverse')
 ```
 
 
-# Download `kotzeb0912` Telemetry
+# Download KotzEB09 Telemetry
 
-All of the deployments have been labeled within the data portal as *ProjectID = KotzEB09*. We will use that information to only download the relevant data.
+All of the deployments have been labeled within the data portal as 
+*ProjectID = KotzEB09*. We will use that information to only download the 
+relevant data.
 
 ```{r get-data-from-wc, eval = as.logical(params$get_data)}
 # first thing, get deployment data from WCDP
@@ -84,6 +91,7 @@ but for now, we'll just open each zip file and examine the data files to
 extract the assigned `DeployID`.
 
 ```{r rename-zip-files, eval = as.logical(params$get_data)}
+df <- tibble::as_tibble()
 for (zipfile in list.files(pattern = ".zip",full.names = TRUE)) {
   summary_name <- grep('*-Summary.csv',
                       unzip(file.path(
@@ -92,17 +100,33 @@ for (zipfile in list.files(pattern = ".zip",full.names = TRUE)) {
                        value = TRUE)
   deployid <- read.csv(unzip(zipfile, files = summary_name))$DeployID
   deployid <- as.character(deployid)
+  instr <- read.csv(unzip(zipfile, files = summary_name))$Instr
+  instr <- as.character(instr)
+  first_tx <- read.csv(unzip(zipfile, files = summary_name))$LatestXmitTime
+  first_tx <- as.character(first_tx)
+  last_tx <- read.csv(unzip(zipfile, files = summary_name))$LatestXmitTime
+  last_tx <- as.character(last_tx)
+  ndays_tx <- read.csv(unzip(zipfile, files = summary_name))$XmitDays
+  ndays_tx <- as.character(ndays_tx)
+  
   file.remove(summary_name)
   file.rename(file.path(zipfile),
               file.path(paste(deployid,"zip",sep = '.'))
   )
+  
+  df <- df %>% dplyr::bind_rows(list(filename = paste(deployid,"zip",sep = '.'),
+                 instrument = instr,
+                 "first transmission" = first_tx,
+                 "last transmission" = last_tx,
+                 "no. days" = ndays_tx
+                 ))
 }
 ```
 
 ## List of Archive Files
 
 ```{r list-downloaded-files}
-tibble(file_name = (list.files(pattern = ".zip"))) %>% knitr::kable()
+df %>% knitr::kable()
 ```
 
 # Create datapack
@@ -136,11 +160,6 @@ progObj <- new("DataObject", format = "application/R",
                filename = "00_kotzeb0912_get_data.Rmd", 
                mediaType = "text/x-rsrc")
 dp <- addMember(dp, progObj, mo = metadataObj)
-
-outputObj <- new("DataObject", format="text/html", 
-                 filename="00_kotzeb0912_get_data.html") 
-dp <- addMember(dp, outputObj, mo = metadataObj)
-
 ```
 
 # Establish Connection with DataONE Node
