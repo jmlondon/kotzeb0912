@@ -216,8 +216,10 @@ aleut_ids &lt;-<span class="st"> </span>wcUtils<span class="op">::</span><span c
 }</code></pre></div>
 <div id="list-of-archive-files" class="section level2">
 <h2>List of Archive Files</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="dt">booktabs =</span> <span class="ot">TRUE</span>,
+  <span class="dt">caption =</span> <span class="st">'Files and Associated Key Deployment Statistics'</span>)</code></pre></div>
 <table>
+<caption><span id="tab:list-downloaded-files">Table 1: </span>Files and Associated Key Deployment Statistics</caption>
 <thead>
 <tr class="header">
 <th align="left">filename</th>
@@ -228,104 +230,6 @@ aleut_ids &lt;-<span class="st"> </span>wcUtils<span class="op">::</span><span c
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">EB2011_3000_10A0219.zip</td>
-<td align="left">Mk10</td>
-<td align="left">20:28:51 01-Apr-2012</td>
-<td align="left">20:28:51 01-Apr-2012</td>
-<td align="left">290</td>
-</tr>
-<tr class="even">
-<td align="left">EB2011_3001_10A0552.zip</td>
-<td align="left">Mk10</td>
-<td align="left">12:31:14 30-Jan-2012</td>
-<td align="left">12:31:14 30-Jan-2012</td>
-<td align="left">227</td>
-</tr>
-<tr class="odd">
-<td align="left">EB2011_3001_09S1225.zip</td>
-<td align="left">SPOT</td>
-<td align="left">02:18:10 30-May-2012</td>
-<td align="left">02:18:10 30-May-2012</td>
-<td align="left">346</td>
-</tr>
-<tr class="even">
-<td align="left">EB2011_3002_10A0200.zip</td>
-<td align="left">Mk10</td>
-<td align="left">02:53:09 14-Mar-2012</td>
-<td align="left">02:53:09 14-Mar-2012</td>
-<td align="left">270</td>
-</tr>
-<tr class="odd">
-<td align="left">EB2009_3000_09S0188.zip</td>
-<td align="left">SPOT</td>
-<td align="left">04:34:56 12-Jun-2012</td>
-<td align="left">04:34:56 12-Jun-2012</td>
-<td align="left">1054</td>
-</tr>
-<tr class="even">
-<td align="left">EB2009_3001_08S0215.zip</td>
-<td align="left">SPOT</td>
-<td align="left">01:15:52 12-Jun-2012</td>
-<td align="left">01:15:52 12-Jun-2012</td>
-<td align="left">1071</td>
-</tr>
-<tr class="odd">
-<td align="left">EB2009_3002_09S0185.zip</td>
-<td align="left">SPOT</td>
-<td align="left">04:23:19 18-May-2012</td>
-<td align="left">04:23:19 18-May-2012</td>
-<td align="left">1022</td>
-</tr>
-<tr class="even">
-<td align="left">EB2012_3003_09A0888.zip</td>
-<td align="left">Mk10</td>
-<td align="left">03:02:12 12-Mar-2013</td>
-<td align="left">03:02:12 12-Mar-2013</td>
-<td align="left">251</td>
-</tr>
-<tr class="odd">
-<td align="left">EB2009_3002_06A1357.zip</td>
-<td align="left">Mk10</td>
-<td align="left">02:56:55 04-Mar-2010</td>
-<td align="left">02:56:55 04-Mar-2010</td>
-<td align="left">251</td>
-</tr>
-<tr class="even">
-<td align="left">EB2009_3000_06A1346.zip</td>
-<td align="left">Mk10</td>
-<td align="left">12:25:46 14-Apr-2010</td>
-<td align="left">12:25:46 14-Apr-2010</td>
-<td align="left">295</td>
-</tr>
-<tr class="odd">
-<td align="left">EB2009_3001_06A1332.zip</td>
-<td align="left">Mk10</td>
-<td align="left">08:17:48 09-Mar-2010</td>
-<td align="left">08:17:48 09-Mar-2010</td>
-<td align="left">257</td>
-</tr>
-<tr class="even">
-<td align="left">EB2011_3000_10S0628.zip</td>
-<td align="left">SPOT</td>
-<td align="left">02:48:09 15-Aug-2012</td>
-<td align="left">02:48:09 15-Aug-2012</td>
-<td align="left">399</td>
-</tr>
-<tr class="odd">
-<td align="left">EB2011_3002_10S0494.zip</td>
-<td align="left">SPOT</td>
-<td align="left">02:37:59 24-Jun-2014</td>
-<td align="left">02:37:59 24-Jun-2014</td>
-<td align="left">1101</td>
-</tr>
-<tr class="even">
-<td align="left">EB2012_3003_10S0625.zip</td>
-<td align="left">SPOT</td>
-<td align="left">18:23:24 12-Nov-2013</td>
-<td align="left">18:23:24 12-Nov-2013</td>
-<td align="left">494</td>
-</tr>
 <tr class="odd">
 <td align="left">EB2009_3000_06A1346.zip</td>
 <td align="left">Mk10</td>
@@ -432,11 +336,15 @@ aleut_ids &lt;-<span class="st"> </span>wcUtils<span class="op">::</span><span c
 <h1>Create datapack</h1>
 <p>Now that we have our files downloaded and stored locally, we want to create a datapack for upload to DataONE. The process described here borrows heavily from the <a href="https://cran.r-project.org/web/packages/dataone/vignettes/upload-data.html">vignette provided DataONE</a> in the <code>dataone</code> package.</p>
 <p>First, we load the required libraries and then create an empty DataPackage.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(<span class="st">'dataone'</span>)) <span class="kw">install.packages</span>(<span class="st">'dataone'</span>)
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(<span class="st">'datapack'</span>)) <span class="kw">install.packages</span>(<span class="st">'datapack'</span>)
-<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(<span class="st">'uuid'</span>)) <span class="kw">install.packages</span>(<span class="st">'uuid'</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(<span class="st">'dataone'</span>)) <span class="kw">install.packages</span>(<span class="st">'dataone'</span>)
+<span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(<span class="st">'datapack'</span>)) <span class="kw">install.packages</span>(<span class="st">'datapack'</span>)
+<span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(<span class="st">'uuid'</span>)) <span class="kw">install.packages</span>(<span class="st">'uuid'</span>)
 
 dp &lt;-<span class="st"> </span><span class="kw">new</span>(<span class="st">&quot;DataPackage&quot;</span>)</code></pre></div>
+<p>Now, we need to add our data files and metadata to the DataPackage. NMFS requires that all metadata be cataloged within the InPort application. The <code>kotzeb0912_raw_iso19115.xml</code> file is an ISO 19115-2 export from InPort. The DataPackage also includes a <code>wc_archive_files_iso19115.xml</code> file that describes the individual files that are found within a Wildlife Computers deployment archive.</p>
+<blockquote>
+<p>the examples and vignettes online all describe using EML and functions w/in the eml package. Not sure what the best workflow is when the metadata are not in EML format.</p>
+</blockquote>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">metadataObj &lt;-<span class="st"> </span><span class="kw">new</span>(<span class="st">&quot;DataObject&quot;</span>, 
                    <span class="dt">format =</span> <span class="st">&quot;https://www.iso.org/standard/53798.html&quot;</span>,
                    <span class="dt">filename =</span> <span class="st">&quot;kotzeb0912_raw_iso19115.xml&quot;</span>)
@@ -450,14 +358,12 @@ dp &lt;-<span class="st"> </span><span class="kw">addMember</span>(dp, metadataO
 progObj &lt;-<span class="st"> </span><span class="kw">new</span>(<span class="st">&quot;DataObject&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;application/R&quot;</span>, 
                <span class="dt">filename =</span> <span class="st">&quot;00_kotzeb0912_get_data.Rmd&quot;</span>, 
                <span class="dt">mediaType =</span> <span class="st">&quot;text/x-rsrc&quot;</span>)
-dp &lt;-<span class="st"> </span><span class="kw">addMember</span>(dp, progObj, <span class="dt">mo =</span> metadataObj)
-
-outputObj &lt;-<span class="st"> </span><span class="kw">new</span>(<span class="st">&quot;DataObject&quot;</span>, <span class="dt">format=</span><span class="st">&quot;text/html&quot;</span>, 
-                 <span class="dt">filename=</span><span class="st">&quot;00_kotzeb0912_get_data.html&quot;</span>) 
-dp &lt;-<span class="st"> </span><span class="kw">addMember</span>(dp, outputObj, <span class="dt">mo =</span> metadataObj)</code></pre></div>
+dp &lt;-<span class="st"> </span><span class="kw">addMember</span>(dp, progObj, <span class="dt">mo =</span> metadataObj)</code></pre></div>
 </div>
 <div id="establish-connection-with-dataone-node" class="section level1">
 <h1>Establish Connection with DataONE Node</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># we'll use a knb test server to start with</span>
+<span class="co"># https://dev.nceas.ucsb.edu/</span></code></pre></div>
 </div>
 <div id="send-datapack-to-dataone-node" class="section level1">
 <h1>Send datapack to DataONE Node</h1>

@@ -90,7 +90,7 @@ functionality could be implemented within the `wcUtils` package and the API,
 but for now, we'll just open each zip file and examine the data files to
 extract the assigned `DeployID`.
 
-```{r rename-zip-files, eval = as.logical(params$get_data)}
+```{r rename-zip-files}
 df <- tibble::as_tibble()
 for (zipfile in list.files(pattern = ".zip",full.names = TRUE)) {
   summary_name <- grep('*-Summary.csv',
@@ -126,7 +126,8 @@ for (zipfile in list.files(pattern = ".zip",full.names = TRUE)) {
 ## List of Archive Files
 
 ```{r list-downloaded-files}
-df %>% knitr::kable()
+df %>% knitr::kable(booktabs = TRUE,
+  caption = 'Files and Associated Key Deployment Statistics')
 ```
 
 # Create datapack
@@ -138,12 +139,23 @@ the [vignette provided DataONE](https://cran.r-project.org/web/packages/dataone/
 First, we load the required libraries and then create an empty DataPackage.
 
 ```{r create-datapack}
-if(!require('dataone')) install.packages('dataone')
-if(!require('datapack')) install.packages('datapack')
-if(!require('uuid')) install.packages('uuid')
+if (!require('dataone')) install.packages('dataone')
+if (!require('datapack')) install.packages('datapack')
+if (!require('uuid')) install.packages('uuid')
 
 dp <- new("DataPackage")
 ```
+
+Now, we need to add our data files and metadata to the DataPackage. NMFS requires
+that all metadata be cataloged within the InPort application. The
+`kotzeb0912_raw_iso19115.xml` file is an ISO 19115-2 export from InPort. The 
+DataPackage also includes a `wc_archive_files_iso19115.xml` file that
+describes the individual files that are found within a Wildlife Computers
+deployment archive.
+
+> the examples and vignettes online all describe using EML and functions w/in
+the eml package. Not sure what the best workflow is when the metadata are not
+in EML format.
 
 ```{r add-files-datapack}
 metadataObj <- new("DataObject", 
@@ -163,5 +175,12 @@ dp <- addMember(dp, progObj, mo = metadataObj)
 ```
 
 # Establish Connection with DataONE Node
+
+```{r connect-D1}
+# we'll use a knb test server to start with
+# https://dev.nceas.ucsb.edu/
+
+
+```
 
 # Send datapack to DataONE Node
