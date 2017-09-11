@@ -153,7 +153,7 @@ DataPackage also includes a `wc_archive_files_iso19115.xml` file that
 describes the individual files that are found within a Wildlife Computers
 deployment archive.
 
-> the examples and vignettes online all describe using EML and functions w/in
+> **[JML comment]** the examples and vignettes online all describe using EML and functions w/in
 the eml package. Not sure what the best workflow is when the metadata are not
 in EML format.
 
